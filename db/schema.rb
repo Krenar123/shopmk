@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_01_172542) do
+ActiveRecord::Schema.define(version: 2022_07_20_121148) do
 
   create_table "eikonas", force: :cascade do |t|
     t.string "path_ref"
@@ -41,7 +41,36 @@ ActiveRecord::Schema.define(version: 2022_02_01_172542) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "size"
     t.string "category"
+    t.string "previous_price"
+    t.text "long_description"
+    t.string "energy"
+    t.string "fat"
+    t.string "carbs"
+    t.string "fibre"
+    t.string "protein"
+    t.string "salt"
+    t.string "sugar"
+  end
+
+  create_table "tagged_products", force: :cascade do |t|
+    t.integer "proion_id", null: false
+    t.integer "tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["proion_id"], name: "index_tagged_products_on_proion_id"
+    t.index ["tag_id"], name: "index_tagged_products_on_tag_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.string "reference"
+    t.string "color"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
   add_foreign_key "eikonas", "proions"
+  add_foreign_key "tagged_products", "proions"
+  add_foreign_key "tagged_products", "tags"
 end

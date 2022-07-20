@@ -1,0 +1,2 @@
+class TaggedProduct < ApplicationRecord
+end
