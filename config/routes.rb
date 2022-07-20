@@ -1,10 +1,14 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   namespace :admin do
     resources :hrists
     resources :eikonas
     resources :proions
+    resources :tags
+    resources :tagged_products
 
-    root to: "hrists#index"
+    root to: 'hrists#index'
   end
 
   devise_for :hrists
@@ -15,5 +19,5 @@ Rails.application.routes.draw do
 
   resources :proions
 
-  root "proions#index"
+  root 'proions#index'
 end

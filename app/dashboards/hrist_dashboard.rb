@@ -1,4 +1,6 @@
-require "administrate/base_dashboard"
+# frozen_string_literal: true
+
+require 'administrate/base_dashboard'
 
 class HristDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -15,7 +17,7 @@ class HristDashboard < Administrate::BaseDashboard
     reset_password_sent_at: Field::DateTime,
     remember_created_at: Field::DateTime,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES

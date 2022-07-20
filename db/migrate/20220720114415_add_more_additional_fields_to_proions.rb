@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddMoreAdditionalFieldsToProions < ActiveRecord::Migration[7.0]
   def change
     add_column :proions, :previous_price, :string

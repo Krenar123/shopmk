@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateTaggedProducts < ActiveRecord::Migration[7.0]
   def change
     create_table :tagged_products do |t|

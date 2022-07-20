@@ -1,4 +1,6 @@
-require "administrate/base_dashboard"
+# frozen_string_literal: true
+
+require 'administrate/base_dashboard'
 
 class ProionDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -15,7 +17,7 @@ class ProionDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     size: Field::String,
-    category: Field::String,
+    category: Field::String
   }.freeze
 
   # COLLECTION_ATTRIBUTES

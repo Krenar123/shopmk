@@ -2,7 +2,7 @@
 
 require 'administrate/base_dashboard'
 
-class EikonaDashboard < Administrate::BaseDashboard
+class TaggedProductDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -10,12 +10,9 @@ class EikonaDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    proion: Field::BelongsTo,
     id: Field::Number,
-    path_ref: Field::String,
-    best: Field::String,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime
+    proion: Field::BelongsTo,
+    tag: Field::BelongsTo
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -24,31 +21,26 @@ class EikonaDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    proion
     id
-    path_ref
-    best
-    created_at
+    proion
+    tag
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    proion
     id
-    path_ref
-    best
-    created_at
-    updated_at
+    proion
+    tag
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+    id
     proion
-    path_ref
-    best
+    tag
   ].freeze
 
   # COLLECTION_FILTERS
