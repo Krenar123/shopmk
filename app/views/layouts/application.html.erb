@@ -14,9 +14,10 @@
   </head>
 
   <body>
+   <%= render partial: "/shared/header" %>
+    <%= render partial: "/shared/promotions" %>
     <div class="container">
-      <%= render partial: "/shared/header" %>
-      <%= render partial: "/shared/promotions" %>
+     
       <%= yield %>
       <%= render partial: "/shared/footer" %>
     </div>

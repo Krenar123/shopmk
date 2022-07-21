@@ -15,3 +15,7 @@
  *= require_tree .
  *= require_self
  */
+
+#hero {
+    background-color: rgba(rgb(158, 100, 163), green, blue, alpha);
+}
