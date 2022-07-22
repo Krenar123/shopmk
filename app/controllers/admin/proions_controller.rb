@@ -12,13 +12,78 @@ module Admin
 
     def edit
       @tags = Tag.all
+      @tags_selected = Proion.find(params[:id]).tags.map(&:name)
       super
     end
 
-    # def update
-    #  super
-    #  #send_foo_updated_email(requested_resource)
-    # end
+    def create
+      resource = resource_class.new(resource_params)
+      authorize_resource(resource)
+
+      proion = Proion.new(proion_params)
+
+      if proion.save_and_link_tag(proion_params[:tag_names])
+        redirect_to(
+          after_resource_created_path(resource),
+          notice: translate_with_resource('create.success')
+        )
+      else
+        @tags = Tag.all
+
+        render :new, locals: {
+          page: Administrate::Page::Form.new(dashboard, resource)
+        }, status: :unprocessable_entity
+      end
+    end
+
+    def update
+      proion = Proion.find(params[:id])
+
+      if proion.save_and_link_tag(proion_params[:tag_names])
+        redirect_to(
+          after_resource_updated_path(requested_resource),
+          notice: translate_with_resource('update.success')
+        )
+      else
+        @tags = Tag.all
+        @tags_selected = Proion.find(params[:id]).tags.map(&:name)
+
+        render :edit, locals: {
+          page: Administrate::Page::Form.new(dashboard, requested_resource)
+        }, status: :unprocessable_entity
+      end
+      # send_foo_updated_email(requested_resource)
+    end
+
+    private
+
+    def after_resource_created_path(requested_resource)
+      [namespace, requested_resource]
+    end
+
+    def after_resource_updated_path(requested_resource)
+      [namespace, requested_resource]
+    end
+
+    def proion_params
+      params.require(:proion).permit(
+        :title,
+        :description,
+        :price,
+        :size,
+        :category,
+        :previous_price,
+        :long_description,
+        :energy,
+        :fat,
+        :carbs,
+        :fibre,
+        :protein,
+        :salt,
+        :sugar,
+        :tag_names
+      )
+    end
 
     # Override this method to specify custom lookup behavior.
     # This will be used to set the resource for the `show`, `edit`, and `update`

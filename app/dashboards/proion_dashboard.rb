@@ -26,7 +26,7 @@ class ProionDashboard < Administrate::BaseDashboard
     fibre: Field::String,
     protein: Field::String,
     salt: Field::String,
-    sugar: Field::String,
+    sugar: Field::String
   }.freeze
 
   # COLLECTION_ATTRIBUTES

@@ -44,15 +44,63 @@ and renders all form fields for a resource's editable attributes.
       <label for="proion_tag_ids">Tags</label>
     </div>
     <div class="field-unit__field">
-      <input type="hidden" name="proion[tag_ids]" id="proion_tag_ids">
+      <input type="hidden" id="tag_names" value="<%= @tags.map(&:name).join(", ") %>">
+      <input type="hidden" name="proion[tag_names]" id="proion_tag_ids" value="<% if @tags_selected.present? %><%= @tags_selected.join(", ") %><% end %>">
       <% @tags.each do |tag| %>
-        <div class="block">
-          <span class="tag is-success">
+        <div class="block" style="cursor: pointer;">
+          <span id="tag_<%= tag.name %>" class="tag <% if @tags_selected.include?(tag.name) %>is-success<% else %>is-default<% end %>">
+            <input type="hidden" id="<%= tag.name %>" value="<%= tag.id %>">
             <%= tag.name %>
-            <button class="delete is-small"></button>
+            <button id="delete_tag_<%= tag.name %>" style="<% if @tags_selected.include?(tag.name) %><% else %>display: none;<% end %> z-index: 111;" class="delete is-small"></button>
           </span>
         </div>
       <% end %>
+      <script>
+        // Script for selecting and unselecting tags for one product
+        var tag_names = document.getElementById("tag_names").value;
+        tag_names.split(", ").forEach(function(tag_name){
+          var tag_name_2 = "tag_" + tag_name;
+          var tag = document.getElementById(tag_name_2);
+          var delete_button = document.getElementById('delete_'.concat(tag_name_2));
+          const proion_tags = document.getElementById('proion_tag_ids');
+
+          tag.addEventListener("click", function(){
+            if(proion_tags.value.includes(`${tag_name}`)){
+            }else {
+              if(tag.classList.contains('is-success')){
+                delete_button.style.display = 'none';
+                tag.classList.remove("is-success");
+                tag.classList.add("is-default");
+              } else {
+                if(proion_tags.value == ""){
+                  proion_tags.value += tag_name
+                }else{
+                  proion_tags.value += ', ' + tag_name
+                }
+                delete_button.style.display = 'block';
+                tag.classList.remove("is-default");
+                tag.classList.add("is-success");
+              }
+            }
+          });
+
+          delete_button.addEventListener("click", function(e){
+            e.preventDefault();
+
+            if(proion_tags.value.includes(`${tag_name}`)){
+              if(proion_tags.value.split(", ").length == 1) {
+                document.getElementById('proion_tag_ids').value = "";
+              }
+              else if(proion_tags.value.split(", ")[0] == tag_name){
+                proion_tags.value = proion_tags.value.replace(tag_name, '');
+              }else{
+                proion_tags.value = proion_tags.value.replace(', ' + tag_name, '');
+              }
+            }else {
+            }
+          });
+        })
+      </script>
     </div>
   </div>
 
