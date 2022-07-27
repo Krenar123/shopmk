@@ -1,60 +1,8 @@
-<nav class="navbar mt-4" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
-      <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-    </a>
-
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
+<section class="hero is-link">
+  <div class="hero-body">
+    <p class="title">
+      <%= image_tag("logo_hero.png",size:"150x150")%>
+    </p>
+    
   </div>
-
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <a class="navbar-item">
-        Home
-      </a>
-
-      <a class="navbar-item">
-        Documentation
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More
-        </a>
-
-        <div class="navbar-dropdown">
-          <a class="navbar-item">
-            About
-          </a>
-          <a class="navbar-item">
-            Jobs
-          </a>
-          <a class="navbar-item">
-            Contact
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
-            Report an issue
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <% if current_hrist %>
-            <%= link_to 'Log Out', destroy_hrist_session_path ,method: :delete, class: 'navbar-item all__item' %>
-          <% else %>
-            <%= link_to 'Log In', new_hrist_session_path, class: 'navbar-item all__item' %>
-            <%= link_to 'Sign Up', new_hrist_registration_path, class: 'navbar-item all__item is-primary' %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</nav>
+</section>
