@@ -22,7 +22,7 @@ module Admin
 
       proion = Proion.new(proion_params)
 
-      if proion.save_and_link_tag(proion_params[:tag_names])
+      if proion.save_and_link_tag(proion_params)
         redirect_to(
           after_resource_created_path(resource),
           notice: translate_with_resource('create.success')
@@ -39,7 +39,7 @@ module Admin
     def update
       proion = Proion.find(params[:id])
 
-      if proion.save_and_link_tag(proion_params[:tag_names])
+      if proion.update_and_link_tag(proion_params)
         redirect_to(
           after_resource_updated_path(requested_resource),
           notice: translate_with_resource('update.success')
@@ -71,7 +71,7 @@ module Admin
         :description,
         :price,
         :size,
-        :category,
+        :category_id,
         :previous_price,
         :long_description,
         :energy,

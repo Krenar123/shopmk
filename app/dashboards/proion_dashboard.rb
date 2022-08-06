@@ -26,7 +26,8 @@ class ProionDashboard < Administrate::BaseDashboard
     fibre: Field::String,
     protein: Field::String,
     salt: Field::String,
-    sugar: Field::String
+    sugar: Field::String,
+    category: Field::BelongsTo
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -98,7 +99,7 @@ class ProionDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how proions are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(proion)
-  #   "Proion ##{proion.id}"
-  # end
+  def display_resource(proion)
+    "#{proion.title}"
+  end
 end

@@ -119,6 +119,10 @@ select {
   font-size: $base-font-size;
 }
 
+.selectize-control {
+  width: 200px;
+}
+
 input,
 select,
 textarea {

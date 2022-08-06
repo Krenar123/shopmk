@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :hrists
     resources :eikonas
     resources :proions
+    resources :categories
     resources :tags
     resources :tagged_products
 

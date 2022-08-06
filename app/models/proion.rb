@@ -3,6 +3,7 @@
 class Proion < ApplicationRecord
   attr_accessor :tag_names
 
+  belongs_to :category, optional: true
   has_many :eikonas
   has_many :tagged_products, dependent: :delete_all
   has_many :tags, through: :tagged_products
@@ -17,10 +18,20 @@ class Proion < ApplicationRecord
     eikonas.present?
   end
 
-  def save_and_link_tag(tag_names)
+  def save_and_link_tag(params)
     transaction do
       save!
-      link_tags!(tag_names)
+      link_tags!(params[:tag_names])
+    rescue ActiveRecord::ActiveRecordError
+      return_value = false
+      raise ActiveRecord::Rollback
+    end
+  end
+
+  def update_and_link_tag(params)
+    transaction do
+      update!(params)
+      link_tags!(params[:tag_names])
     rescue ActiveRecord::ActiveRecordError
       return_value = false
       raise ActiveRecord::Rollback
