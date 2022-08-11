@@ -37,10 +37,10 @@ $_search-icon-size: 1rem;
   fill: $grey-5;
   height: $_search-icon-size;
   position: absolute;
-  transition: fill $base-duration $base-timing;
+  transition: fill 250ms ease-in-out ;
   width: $_search-icon-size;
 
   &:hover {
-    fill: $action-color;
+    fill: #1976d2;
   }
 }

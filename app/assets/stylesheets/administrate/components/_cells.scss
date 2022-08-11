@@ -3,11 +3,11 @@
 
   &:hover {
     a {
-      color: $action-color;
+      color: #1976d2;
     }
 
     svg {
-      fill: $action-color;
+      fill: #1976d2;
       transform: rotate(180deg);
     }
   }
@@ -15,14 +15,14 @@
   a {
     color: inherit;
     display: inline-block;
-    transition: color $base-duration $base-timing;
+    transition: color 250ms ease-in-out ;
     width: 100%;
   }
 }
 
 .cell-label--asc,
 .cell-label--desc {
-  font-weight: $bold-font-weight;
+  font-weight: 700;
 }
 
 .cell-label__sort-indicator {
@@ -32,7 +32,7 @@
   svg {
     fill: $hint-grey;
     height: 13px;
-    transition: transform $base-duration $base-timing;
+    transition: transform 250ms ease-in-out ;
     width: 13px;
   }
 }

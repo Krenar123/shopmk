@@ -2,9 +2,11 @@
 
 body {
   color: $base-font-color;
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  line-height: $base-line-height;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+  "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
 }
 
 h1,
@@ -13,23 +15,25 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $heading-font-family;
-  font-size: $base-font-size;
-  line-height: $heading-line-height;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+  "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+  font-size: 1em;
+  line-height: 1.2t;
   margin: 0;
 }
 
 p {
-  margin: 0 0 $small-spacing;
+  margin: 0 0 calc(1.5 * 1em / 2);
 }
 
 a {
-  color: $action-color;
+  color: #1976d2;
   text-decoration-skip-ink: auto;
-  transition: color $base-duration $base-timing;
+  transition: color 250ms ease-in-out ;
 
   &:hover {
-    color: mix($black, $action-color, 25%);
+    color: mix(#000, #1976d2, 25%);
   }
 
   &:focus {
@@ -39,9 +43,9 @@ a {
 }
 
 hr {
-  border-bottom: $base-border;
+  border-bottom: 1px solid #dfe0e1;
   border-left: 0;
   border-right: 0;
   border-top: 0;
-  margin: $base-spacing 0;
+  margin: 1.5 * 1em 0;
 }

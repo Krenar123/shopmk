@@ -2,7 +2,7 @@
   @include administrate-clearfix;
   align-items: center;
   display: flex;
-  margin-bottom: $base-spacing;
+  margin-bottom: 1.5 * 1em;
   position: relative;
   width: 100%;
 }
@@ -25,15 +25,15 @@
   width: 100%;
 
   .optgroup-header {
-    font-weight: $bold-font-weight;
+    font-weight: 700;
   }
 }
 
 .field-unit--nested {
-  border: $base-border;
+  border: 1px solid #dfe0e1;
   margin-left: 7.5%;
   max-width: 60rem;
-  padding: $small-spacing;
+  padding: calc(1.5 * 1em / 2);
   width: 100%;
 
   .field-unit__field {

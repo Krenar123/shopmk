@@ -20,5 +20,5 @@ Rails.application.routes.draw do
 
   resources :proions
 
-  root 'proions#index'
+  root 'pages#index', as: :pages_index
 end

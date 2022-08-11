@@ -8,7 +8,7 @@ fieldset {
 }
 
 legend {
-  font-weight: $bold-font-weight;
+  font-weight: 700;
   margin: 0;
   padding: 0;
 }
@@ -108,15 +108,17 @@ legend {
 
 label {
   display: block;
-  font-weight: $bold-font-weight;
+  font-weight: 700;
   margin: 0;
 }
 
 input,
 select {
   display: block;
-  font-family: $base-font-family;
-  font-size: $base-font-size;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+  "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+  font-size: 1em;
 }
 
 .selectize-control {
@@ -127,7 +129,9 @@ input,
 select,
 textarea {
   display: block;
-  font-family: $base-font-family;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+  "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
   font-size: 16px;
 }
 
@@ -147,28 +151,28 @@ textarea {
 input:not([type]),
 textarea {
   appearance: none;
-  background-color: $white;
-  border: $base-border;
-  border-radius: $base-border-radius;
+  background-color: #fff;
+  border: 1px solid #dfe0e1;
+  border-radius: 4px;
   padding: 0.5em;
-  transition: border-color $base-duration $base-timing;
+  transition: border-color 250ms ease-in-out ;
   width: 100%;
 
   &:hover {
-    border-color: mix($black, $base-border-color, 20%);
+    border-color: mix(#000, #dfe0e1, 20%);
   }
 
   &:focus {
-    border-color: $action-color;
+    border-color: #1976d2;
     outline: none;
   }
 
   &:disabled {
-    background-color: mix($black, $white, 5%);
+    background-color: mix(#000, #fff, 5%);
     cursor: not-allowed;
 
     &:hover {
-      border: $base-border;
+      border: 1px solid #dfe0e1;
     }
   }
 
@@ -184,7 +188,7 @@ textarea {
 [type="checkbox"],
 [type="radio"] {
   display: inline;
-  margin-right: $small-spacing / 2;
+  margin-right: calc(1.5 * 1em / 2) / 2;
 }
 
 [type="file"] {

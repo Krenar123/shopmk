@@ -8,11 +8,11 @@ ol {
 }
 
 dl {
-  margin-bottom: $small-spacing;
+  margin-bottom: calc(1.5 * 1em / 2);
 
   dt {
-    font-weight: $bold-font-weight;
-    margin-top: $small-spacing;
+    font-weight: 700;
+    margin-top: calc(1.5 * 1em / 2);
   }
 
   dd {

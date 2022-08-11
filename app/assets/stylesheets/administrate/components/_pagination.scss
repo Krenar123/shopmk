@@ -1,7 +1,7 @@
 .pagination {
-  margin-top: $base-spacing;
-  padding-left: $base-spacing;
-  padding-right: $base-spacing;
+  margin-top: 1.5 * 1em;
+  padding-left: 1.5 * 1em;
+  padding-right: 1.5 * 1em;
   text-align: center;
 
   .first,
@@ -9,10 +9,10 @@
   .page,
   .next,
   .last {
-    margin: $small-spacing;
+    margin: calc(1.5 * 1em / 2);
   }
 
   .current {
-    font-weight: $bold-font-weight;
+    font-weight: 700;
   }
 }
