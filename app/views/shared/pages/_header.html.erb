@@ -4,9 +4,9 @@
       <%= image_tag("logo_hero.png",size:"150x150")%>
     </p>
     <% if current_hrist.present? %>
-      <%= link_to "Sign out", destroy_hrist_session_path, method: :delete  %>
+      <%= button_to "Sign out", destroy_hrist_session_path, {class: 'authorization-btn', method: :delete}  %>
     <% else %>
-      <%= link_to "Sign in", new_hrist_session_path  %>
+      <%= button_to "Sign in", new_hrist_session_path, {class: 'authorization-btn', method: :get}  %>
     <% end %>
   </div>
 </section>

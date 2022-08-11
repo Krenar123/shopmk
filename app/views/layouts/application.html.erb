@@ -13,12 +13,9 @@
     <%= javascript_import_module_tag "@fortawesome/fontawesome-free" %>
   </head>
   <body>
-    <%= render partial: "/shared/header" %>
-    <%= render partial: "/shared/promotions" %>
-    <div class="container">
+    <div>
       <%= yield %>
     </div>
-  </div>
-  <%= render partial: "/shared/footer" %>
+    <%= render partial: "/shared/footer" %>
 </body>
 </html>
