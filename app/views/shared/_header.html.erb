@@ -1,8 +1,12 @@
 <section class="hero is-link">
-  <div class="hero-body">
+  <div class="hero-body is-flex is-justify-content-space-between">
     <p class="title">
       <%= image_tag("logo_hero.png",size:"150x150")%>
     </p>
-    <%= button_to "logout", destroy_hrist_session_path, method: :delete  %>
+    <% if current_hrist.present? %>
+      <%= link_to "Sign out", destroy_hrist_session_path, method: :delete  %>
+    <% else %>
+      <%= link_to "Sign in", new_hrist_session_path  %>
+    <% end %>
   </div>
 </section>

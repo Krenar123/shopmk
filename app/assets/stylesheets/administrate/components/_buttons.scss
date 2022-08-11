@@ -30,8 +30,8 @@ input[type="submit"],
   }
 
   &:focus {
-    outline: $focus-outline;
-    outline-offset: $focus-outline-offset;
+    outline:  3px solid transparentize(#1976d2, 0.4);
+    outline-offset: 3px;
   }
 
   &:disabled {
@@ -47,8 +47,8 @@ input[type="submit"],
 .button--alt {
   background-color: transparent;
   border: 1px solid #dfe0e1;
-  border-color: $blue;
-  color: $blue;
+  border-color: #1976d2;
+  color: #1976d2;
 }
 
 .button--nav {

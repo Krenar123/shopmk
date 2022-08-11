@@ -1,7 +1,7 @@
 @import "../library/variables";
 
 body {
-  color: $base-font-color;
+  color: #293f54;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
   "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
   sans-serif;
@@ -37,8 +37,8 @@ a {
   }
 
   &:focus {
-    outline: $focus-outline;
-    outline-offset: $focus-outline-offset;
+    outline:  3px solid transparentize(#1976d2, 0.4);
+    outline-offset: 3px;
   }
 }
 

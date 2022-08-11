@@ -204,7 +204,7 @@ select {
 [type="file"],
 select {
   &:focus {
-    outline: $focus-outline;
-    outline-offset: $focus-outline-offset;
+    outline: 3px solid transparentize(#1976d2, 0.4);
+    outline-offset: 3px;
   }
 }

@@ -22,7 +22,7 @@ tr {
 
 tbody tr {
   &:hover {
-    background-color: $base-background-color;
+    background-color: #f6f7f7;
   }
 
   [role=link] {
@@ -30,8 +30,8 @@ tbody tr {
   }
 
   &:focus {
-    outline: $focus-outline;
-    outline-offset: -($focus-outline-width);
+    outline:  3px solid transparentize(#1976d2, 0.4);
+    outline-offset: -(3px);
   }
 }
 
