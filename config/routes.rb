@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :hrists
     resources :eikonas
     resources :proions
+    resources :categories
     resources :tags
     resources :tagged_products
 
@@ -19,5 +20,5 @@ Rails.application.routes.draw do
 
   resources :proions
 
-  root 'proions#index'
+  root 'pages#index', as: :pages_index
 end

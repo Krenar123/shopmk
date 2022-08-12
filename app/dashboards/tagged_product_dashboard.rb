@@ -58,7 +58,7 @@ class TaggedProductDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how eikonas are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(eikona)
-  #   "Eikona ##{eikona.id}"
-  # end
+  def display_resource(tagged_product)
+    "Tagged ##{tagged_product.product.title}-##{tagged_product.tag.name}"
+  end
 end

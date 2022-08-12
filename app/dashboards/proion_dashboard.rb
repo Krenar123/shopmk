@@ -17,7 +17,17 @@ class ProionDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     size: Field::String,
-    category: Field::String
+    category: Field::String,
+    previous_price: Field::String,
+    long_description: Field::Text,
+    energy: Field::String,
+    fat: Field::String,
+    carbs: Field::String,
+    fibre: Field::String,
+    protein: Field::String,
+    salt: Field::String,
+    sugar: Field::String,
+    category: Field::BelongsTo
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -28,8 +38,8 @@ class ProionDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     title
-    description
     price
+    category
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -39,10 +49,19 @@ class ProionDashboard < Administrate::BaseDashboard
     title
     description
     price
-    created_at
-    updated_at
     size
     category
+    previous_price
+    long_description
+    carbs
+    fat
+    energy
+    fibre
+    protein
+    salt
+    sugar
+    created_at
+    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -54,6 +73,15 @@ class ProionDashboard < Administrate::BaseDashboard
     price
     size
     category
+    previous_price
+    long_description
+    energy
+    fat
+    carbs
+    fibre
+    protein
+    salt
+    sugar
   ].freeze
 
   # COLLECTION_FILTERS
@@ -71,7 +99,7 @@ class ProionDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how proions are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(proion)
-  #   "Proion ##{proion.id}"
-  # end
+  def display_resource(proion)
+    "#{proion.title}"
+  end
 end

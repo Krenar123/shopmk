@@ -10,14 +10,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <%= javascript_import_module_tag "@fortawesome/fontawesome-free" %>
   </head>
   <body>
-    <%= render partial: "/shared/header" %>
-    <%= render partial: "/shared/promotions" %>
-    <div class="container">
+    <div>
       <%= yield %>
     </div>
-  </div>
-  <%= render partial: "/shared/footer" %>
+    <%= render partial: "/shared/footer" %>
 </body>
 </html>
