@@ -22,3 +22,19 @@
 * {
     font-family: "Jost", sans-serif !important;
 }
+
+#download-images {
+    margin-left: -15px;
+}
+
+#download-images1 {
+    margin-left: -5;
+}
+
+@media only screen and (max-width: 640px) {
+    #left-float-whenis-mobile {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+    }
+}

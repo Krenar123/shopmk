@@ -1,20 +1,27 @@
 <div  style="width:  100% !important;background-color:#fce7f1; padding:0.5rem;opacity:1"></div>
 <footer >
-  <div class="columns mt-5 is-flex is-justify-content-center is-align-content-center is-flex-direction-row-desktop is-flex-direction-column-mobile   has-text-centered" style="">
+  <div class="columns mt-5 is-flex is-justify-content-center is-align-content-center is-flex-direction-row-desktop is-flex-direction-column-mobile   has-text-centered" id="left-float-whenis-mobile">
     <div class="column is-2  mr-5">
       <%= image_tag("logo_hero.png", :size => "135x135") %>
     </div>
-    <div class="column ml-5 is-1 has-text-left"style="color:#022855;width:15rem" >
+    <div class="column ml-2-mobile mt-2-mobile ml-5-desktop is-1 has-text-left"style="color:#022855;width:15rem" >
       <div class="title is-4" style="color:#022855">About</div>
       <div style="color:#022855">Careers</div>
-      <div style="color:#022855">FAQ</div>
+      <div class="mt-2"style="color:#022855">FAQ</div>
     </div>
-    <div class="column is-1 has-text-left"style="color:#022855;width:15rem">
+    <div class="column ml-2-mobile mt-2-mobile mt-2-mobile is-1 has-text-left"style="color:#022855;width:15rem">
       <div class="title is-4"style="color:#022855;">Social</div>
-      <i class="fa-brands fa-square-instagram"></i>
+      <div class="is-flex " id="social-media">
+        <i class="fa-brands fa-square-instagram mr-3 fa-2x"></i>
+        <i class="fab fa-facebook-f fa-2x mr-3"></i>
+        <i class=" mr-3 fa-brands fa-linkedin fa-2x"></i>
+      </div>
     </div>
-    <div class="column is-1 "style="color:#022855;width:15rem">
-      <div class="title is-4"style="color:#022855">apps</div>
+    <div class="column ml-2-mobile is-1  mt-2-mobile  has-text-left "style="color:#022855;width:15rem">
+      <div class="title is-4 is-flex is-flex-direction-column has-"style="color:#022855">Apps
+        <div class="mt-2 " id="download-images"><a>      <%= image_tag("app-store.png", :size => "200x200") %></a></div>
+        <div class="mt-2 " id="download-images1"><a>      <%= image_tag("googleplayy.png", :size => "170x170") %></a></div>
+      </div>
     </div>
   </div>
 </div>
@@ -23,16 +30,19 @@
     <div>
       <hr style="width:100%;border-top-width:1px;--tw-border-opacity:1;border-color:rgba(222, 222, 222, var(--tw-border-opacity));">
     </div>
-    <div class="is-flex is-justify-content-space-between ">
-      <div class=" is-flex" style="width:60rem;gap:1rem; ">
+    <div class="is-flex is-justify-content-space-between"  id="left-float-whenis-mobile">
+      <div class=" is-flex" style="width:60rem;gap:1rem;  "id="left-float-whenis-mobile">
         <div class=" mr-auto " style="color:#022855">© 2022 Sooq SE </div>
         <div class=" mr-auto " style="color:#022855">Imprint  </div>
         <div class=" mr-auto " style="color:#022855">Terms and Condition </div>
         <div class=" mr-auto " style="color:#022855">Privacy </div>
-        <div class=" mr-auto " style="width:1rem;flex-grow:1 !important;color:#022855">Cookie Settings </div>
+        <div class=" mr-auto is-pulled-left" style="width:1rem;flex-grow:1 !important;color:#022855">Cookie Settings </div>
       </div>
-      <div class=" is-flex" style=";gap:1rem;color:#022855 ">
-        International - EN
+      <div class=" is-flex" id="left-float-whenis-mobile"style=";gap:1rem;color:#022855 ">
+        <div class="mt-5-mobile">
+          <i class="fa-solid fa-location-dot"></i>
+          International - EN
+        </div>
       </div>
     </div>
   </footer>

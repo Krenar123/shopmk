@@ -18,22 +18,3 @@
 
 
  */
-
-#hero {
-    background-color: rgba(rgb(158, 100, 163), green, blue, alpha);
-}
-
-#salty_snacks {
-    color: blue;
-    background-color: #e3f7f7;
-}
-
-#why_sooq {
-    color: #022855;
-}
-
-@media only screen and (max-width: 500px) {
-    #adds {
-        background-color: black;
-    }
-}
