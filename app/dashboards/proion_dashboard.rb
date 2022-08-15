@@ -100,6 +100,6 @@ class ProionDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(proion)
-    "#{proion.title}"
+    proion.title.to_s
   end
 end

@@ -46,7 +46,6 @@ class TagDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     name
-    reference
     color
   ].freeze
 
@@ -66,6 +65,6 @@ class TagDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(tag)
-    "#{tag.name}"
+    tag.name.to_s
   end
 end

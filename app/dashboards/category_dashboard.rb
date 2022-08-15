@@ -43,7 +43,6 @@ class CategoryDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     name
-    reference
   ].freeze
 
   # COLLECTION_FILTERS
@@ -62,6 +61,6 @@ class CategoryDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(category)
-    "#{category.name}"
+    category.name.to_s
   end
 end
