@@ -5,6 +5,6 @@ module AuthenticateAdmin
 
     def authenticate_admin!
         authenticate_hrist!
-        redirect_to :pages_index, status: :forbidden unless current_hrist.admin?
+        redirect_to :proions unless current_hrist.admin?
     end
 end

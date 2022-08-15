@@ -42,18 +42,16 @@ class Proion < ApplicationRecord
 
   def link_tags!(tag_names)
     return TaggedProduct.where(proion_id: id).destroy_all if tag_names.blank?
-      
-    tags = Tag.where(name: tag_names.split(", "))
+
+    tags = Tag.where(name: tag_names.split(', '))
     tagged_products = TaggedProduct.where(tag_id: tags.map(&:id), proion_id: id)
 
-    tag_names.split(", ").each_with_index do |name, position|
+    tag_names.split(', ').each_with_index do |name, _position|
       tag = Tag.find_by!(name: name)
 
-      # if break doesnt work use if if 
-      if tag.present?
-        if TaggedProduct.find_by(tag_id: tag.id, proion_id: id).blank?
-          TaggedProduct.create(tag_id: tag.id, proion_id: id)
-        end
+      # if break doesnt work use if if
+      if tag.present? && TaggedProduct.find_by(tag_id: tag.id, proion_id: id).blank?
+        TaggedProduct.create(tag_id: tag.id, proion_id: id)
       end
     end
 

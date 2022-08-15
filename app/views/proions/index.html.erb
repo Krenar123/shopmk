@@ -1,3 +1,19 @@
-<div class="columns is-multiline mt-6 mb-6">
-  <%= render @proions %>
+<div class="main-container">
+  <div class="columns">
+    <div class="column is-2_5">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            Card header
+          </p>
+        </header>
+      </div>
+    </div>
+    <div class="column">
+      <p class="bd-notification is-primary">Second column with more content. This is so you can see the vertical alignment.</p>
+      <div class="columns is-mobile">
+        <%= render @proions %>
+      </div>
+    </div>
+  </div>
 </div>
