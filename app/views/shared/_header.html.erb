@@ -1,0 +1,14 @@
+<section class="hero <%= content_for?(:pages_index) ? yield(:pages_index) : "" %>">
+  <div class="hero-body hero-body-header is-flex is-justify-content-space-between">
+    <p class="title title-pages is-flex">
+      <%= image_tag("logo_hero.png",size:"150x150")%>
+    </p>
+    <% if !content_for?(:pages_index) %>
+      <% if current_hrist.present? %>
+        <%= button_to "Sign out", destroy_hrist_session_path, {class: 'authorization-btn is-link', method: :delete}  %>
+      <% else %>
+        <%= button_to "Sign in", new_hrist_session_path, {class: 'authorization-btn is-link', method: :get}  %>
+      <% end %>
+    <% end %>
+  </div>
+</section>

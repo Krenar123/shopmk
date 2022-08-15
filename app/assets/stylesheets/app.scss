@@ -38,3 +38,13 @@
         margin-left: 15px;
     }
 }
+
+.authorization-btn {
+    border: none;
+    box-shadow: none;
+    color: #485fc7;
+    background-color: transparent !important;
+    &:hover {
+        color: #485fc7;
+    }
+}

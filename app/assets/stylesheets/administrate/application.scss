@@ -854,8 +854,22 @@ h6 {
   margin: 0;
 }
 
-p {
-  margin: 0 0 calc(1.5 * 1em / 2);
+.title-pages {
+  margin-bottom: 0px !important;
+}
+
+@media screen and (min-width: 769px){
+  .hero-body-header {
+    padding: 1.5rem 3rem;
+  }
+}
+
+.mb-10 {
+  margin-bottom: 10rem!important;
+}
+
+.hero-body-header {
+  padding: 1.7rem 3rem;
 }
 
 a {
