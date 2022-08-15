@@ -1,12 +1,10 @@
-# frozen_string_literal: true
-
 module AuthenticateAdmin
-  extend ActiveSupport::Concern
+    extend ActiveSupport::Concern
 
-  protected
+    protected
 
-  def authenticate_admin!
-    authenticate_hrist!
-    redirect_to :pages_index, status: :forbidden unless current_hrist.admin?
-  end
+    def authenticate_admin!
+        authenticate_hrist!
+        redirect_to :proions unless current_hrist.admin?
+    end
 end

@@ -36,3 +36,15 @@ body {
         color: #485fc7;
     }
 }
+
+.main-container {
+    padding: 1.7rem 3rem;
+    padding-right: 0;
+}
+
+@media screen and (min-width: 769px){
+    .column.is-2_5, .column.is-2_5-tablet {
+        flex: none;
+        width: 20%;
+    }
+}
