@@ -1,31 +1,18 @@
-<div class="column is-one-quarter">
-    <div class="card">
-        <div class="card-image">
-            <figure class="image is-4by3">
-                <% if proion.main_image.present? %>
-                    <img src="<%= proion.main_image %>" alt="Placeholder image">
-                <% else %>
-                    <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                <% end %>
-            </figure>
+<div class="section">
+  <div class="columns is-flex " >
+    <div class="column is-5">
+      <div id="card-itemq" class = "is-flex is-flex-direction-column " >
+        <div class="product-image is-flex is-align-center is-justify-content-center"style="position:relative">
+          <span><%= image_tag("domestos.png", :size => "80x80",style:"margin:0 auto;") %></span>
+          <%= image_tag("plus-svgrepo-com.svg", :size => "80x80", :class => "add-icon") %>
+          <%# <i class="fa fa-plus add-icon" style="position:absolute; top: 5px; left: 5px;" aria-hidden="true"></i> %>
         </div>
-        <div class="card-content">
-            <div class="media">
-                <div class="media-content">
-                    <p class="title is-4"><%= proion.title %></p>
-                </div>
-            </div>
-
-            <div class="content">
-                <div class="is-flex is-justify-content-space-between is-align-items-center">
-                    <span><%= truncate(proion.description, length: 25, omission: '...') %></span>
-                </div>
-                <br>
-                <span style="font-weight: bold; font-size: 18px;"><%= "#{proion.price},00 den" %></span>
-            </div>
-            <div>
-                <button class="button is-danger is-rounded mt-1 is-fullwidth">Buy it</button>
-            </div>
+        <div class="has-text-left">
+          <p><span class="subtitle is-7"> $3.33</span></p>
+          <span class="subtitle is-6 is-bold is-black"><a class="subtitle is-7 has-text-weight-medium	" href="domestos.com">Domestos distribucija Tetovo dauti kommerc</a> </span>
+          <p><span class="subtitle is-7"> $20.33 / 1kg</span></p>
         </div>
+      </div>
     </div>
+  </div>
 </div>

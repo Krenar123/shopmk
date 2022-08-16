@@ -67,13 +67,33 @@ button:active {
         flex: none;
         width: 20%;
     }
-<<<<<<< HEAD
-}
-=======
 }
 
 .paragraph-icons {
     position: relative;
     top: 1px;
 }
->>>>>>> main
+
+#card-itemq {
+    width: 140px;
+}
+
+.product-image {
+    background-color: #f3f2f0;
+    width: 115px;
+    height: 100px;
+    border-radius: 7%;
+}
+
+.add-icon {
+    bottom: 5px;
+    position: absolute;
+    right: 5px;
+    font-size: 25px;
+    color: red;
+    background-color: white;
+    border-radius: 4px;
+    padding: 6px;
+    border: 1px solid #bfbdbd;
+    width: 30px;
+}
