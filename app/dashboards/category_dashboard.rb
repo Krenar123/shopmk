@@ -13,6 +13,7 @@ class CategoryDashboard < Administrate::BaseDashboard
     id: Field::Number,
     name: Field::String,
     reference: Field::String,
+    icon: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -26,6 +27,7 @@ class CategoryDashboard < Administrate::BaseDashboard
     id
     name
     reference
+    icon
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -34,6 +36,7 @@ class CategoryDashboard < Administrate::BaseDashboard
     id
     name
     reference
+    icon
     created_at
     updated_at
   ].freeze
@@ -43,6 +46,7 @@ class CategoryDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     name
+    icon
   ].freeze
 
   # COLLECTION_FILTERS

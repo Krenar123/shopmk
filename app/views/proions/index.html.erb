@@ -1,12 +1,17 @@
 <div class="main-container">
   <div class="columns">
     <div class="column is-2_5">
-      <div class="card">
-        <header class="card-header">
-          <p class="card-header-title">
-            Card header
-          </p>
-        </header>
+      <div class="columns is-multiline is-flex-direction-column">
+        <div class="column">
+          <div class="card">
+            <header class="card-header">
+              <p class="card-header-title">
+                Card header
+              </p>
+            </header>
+          </div>
+        </div>
+        <%= render 'shared/navbar'%>
       </div>
     </div>
     <div class="column">
