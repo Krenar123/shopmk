@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :proions, :path => 'products'
+  resources :categories, :key => :reference
 
+  get '/shop', to: 'pages#shop', as: :shop
   root 'pages#index', as: :pages_index
 end

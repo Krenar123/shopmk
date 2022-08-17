@@ -15,10 +15,13 @@ ActiveRecord::Schema.define(version: 2022_08_15_212803) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "reference"
+    t.integer "parent_category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "icon"
     t.index ["name"], name: "index_categories_on_name", unique: true
+    t.index ["parent_category_id"], name: "index_categories_on_parent_category_id"
+    t.index ["reference"], name: "index_categories_on_reference", unique: true
   end
 
   create_table "eikonas", force: :cascade do |t|
@@ -81,6 +84,7 @@ ActiveRecord::Schema.define(version: 2022_08_15_212803) do
     t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
+  add_foreign_key "categories", "categories", column: "parent_category_id"
   add_foreign_key "eikonas", "proions"
   add_foreign_key "tagged_products", "proions"
   add_foreign_key "tagged_products", "tags"

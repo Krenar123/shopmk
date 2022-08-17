@@ -1,0 +1,25 @@
+<div class="main-container">
+  <div class="columns">
+    <div class="column is-2_5">
+      <div class="columns is-multiline is-flex-direction-column">
+        <div class="column">
+          <div class="card">
+            <header class="card-header">
+              <p class="card-header-title">
+                Card header
+              </p>
+            </header>
+          </div>
+        </div>
+        <%= render 'shared/navbar/main' %>
+      </div>
+    </div>
+    <div class="column pt-5 pl-6">
+      <div class="columns is-mobile is-flex-direction-column">
+        <div id="category-details">
+            <%= render @category %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

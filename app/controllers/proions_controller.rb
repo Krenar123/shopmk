@@ -3,6 +3,7 @@
 class ProionsController < ApplicationController
   def index
     @proions = Proion.all
-    @categories = Category.all
+    # except hottest, etcc.
+    # kur ta trusin ni kategori qato i qel kejt
   end
 end
