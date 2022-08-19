@@ -1,8 +1,11 @@
+<%
+    eikona = proion.eikonas.present? && proion.eikonas.find_by(best: "true").present? ? proion.eikonas.find_by(best: "true") : ""
+%>
 <div class="columns is-flex " >
   <div class="column is-12">
     <div id="card-item-product" class = "is-flex is-flex-direction-column " >
       <div class="product-image is-flex is-align-center is-justify-content-center"style="position:relative">
-        <span class="is-flex is-align-items-center is-justify-content-center"><%= image_tag(proion.eikonas.find_by(best: "true").path_ref, :size => "80x80",style:"margin:0 auto;") %></span>
+        <span class="is-flex is-align-items-center is-justify-content-center"><% if eikona.present? %><%= image_tag(proion.eikonas.find_by(best: "true").path_ref, :size => "80x80",style:"margin:0 auto;") %><% else %><%= image_tag("domestos.png", :size => "80x80",style:"margin:0 auto;") %><% end %></span>
         <%= image_tag("plus-svgrepo-com.svg", :size => "80x80", :class => "add-icon") %>
         <%# <i class="fa fa-plus add-icon" style="position:absolute; top: 5px; left: 5px;" aria-hidden="true"></i> %>
       </div>
