@@ -116,3 +116,22 @@ button:active {
 body {
     background-color: white;
 }
+
+.showing-time {
+    text-align: center;
+    line-height: 1;
+    margin-right: 0.5rem;
+    background-color: #f1f1f1;
+    border-radius: 10%;
+    font-size: 14px;
+    color: #022855;
+    font-weight: 700;
+    padding: 7px;
+}
+
+.price-div {
+    width: 12rem;
+    height: 55px;
+    border-radius: 6px;
+    position: relative;
+}
