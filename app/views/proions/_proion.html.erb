@@ -1,16 +1,16 @@
 <div class="columns is-flex " >
-    <div class="column is-12">
-        <div id="card-item-product" class = "is-flex is-flex-direction-column " >
-            <div class="product-image is-flex is-align-center is-justify-content-center"style="position:relative">
-                <span><%= image_tag("domestos.png", :size => "80x80",style:"margin:0 auto;") %></span>
-                <%= image_tag("plus-svgrepo-com.svg", :size => "80x80", :class => "add-icon") %>
-                <%# <i class="fa fa-plus add-icon" style="position:absolute; top: 5px; left: 5px;" aria-hidden="true"></i> %>
-            </div>
-            <div class="has-text-left">
-                <p><span class="subtitle is-7"> $3.33</span></p>
-                <span class="subtitle is-6 is-bold is-black"><a class="subtitle is-7 has-text-weight-medium	" href="domestos.com">Domestos distribucija Tetovo dauti kommerc</a> </span>
-                <p><span class="subtitle is-7"> $20.33 / 1kg</span></p>
-            </div>
-        </div>
+  <div class="column is-12">
+    <div id="card-item-product" class = "is-flex is-flex-direction-column " >
+      <div class="product-image is-flex is-align-center is-justify-content-center"style="position:relative">
+        <span class="is-flex is-align-items-center is-justify-content-center"><%= image_tag(proion.eikonas.find_by(best: "true").path_ref, :size => "80x80",style:"margin:0 auto;") %></span>
+        <%= image_tag("plus-svgrepo-com.svg", :size => "80x80", :class => "add-icon") %>
+        <%# <i class="fa fa-plus add-icon" style="position:absolute; top: 5px; left: 5px;" aria-hidden="true"></i> %>
+      </div>
+      <div class="has-text-left">
+        <p><span class="subtitle is-7"> <%=  proion.price %></span></p>
+        <span class="subtitle is-6 is-bold is-black"><a class="subtitle is-7 has-text-weight-medium	" href="domestos.com"><%=proion.title   %></a> </span>
+        <p><span class="subtitle is-7"> $20.33 / 1kg</span></p>
+      </div>
     </div>
+  </div>
 </div>
