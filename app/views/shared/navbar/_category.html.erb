@@ -1,6 +1,18 @@
-<%= link_to(category_path(category.reference), :remote => true) do %>
-    <div class="is-flex mt-2 is-align-items-center">
-        <i style="width: 25px;" class="<%= category.icon %>"></i>
-        <p class="ml-2 paragraph-icons"><%= category.name %></p>
+<%= link_to(category_path(category.reference), :remote => true, :class => "mr-4") do %>
+    <div class="is-hidden-mobile">
+        <div class="is-flex mt-2 is-align-items-center">
+            <i style="width: 25px;" class="<%= category.icon %>"></i>
+            <p class="ml-2 paragraph-icons"><%= category.name %></p>
+        </div>
+    </div>
+    <!-- IF NOT BULMA USE MEDIA QUERY  MAX-WIDTH: 640px -->
+    <div class="is-hidden-tablet">
+        <div class="card">
+            <div class="product-image is-flex is-flex-direction-column is-align-center is-justify-content-center"style="position:relative">
+                <p class="card-category"><%= category.name %></p>
+                <span class="is-flex"><%= image_tag("domestos.png", :size => "80x80",style:"margin:0 auto;") %></span>
+                <%# <i class="fa fa-plus add-icon" style="position:absolute; top: 5px; left: 5px;" aria-hidden="true"></i> %>
+            </div>
+        </div>
     </div>
 <% end %>
