@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :proions, :path => 'products'
   resources :categories, :key => :reference
 
+  post '/navigate-category', to: 'categories#navigate_category'
   get '/shop', to: 'pages#shop', as: :shop
   root 'pages#index', as: :pages_index
 end
