@@ -1,10 +1,7 @@
 class CategoriesController < ApplicationController
-    def show
-        @category = Category.find_by_reference(params[:id])
+    def navigate_category
+        @category = Category.find_by_reference(params[:reference])
 
-        respond_to do |format|
-            format.html { render @category }
-            format.js { render layout: false }
-        end
+        render json: { html: render_to_string(partial: 'category', locals: { category:  @category}) }
     end
 end

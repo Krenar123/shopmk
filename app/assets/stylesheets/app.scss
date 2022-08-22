@@ -66,6 +66,7 @@ button:active {
     .column.is-2_5-tablet {
         flex: none;
         width: 20%;
+        position: fixed;
     }
 }
 
@@ -134,4 +135,8 @@ body {
     height: 55px;
     border-radius: 6px;
     position: relative;
+}
+
+.hero-main {
+    margin-top: 75px;
 }

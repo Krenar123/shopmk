@@ -1,38 +1,38 @@
 <div class="is-hidden-mobile">
-  <div class="column">
-    <h4>NAVIGATION</h4>
-    <a href="/categories/<%= @main_category.reference %>">
-      <div class="is-flex mt-2 is-align-items-center">
-        <i style="width: 25px;"  class="<%= @main_category.icon %>"></i>
-        <p class="ml-2 paragraph-icons"><%= @main_category.name %></p>
-      </div>
-    </a>
-  </div>
-  <div class="column">
-    <h4>CATEGORIES</h4>
-    <div class="is-flex is-multiline is-flex-direction-column is-fullwidth is-scrollable">
-      <% @categories.each do |category| %>
-        <%= render 'shared/navbar/category', category: category %>
-      <% end %>
+    <div class="column">
+        <h4>NAVIGATION</h4>
+        <a href="#" data-controller="render-category" data-render-category-load-path="/navigate-category" data-action="click->render-category#loadSubCategories" data-reference="<%= @main_category.reference %>">
+            <div class="is-flex mt-2 is-align-items-center">
+                <i style="width: 25px;"  class="<%= @main_category.icon %>"></i>
+                <p class="ml-2 paragraph-icons"><%= @main_category.name %></p>
+            </div>
+        </a>
     </div>
-  </div>
+    <div class="column">
+        <h4>CATEGORIES</h4>
+        <div class="is-flex is-multiline is-flex-direction-column is-fullwidth is-scrollable">
+            <% @categories.each do |category| %>
+                <%= render 'shared/navbar/category', category: category %>
+            <% end %>
+        </div>
+    </div>
 </div>
 <div class="is-hidden-tablet">
-  <div class="column">
-    <h4>CATEGORIES</h4>
-    <div class="is-flex is-multiline is-fullwidth is-scrollable">
-      <a href="/categories/<%= @main_category.reference %>" class="mr-4">
-        <div class="card">
-          <div class="product-image is-flex is-flex-direction-column is-align-center is-justify-content-center"style="position:relative">
-            <p class="card-category"><%= @main_category.name %></p>
-            <span class="is-flex"><%= image_tag("domestos.png", :size => "80x80",style:"margin:0 auto;") %></span>
-            <%# <i class="fa fa-plus add-icon" style="position:absolute; top: 5px; left: 5px;" aria-hidden="true"></i> %>
-          </div>
+    <div class="column">
+        <h4>CATEGORIES</h4>
+        <div class="is-flex is-multiline is-fullwidth is-scrollable">
+            <a href="#" data-controller="render-category" data-render-category-load-path="/navigate-category" data-action="click->render-category#loadSubCategories" data-reference="<%= @main_category.reference %>" class="mr-4">
+                <div class="card">
+                    <div class="product-image is-flex is-flex-direction-column is-align-center is-justify-content-center"style="position:relative">
+                        <p class="card-category"><%= @main_category.name %></p>
+                        <span class="is-flex"><%= image_tag("domestos.png", :size => "80x80",style:"margin:0 auto;") %></span>
+                        <%# <i class="fa fa-plus add-icon" style="position:absolute; top: 5px; left: 5px;" aria-hidden="true"></i> %>
+                    </div>
+                </div>
+            </a>
+            <% @categories.each do |category| %>
+                <%= render 'shared/navbar/category', category: category %>
+            <% end %>
         </div>
-      </a>
-      <% @categories.each do |category| %>
-        <%= render 'shared/navbar/category', category: category %>
-      <% end %>
     </div>
-  </div>
 </div>
