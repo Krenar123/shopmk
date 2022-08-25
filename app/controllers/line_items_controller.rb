@@ -3,7 +3,7 @@
 class LineItemsController < ApplicationController
   def create
     # Find associated proion and current cart
-    chosen_proion = Proion.find(params[:proion_id])
+    chosen_proion = Proion.find(params[:product_id])
     current_cart = @current_cart
 
     # If cart already has this proion then find the relevant line_item and iterate quantity otherwise create a new line_item for this proion
@@ -16,11 +16,12 @@ class LineItemsController < ApplicationController
       @line_item = LineItem.new
       @line_item.cart = current_cart
       @line_item.proion = chosen_proion
+      @line_item.quantity = 1
     end
 
     # Save and redirect to cart show path
-    @line_item.save
-    redirect_to cart_path(current_cart)
+    @line_item.save!
+    render json: { html: render_to_string(partial: 'carts/cart_nav', locals: { cart: current_cart }) }
   end
 
   def destroy
@@ -49,6 +50,6 @@ class LineItemsController < ApplicationController
   private
 
   def line_item_params
-    params.require(:line_item).permit(:quantity, :proion_id, :cart_id)
+    params.require(:line_item).permit(:quantity, :product_id, :cart_id)
   end
 end

@@ -3,7 +3,7 @@
 class LineItem < ApplicationRecord
   belongs_to :proion
   belongs_to :cart
-  belongs_to :order
+  belongs_to :order, optional: true
 
   # LOGIC
   def total_price
