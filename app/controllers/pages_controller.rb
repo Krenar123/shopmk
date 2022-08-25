@@ -13,7 +13,7 @@ class PagesController < ApplicationController
 
   def get_categories
     @main_category = Category.find_by(name: 'Home')
-    
+
     category = params[:reference].present? ? params[:reference] : @main_category.reference
     @category = Category.find_by(reference: category)
   end

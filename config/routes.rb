@@ -18,18 +18,18 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  resources :proions, :path => 'products'
-  resources :categories, :key => :reference
+  resources :proions, path: 'products'
+  resources :categories, key: :reference
   resources :orders
-  
-  get 'carts/:id' => "carts#show", as: "cart"
-  delete 'carts/:id' => "carts#destroy"
 
-  post 'line_items/:id/add' => "line_items#add_quantity", as: "line_item_add"
-  post 'line_items/:id/reduce' => "line_items#reduce_quantity", as: "line_item_reduce"
-  post 'line_items' => "line_items#create"
-  get 'line_items/:id' => "line_items#show", as: "line_item"
-  delete 'line_items/:id' => "line_items#destroy"
+  get 'carts/:id' => 'carts#show', as: 'cart'
+  delete 'carts/:id' => 'carts#destroy'
+
+  post 'line_items/:id/add' => 'line_items#add_quantity', as: 'line_item_add'
+  post 'line_items/:id/reduce' => 'line_items#reduce_quantity', as: 'line_item_reduce'
+  post 'line_items' => 'line_items#create'
+  get 'line_items/:id' => 'line_items#show', as: 'line_item'
+  delete 'line_items/:id' => 'line_items#destroy'
 
   post '/navigate-category', to: 'categories#navigate_category'
   get '/shop', to: 'pages#shop', as: :shop

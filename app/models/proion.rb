@@ -8,6 +8,10 @@ class Proion < ApplicationRecord
   has_many :tagged_products, dependent: :delete_all
   has_many :tags, through: :tagged_products
 
+  def price_to_calculate
+    price.present? ? price.to_i : 0
+  end
+
   def main_image
     return false unless check_for_images
 
