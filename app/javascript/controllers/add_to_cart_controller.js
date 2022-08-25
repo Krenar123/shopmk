@@ -33,15 +33,17 @@ export default class extends Controller {
     console.log("Opening cart");
     let cartLoadPath = this.data.get('load-path');
     //let mainCategoryId = e.currentTarget.dataset.reference;
-    const cartDetailsSection = document.getElementById("cart-details-section");
+    const cartDetailsSection = document.getElementById("cart-details-modal");
 
     Rails.ajax({
-        type: "post",
+        type: "get",
         dataType: 'json',
         url: cartLoadPath,
         data: ``,
         success: function(data) {
-          cartDetailsSection.innerHTML = data.html; 
+            cartDetailsSection.innerHTML = data.html;
+            document.getElementById("modal-background").style.display = "block";
+            document.getElementById("cart-modal").style.display = "block";
         },
         error: function(data) { alert('Error: no Product match this ID') }
     })
