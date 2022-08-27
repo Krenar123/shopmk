@@ -23,14 +23,23 @@
           <span class="is-pulled-right  has-text-right subtitle has-text-white	 is-7"> + 2.99$ delivery fee</span>
         </div>
       </div>
+    <div id="cart-details">
+      <% if @current_cart.present? && @current_cart.line_items.present? %>
+        <%= render 'carts/cart_nav', cart: @current_cart %>
+      <% end %>
     </div>
     <% if !content_for?(:pages_index) %>
-      <% if current_hrist.present? %>
-        <%= button_to "Sign out", destroy_hrist_session_path, {class: 'authorization-btn is-link', method: :delete}  %>
-      <% else %>
-        <%= button_to "Sign in", new_hrist_session_path, {class: 'authorization-btn is-link', method: :get}  %>
-      <% end %>
+      <div style="display:none;">
+        <% if current_hrist.present? %>
+          <%= button_to "Sign out", destroy_hrist_session_path, {class: 'authorization-btn is-link', method: :delete}  %>
+        <% else %>
+          <%= button_to "Sign in", new_hrist_session_path, {class: 'authorization-btn is-link', method: :get}  %>
+        <% end %>
+      </div>
     <% end %>
+  </div>
+  <div id="cart-details-modal">
+    <%= render 'carts/cart', cart: @current_cart %>
   </div>
 </section>
 <div class="mb-2">

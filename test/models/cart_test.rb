@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class CategoriesControllerTest < ActionDispatch::IntegrationTest
+class CartTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
