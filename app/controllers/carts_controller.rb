@@ -4,7 +4,7 @@ class CartsController < ApplicationController
   def show
     @cart = @current_cart
 
-    render json: { html: render_to_string(partial: 'carts/cart', locals: { cart: current_cart }) }
+    render json: { html: render_to_string(partial: 'carts/cart', locals: { cart: @cart }) }
   end
 
   def destroy

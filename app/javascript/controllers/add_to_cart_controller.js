@@ -29,6 +29,31 @@ export default class extends Controller {
     })
   }
 
+  addReduceCart(e) {
+    let cartLoadPath = this.data.get('load-path');
+    //let mainCategoryId = e.currentTarget.dataset.reference;
+    const cartDetails = document.getElementById("add-reduce-section");
+    const totalAmount = document.getElementById("total-amount");
+    const cartNav = document.getElementById("cart-nav");
+    // I have to show loading here while waiting
+
+    Rails.ajax({
+      type: "post",
+      dataType: 'json',
+      url: cartLoadPath,
+      data: ``,
+      success: function(data) {
+        cartDetails.innerHTML = data.html;
+        if(data.amount == ""){
+          cartNav.style.display = "none";
+        }else{
+          totalAmount.innerHTML = "$" + data.amount;
+        }
+      },
+      error: function(data) { alert('Error: no Product match this ID') }
+    })
+  }
+
   openCart(e){
     console.log("Opening cart");
     let cartLoadPath = this.data.get('load-path');
@@ -47,5 +72,10 @@ export default class extends Controller {
         },
         error: function(data) { alert('Error: no Product match this ID') }
     })
+  }
+
+  closeCart(e){
+    document.getElementById("modal-background").style.display = "none";
+    document.getElementById("cart-modal").style.display = "none";
   }
 }

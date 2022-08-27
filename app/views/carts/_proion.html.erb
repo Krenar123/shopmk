@@ -1,0 +1,26 @@
+<% line_items.each do |line_item| %>
+    <%
+        proion = line_item.proion
+        eikona = proion.eikonas.present? && proion.eikonas.find_by(best: "true").present? ? proion.eikonas.find_by(best: "true") : ""
+    %>
+    <div class="is-flex is-justify-content-space-between is-align-items-end mt-3 mb-3">
+        <div class="product-image is-flex is-align-center is-justify-content-center"style="position:relative">
+            <span class="is-flex is-align-items-center is-justify-content-center"><% if eikona.present? %><%= image_tag(eikona.path_ref, :size => "80x80",style:"margin:0 auto;") %><% else %><%= image_tag("domestos.png", :size => "80x80",style:"margin:0 auto;") %><% end %></span>
+        </div>
+        <div class="is-flex is-align-items-center add-or-reduce" style="height: 40px;">
+            <div class="is-flex p-5px is-justify-content-center">
+                <a class="is-flex is-justify-content-center" href="#" data-controller="add-to-cart" data-add-to-cart-load-path="<%= line_item_reduce_path(:id => line_item) %>" data-action="click->add-to-cart#addReduceCart">
+                    <%= image_tag("minus-svgrepo-com.svg", :size => "25x25") %>
+                </a>
+            </div>
+            <div class="p-5px quantity-background">
+                <p class="has-text-centered"><%= line_item.quantity %><p>
+            </div>
+            <div class="is-flex p-5px is-justify-content-center">
+                <a class="is-flex is-justify-content-center" href="#" data-controller="add-to-cart" data-add-to-cart-load-path="<%= line_item_add_path(:id => line_item) %>" data-action="click->add-to-cart#addReduceCart">
+                    <%= image_tag("plus-svgrepo-com.svg", :size => "25x25") %>
+                </a>
+            </div>
+        </div>
+    </div>
+<% end %>

@@ -35,16 +35,20 @@ class LineItemsController < ApplicationController
     @line_item.quantity += 1
     @line_item.save
 
-    redirect_to cart_path(@current_cart)
+    render json: { html: render_to_string(partial: 'carts/proion', locals: { line_items: @current_cart.line_items }), amount: @current_cart.sub_total }
   end
 
   def reduce_quantity
     @line_item = LineItem.find(params[:id])
-    @line_item.quantity -= 1 if @line_item.quantity > 1
+    if @line_item.quantity == 1
+      @line_item.destroy
+    else
+      @line_item.quantity -= 1 if @line_item.quantity > 1
+      @line_item.save
+    end
 
-    @line_item.save
 
-    redirect_to cart_path(@current_cart)
+    render json: { html: render_to_string(partial: 'carts/proion', locals: { line_items: @current_cart.line_items }), amount: @current_cart.sub_total }
   end
 
   private
