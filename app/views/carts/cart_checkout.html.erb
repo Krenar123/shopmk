@@ -1,0 +1,35 @@
+<div class="hero is-medium">
+    <div class="hero-body">
+    <div class="columns is-mobile">
+    <div class="column is-three-fifths is-offset-one-fifth">
+        <div class="card">
+            <header class="card-header">
+                <p class="card-header-title">
+                Cart details
+                </p>
+            </header>
+            <div class="card-content">
+                <div id="add-reduce-second-section">
+                    <%= render "carts/proion", line_items: @cart.line_items %>
+                </div>
+                <hr />
+                <div class="mb-4 is-flex is-justify-content-space-between" style="font-size: 15px; font-weight: 500;">
+                    <span>Address:</span><span> </span>
+                </div>
+                <div class="is-flex is-justify-content-space-between" style="font-size: 15px; font-weight: 500;">
+                    <span>Total:</span><span><span id="total-second-amount"><%= @cart.sub_total %></span> <span class="currency">den</span></span>
+                </div>
+            </div>
+            <footer class="card-footer">
+                <a href="#" class="card-footer-item">Save</a>
+                <a href="#" class="card-footer-item">Edit</a>
+                <a href="#" class="card-footer-item">Delete</a>
+            </footer>
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
+<% if @show_location %>
+    <%= render 'locations/location', current_user: @current_user, location: @location %>
+<% end %>

@@ -33,7 +33,9 @@ export default class extends Controller {
     let cartLoadPath = this.data.get('load-path');
     //let mainCategoryId = e.currentTarget.dataset.reference;
     const cartDetails = document.getElementById("add-reduce-section");
+    const cartDetailsSecond = document.getElementById("add-reduce-second-section");
     const totalAmount = document.getElementById("total-amount");
+    const totalSecondAmount = document.getElementById("total-second-amount");
     const cartNav = document.getElementById("cart-nav");
     // I have to show loading here while waiting
 
@@ -44,10 +46,12 @@ export default class extends Controller {
       data: ``,
       success: function(data) {
         cartDetails.innerHTML = data.html;
+        cartDetailsSecond.innerHTML = data.html
         if(data.amount == ""){
           cartNav.style.display = "none";
         }else{
           totalAmount.innerHTML = "$" + data.amount;
+          totalSecondAmount.innerHTML = "$" + data.amount;
         }
       },
       error: function(data) { alert('Error: no Product match this ID') }

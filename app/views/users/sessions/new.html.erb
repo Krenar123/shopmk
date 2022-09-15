@@ -1,0 +1,30 @@
+<div class="columns my-6 mb-10 is-mobile">
+  <div class="column is-half is-offset-one-quarter">
+    <h2 class="mb-3">Log in</h2>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <div class="control has-icons-left has-icons-right">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "Email", class: "input", type: "Email" %>
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-exclamation-triangle"></i>
+          </span>
+        </div>
+      </div>
+      <div class="field">
+        <p class="control has-icons-left">
+          <%= f.password_field :password, autocomplete: "new-password",placeholder: " Password", class: "input", type: "password" %>
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+      </div>
+      <div class="actions">
+        <%= f.submit "Log in" %>
+      </div>
+    <% end %>
+    <%= render "users/shared/links" %>
+  </div>
+</div>

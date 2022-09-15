@@ -1,0 +1,43 @@
+<div class="columns is-multiline">
+<div class="column is-three-fifths is-offset-one-fifth">
+<div class="modal-second is-active">
+  <div class="modal-background-second"></div>
+  <div class="modal-card-second">
+    <header class="modal-card-head-second">
+      <p class="modal-card-title">Location</p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <%= form_with model: @article do |form| %>
+        <section class="modal-card-body">
+            <div class="field">
+                <label class="label">Town</label>
+                <div class="control">
+                    <%= form.text_field :neighborhood, class: "input", placeholder: 'Chair...' %>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Address</label>
+                <div class="control has-icons-left has-icons-right">
+                    <%= form.text_field :neighborhood, class: "input", placeholder: 'Vukovarska 5/1...' %>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Additional details</label>
+                <p style="font-size: 13px;">Add more details about: entrance, floor, apartment number...</p>
+                <div class="control has-icons-left has-icons-right">
+                    <%= form.text_area :description, class: "input", placeholder: 'Entrance 2, 4th floor, number 25...' %>
+                </div>
+            </div>
+        </section>
+        <footer class="modal-card-foot-second">
+            <!-- Duhet me bo me javascript controller -->
+            <%= form.submit %>
+            <a class="button">Cancel</a>
+        </footer>
+    <% end %>
+  </div>
+</div>
+</div>
+</div>

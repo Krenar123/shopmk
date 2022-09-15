@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   end
 
   devise_for :hrists
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -22,6 +26,7 @@ Rails.application.routes.draw do
   resources :categories, key: :reference
   resources :orders
 
+  get 'carts/cart_checkout' => "carts#cart_checkout", as: 'cart_checkout'
   get 'carts/:id' => 'carts#show', as: 'cart'
   delete 'carts/:id' => 'carts#destroy'
 

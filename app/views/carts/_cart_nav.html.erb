@@ -3,8 +3,8 @@
         <div class="column price-div has-background-danger">
             <i class="has-text-white is-pulled-left fa fa-shopping-bag is-3" aria-hidden="true"  style="position: absolute; top:20px"></i>
             <div class="is-flex is-flex-direction-column ml-5">
-                <span id="total-amount" class="has-text-right has-text-white ml-5 is-pulled-right">$<% if cart.sub_total != 0 %><%= cart.sub_total %><% end %></span>
-                <span class="is-pulled-right has-text-right subtitle has-text-white	 is-7"> + 2.99$ delivery fee</span>
+                <span id="total-amount" class="has-text-right has-text-white ml-5 is-pulled-right"><% if cart.sub_total != 0 %><%= cart.sub_total %> <span class="currency">den</span><% end %></span>
+                <span class="is-pulled-right has-text-right subtitle has-text-white	 is-7"> + 50.00 <span class="currency">den</span> delivery fee</span>
             </div>
         </div>
     </div>
