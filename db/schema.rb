@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_14_152645) do
+ActiveRecord::Schema.define(version: 2022_09_20_170609) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -78,6 +78,8 @@ ActiveRecord::Schema.define(version: 2022_09_14_152645) do
     t.text "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_location_id"
+    t.index ["user_location_id"], name: "index_orders_on_user_location_id"
   end
 
   create_table "proions", force: :cascade do |t|

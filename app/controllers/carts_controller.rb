@@ -13,6 +13,7 @@ class CartsController < ApplicationController
   def cart_checkout
     @show_location = @current_user.present? && @current_user.locations.blank? ? true : nil
     @cart = @current_cart
+    @order = Order.new
   end
 
   def destroy

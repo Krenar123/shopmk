@@ -25,7 +25,8 @@ Rails.application.routes.draw do
   resources :proions, path: 'products'
   resources :categories, key: :reference
   resources :orders
-
+  resources :locations
+  
   get 'carts/cart_checkout' => "carts#cart_checkout", as: 'cart_checkout'
   get 'carts/:id' => 'carts#show', as: 'cart'
   delete 'carts/:id' => 'carts#destroy'
