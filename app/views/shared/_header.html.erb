@@ -5,28 +5,27 @@
         <%= image_tag("logo_hero.png",size:"150x150")%>
       </p>
     </a>
-    <div class = "field">
-      <div class = "control">
-        <p class = "control has-icons-left has-icons-right">
-          <input class = "input" type = "email" placeholder = "Search... ">
-          <span class = "icon is-small is-left">
-            <i class = "fas fa-search"></i>
+    <div class="field">
+      <div class="control">
+        <p class="control has-icons-left has-icons-right is-hidden-mobile ">
+          <input class="input" type="email" placeholder="Search... ">
+          <span class="icon is-small is-left">
+            <i class="fas fa-search"></i>
           </span>
         </p>
       </div>
     </div>
-    <div class=" columns  is-flex is-justify-content-centered is-align-items-center  " >
-      <div class="column price-div has-background-danger" >
-        <i class=" has-text-white	 is-pulled-left fa-lg fa fa-shopping-bag is-3" aria-hidden="true"  style="position: absolute; top:15px"></i>
-        <div class="is-flex is-flex-direction-column ml-5	">
-          <span class="has-text-right has-text-white	 ml-5 is-pulled-right	">$2.99</span>
-          <span class="is-pulled-right  has-text-right subtitle has-text-white	 is-7"> + 2.99$ delivery fee</span>
-        </div>
+    <div class="is-flex  ">
+      <div id="cart-details ">
+        <% if @current_cart.present? && @current_cart.line_items.present? %>
+          <% unless action_name == "index" %>
+            <%= render 'carts/cart_nav', cart: @current_cart %>
+          <% end %>
+        <%end%>
       </div>
-    <div id="cart-details">
-      <% if @current_cart.present? && @current_cart.line_items.present? %>
-        <%= render 'carts/cart_nav', cart: @current_cart %>
-      <% end %>
+      <div class="user-account-icon ml-5 mb-2">
+        <%= image_tag("default-avatar.png", :alt => "rss feed", :style => "width:50px;height:50px") %>
+      </div>
     </div>
     <% if !content_for?(:pages_index) %>
       <div style="display:none;">

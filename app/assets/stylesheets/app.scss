@@ -80,7 +80,8 @@ button:active {
     #modal-background {
         display: none;
     }
-    .modal-card, .modal-content {
+    .modal-card,
+    .modal-content {
         margin: 0 auto;
         max-height: calc(100vh - 40px);
         width: 360px;
@@ -95,7 +96,8 @@ button:active {
         top: 105px;
         z-index: 11;
     }
-    .modal-card-foot, .modal-card-head {
+    .modal-card-foot,
+    .modal-card-head {
         background-color: white;
     }
 }
@@ -154,11 +156,11 @@ button:active {
     height: 40px;
 }
 
-.p-5px{
+.p-5px {
     padding: 5px;
 }
 
-.quantity-background{
+.quantity-background {
     background-color: #f14668;
     color: white;
     font-size: 20px;
@@ -195,4 +197,42 @@ body {
 
 .hero-main {
     margin-top: 75px;
+}
+
+.home-title {
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: black;
+}
+
+.user-account-icon {
+    line-height: 50px;
+    margin-top: -15px;
+    width: 60px;
+    height: 60px;
+    background-color: #bfbdbd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #022855;
+    font-weight: bold;
+    background-color: #f1f1f1;
+}
+
+@media only screen and (max-width: 768px) {
+    #delivery-price {
+        font-size: 8px;
+    }
+    .cart-nav {
+        width: 140px;
+        height: 70px;
+        float: right;
+    }
+    .card-nav-mt-mobile {
+        margin-top: 0.3rem;
+    }
+    .font-size-subtotal-mobile {
+        font-size: 12px;
+    }
 }
