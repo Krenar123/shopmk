@@ -58,12 +58,12 @@ export default class extends Controller {
                 if (data.amount == "") {
                     cartNav.style.display = "none";
                 } else {
-                    totalAmount.innerHTML = "$" + data.amount;
+                    totalAmount.innerHTML = data.amount;
                     if (
                         typeof totalSecondAmount != "undefined" &&
                         totalSecondAmount != null
                     ) {
-                        totalSecondAmount.innerHTML = "$" + data.amount;
+                        totalSecondAmount.innerHTML = data.amount;
                     }
                 }
             },

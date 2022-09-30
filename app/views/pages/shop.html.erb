@@ -11,10 +11,12 @@
               <span class="opened-hours has-text-weight-semibold	subtitle is-7" style="color:#a9a8a8">OPEN 8:00 am - 11:59 pm</span>
               <% if @current_user.present? %>
                 <div>
-                  <% if @location.present? %>
+                  <% if @location.present? && @location.full_address.present? %>
                     <p class="client-address has-text-weight-semibold subtitle is-7"><%= truncate(@location.full_address, length: 20, omission: '...') %></a>
                   <% else %>
-                    <a href="#" data-controller="location" data-action="click->location#openLocation" class="client-address has-text-weight-semibold subtitle is-7	has-text-danger">Add  address</a>
+                    <% if @current_user.present? %>
+                      <a href="#" data-controller="location" data-action="click->location#openLocation" class="client-address has-text-weight-semibold subtitle is-7	has-text-danger">Add  address</a>
+                    <% end %>
                   <% end %>
                 </div>
               <% end %>
@@ -35,5 +37,6 @@
     </div>
   </div>
 </div>
-
-<%= render 'locations/location', current_user: @current_user, location: @location, show_location: @show_location %>
+<% if @current_user.present? %>
+  <%= render 'locations/location', current_user: @current_user, location: @location, show_location: "" %>
+<% end %>

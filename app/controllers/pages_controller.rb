@@ -26,6 +26,6 @@ class PagesController < ApplicationController
   end
 
   def get_location
-    @location = @current_user.present? && @current_user.locations.present? ? @current_user.locations.most_recently_created : ""
+    @location = @current_user.present? && @current_user.locations.present? ? @current_user.locations.most_recently_created : Location.new
   end
 end
