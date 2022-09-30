@@ -1,13 +1,13 @@
 <div class="columns is-multiline">
-<div class="column is-three-fifths is-offset-one-fifth">
-<div class="modal-second is-active">
-  <div class="modal-background-second"></div>
+<div class="column is-8 is-offset-3">
+<div id="modal-second" class="modal-second <% if show_location.present? %>is-active<% end %>" style="top:150px;">
+  <div id="modal-background-second" class="modal-background-second"></div>
   <div class="modal-card-second">
-    <header class="modal-card-head-second">
-      <p class="modal-card-title">Location</p>
-      <button class="delete" aria-label="close"></button>
+    <header class="modal-card-head-second has-background-danger">
+      <p class="modal-card-title">Address</p>
+      <a href="#" data-controller="location" data-action="click->location#closeLocation" class="delete" aria-label="close"></a>
     </header>
-    <%= form_with model: @article do |form| %>
+    <%= form_with model: @location, id: "location-form" do |form| %>
         <section class="modal-card-body">
             <div class="field">
                 <label class="label">Town</label>
@@ -17,24 +17,24 @@
             </div>
 
             <div class="field">
-                <label class="label">Address</label>
-                <div class="control has-icons-left has-icons-right">
-                    <%= form.text_field :neighborhood, class: "input", placeholder: 'Vukovarska 5/1...' %>
+                <label class="label">Full address</label>
+                <div class="control">
+                    <%= form.text_field :road, class: "input", placeholder: 'Vukovarska 5/1...' %>
                 </div>
             </div>
 
             <div class="field">
                 <label class="label">Additional details</label>
                 <p style="font-size: 13px;">Add more details about: entrance, floor, apartment number...</p>
-                <div class="control has-icons-left has-icons-right">
+                <div class="control">
                     <%= form.text_area :description, class: "input", placeholder: 'Entrance 2, 4th floor, number 25...' %>
                 </div>
             </div>
         </section>
         <footer class="modal-card-foot-second">
             <!-- Duhet me bo me javascript controller -->
-            <%= form.submit %>
-            <a class="button">Cancel</a>
+            <a class="button is-danger" data-controller="location" data-action="click->location#createLocation">Create</a>
+            <a href="#" data-controller="location" data-action="click->location#closeLocation" class="button is-light ml-2">Cancel</a>
         </footer>
     <% end %>
   </div>

@@ -88,6 +88,7 @@ export default class extends Controller {
                 cartDetailsSection.innerHTML = data.html;
                 document.getElementById("modal-background").style.display = "block";
                 document.getElementById("cart-modal").style.display = "block";
+                document.getElementById("modal-arrow").style.display = "block";
             },
             error: function(data) {
                 alert("Error: no Product match this ID");
@@ -98,5 +99,6 @@ export default class extends Controller {
     closeCart(e) {
         document.getElementById("modal-background").style.display = "none";
         document.getElementById("cart-modal").style.display = "none";
+        document.getElementById("modal-arrow").style.display = "none";
     }
 }

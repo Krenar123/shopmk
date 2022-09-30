@@ -14,16 +14,22 @@ export default class extends Controller {
     const categoryDetails = document.getElementById("category-details");
     
     // I have to show loading here while waiting
+    categoryDetails.style.display = 'none';
+    document.getElementById("loader-4").style.display = 'block';
+    setTimeout(function(){
+      document.getElementById("loader-4").style.display = 'none';
 
-    Rails.ajax({
-      type: "post",
-      dataType: 'json',
-      url: categoriesLoadPath,
-      data: `reference=${mainCategoryId}`,
-      success: function(data) {
-        categoryDetails.innerHTML = data.html; 
-      },
-      error: function(data) { alert('Error: no Category match this ID') }
-    })
+      Rails.ajax({
+        type: "post",
+        dataType: 'json',
+        url: categoriesLoadPath,
+        data: `reference=${mainCategoryId}`,
+        success: function(data) {
+          categoryDetails.innerHTML = data.html;
+          categoryDetails.style.display = 'block';
+        },
+        error: function(data) { alert('Error: no Category match this ID') }
+      })
+    }, 3000);
   }
 }
