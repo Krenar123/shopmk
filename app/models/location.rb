@@ -7,5 +7,5 @@ class Location < ApplicationRecord
 
     def full_address
         "#{neighborhood} #{road}" 
-     end
+    end
 end
