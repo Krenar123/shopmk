@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
     @order.save
 
     LineItem.where(cart_id: session[:cart_id]).update_all(cart_id: nil)
-    
+
     Cart.destroy(session[:cart_id])
     session[:cart_id] = nil
 
