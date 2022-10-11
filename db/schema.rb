@@ -12,10 +12,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_221_007_214_046) do
-  create_table 'carts', force: :cascade do |t|
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+ActiveRecord::Schema.define(version: 2022_10_11_213804) do
+
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table 'categories', force: :cascade do |t|
@@ -30,13 +31,22 @@ ActiveRecord::Schema.define(version: 20_221_007_214_046) do
     t.index ['reference'], name: 'index_categories_on_reference', unique: true
   end
 
-  create_table 'eikonas', force: :cascade do |t|
-    t.string 'path_ref'
-    t.integer 'proion_id', null: false
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.string 'best'
-    t.index ['proion_id'], name: 'index_eikonas_on_proion_id'
+  create_table "deliveries", force: :cascade do |t|
+    t.integer "rider_id", null: false
+    t.integer "order_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["order_id"], name: "index_deliveries_on_order_id"
+    t.index ["rider_id"], name: "index_deliveries_on_rider_id"
+  end
+
+  create_table "eikonas", force: :cascade do |t|
+    t.string "path_ref"
+    t.integer "proion_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "best"
+    t.index ["proion_id"], name: "index_eikonas_on_proion_id"
   end
 
   create_table 'hrists', force: :cascade do |t|
@@ -73,16 +83,14 @@ ActiveRecord::Schema.define(version: 20_221_007_214_046) do
     t.string 'road'
   end
 
-  create_table 'orders', force: :cascade do |t|
-    t.string 'name'
-    t.string 'email'
-    t.text 'address'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.integer 'user_location_id'
-    t.integer 'rider_id'
-    t.index ['rider_id'], name: 'index_orders_on_rider_id'
-    t.index ['user_location_id'], name: 'index_orders_on_user_location_id'
+  create_table "orders", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.text "address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_location_id"
+    t.index ["user_location_id"], name: "index_orders_on_user_location_id"
   end
 
   create_table 'proions', force: :cascade do |t|
@@ -157,10 +165,12 @@ ActiveRecord::Schema.define(version: 20_221_007_214_046) do
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 
-  add_foreign_key 'categories', 'categories', column: 'parent_category_id'
-  add_foreign_key 'eikonas', 'proions'
-  add_foreign_key 'tagged_products', 'proions'
-  add_foreign_key 'tagged_products', 'tags'
-  add_foreign_key 'user_locations', 'locations'
-  add_foreign_key 'user_locations', 'users'
+  add_foreign_key "categories", "categories", column: "parent_category_id"
+  add_foreign_key "deliveries", "orders"
+  add_foreign_key "deliveries", "riders"
+  add_foreign_key "eikonas", "proions"
+  add_foreign_key "tagged_products", "proions"
+  add_foreign_key "tagged_products", "tags"
+  add_foreign_key "user_locations", "locations"
+  add_foreign_key "user_locations", "users"
 end
