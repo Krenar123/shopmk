@@ -20,12 +20,8 @@
                                 <span class="is-flex is-align-items-center">
                                     <div class="control">
                                         <div id="full-address" class="select" style="margin-right: 15px;">
-                                            <% if @current_user.present? && @current_user.locations.present? %>
-                                                <select id="select-address">
-                                                    <% @current_user.locations.each do |location| %>
-                                                        <option value="<%= location.id %>"><%= location.full_address %></option>
-                                                    <% end %>
-                                                </select>
+                                            <% if @current_user.present? && @current_user.user_locations.present? %>
+                                                <%= form.select :user_location_id, @current_user.user_locations.collect {|user_location| [ user_location.location.full_address, user_location.id ]}, selected: @current_user.user_locations.most_recently_created %>
                                             <% end %>
                                         </div>
                                     </div>
@@ -38,10 +34,14 @@
                             </div>
                         </div>
                         <footer class="card-footer">
-                            <a href="#" id="order-button" class="card-footer-item <% if @show_location.present? %>disabled<% end %>">Order</a>
+                            <button href="#" id="order-button" class="card-footer-item <% if @show_location.present? %>disabled<% end %>">Order</button>
                             <a href="/shop" class="card-footer-item">Go back to market</a>
                         </footer>
                     </div>
+                    <input style="display:none;" type="text" value="" name="order[line_item_ids][]" id="order_line_item_ids">
+                    <% @current_cart.line_items.each do |line_item| %>
+                        <input style="display:none;" checked type="checkbox" value="<%= line_item.id %>" name="order[line_item_ids][]" id="order_line_item_ids_<%= line_item.id %>">
+                    <% end %>
                 <% end %>
             </div>
         </div>

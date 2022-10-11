@@ -35,7 +35,8 @@ class LineItemsController < ApplicationController
     @line_item.quantity += 1
     @line_item.save
 
-    render json: { html: render_to_string(partial: 'carts/proion', locals: { line_items: @current_cart.line_items }), amount: @current_cart.sub_total }
+    render json: { html: render_to_string(partial: 'carts/proion', locals: { line_items: @current_cart.line_items }),
+                   amount: @current_cart.sub_total }
   end
 
   def reduce_quantity
@@ -47,8 +48,8 @@ class LineItemsController < ApplicationController
       @line_item.save
     end
 
-
-    render json: { html: render_to_string(partial: 'carts/proion', locals: { line_items: @current_cart.line_items }), amount: @current_cart.sub_total }
+    render json: { html: render_to_string(partial: 'carts/proion', locals: { line_items: @current_cart.line_items }),
+                   amount: @current_cart.sub_total }
   end
 
   private
