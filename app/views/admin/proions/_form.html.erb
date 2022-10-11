@@ -48,10 +48,10 @@ and renders all form fields for a resource's editable attributes.
       <input type="hidden" name="proion[tag_names]" id="proion_tag_ids" value="<% if @tags_selected.present? %><%= @tags_selected.join(", ") %><% end %>">
       <% @tags.each do |tag| %>
         <div class="block" style="cursor: pointer;">
-          <span id="tag_<%= tag.name %>" class="tag <% if @tags_selected.include?(tag.name) %>is-success<% else %>is-default<% end %>">
+          <span id="tag_<%= tag.name %>" class="tag <% if @tags_selected.present? && @tags_selected.include?(tag.name) %>is-success<% else %>is-default<% end %>">
             <input type="hidden" id="<%= tag.name %>" value="<%= tag.id %>">
             <%= tag.name %>
-            <button id="delete_tag_<%= tag.name %>" style="<% if @tags_selected.include?(tag.name) %><% else %>display: none;<% end %> z-index: 111;" class="delete is-small"></button>
+            <button id="delete_tag_<%= tag.name %>" style="<% if @tags_selected.present? && @tags_selected.include?(tag.name) %><% else %>display: none;<% end %> z-index: 111;" class="delete is-small"></button>
           </span>
         </div>
       <% end %>

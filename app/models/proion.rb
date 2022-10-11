@@ -58,7 +58,5 @@ class Proion < ApplicationRecord
         TaggedProduct.create(tag_id: tag.id, proion_id: id)
       end
     end
-
-    TaggedProduct.where.not(id: tagged_products.map(&:id)).destroy_all
   end
 end

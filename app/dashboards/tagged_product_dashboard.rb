@@ -59,6 +59,6 @@ class TaggedProductDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(tagged_product)
-    "Tagged ##{tagged_product.product.title}-##{tagged_product.tag.name}"
+    "Tagged ##{tagged_product.proion.title}-##{tagged_product.tag.name}"
   end
 end
