@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :proions
     resources :categories
     resources :orders
+    resources :riders
+    resources :deliveries
     resources :tags
     resources :tagged_products
 
