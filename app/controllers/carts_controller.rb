@@ -3,7 +3,7 @@
 class CartsController < ApplicationController
   before_action :authenticate_user!, only: :cart_checkout
   before_action :get_current_user, only: :cart_checkout
-  
+
   def show
     @cart = @current_cart
 

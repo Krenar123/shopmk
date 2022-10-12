@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_20_170609) do
+ActiveRecord::Schema.define(version: 2022_10_12_193521) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 2022_09_20_170609) do
     t.index ["name"], name: "index_categories_on_name", unique: true
     t.index ["parent_category_id"], name: "index_categories_on_parent_category_id"
     t.index ["reference"], name: "index_categories_on_reference", unique: true
+  end
+
+  create_table "deliveries", force: :cascade do |t|
+    t.integer "rider_id", null: false
+    t.integer "order_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["order_id"], name: "index_deliveries_on_order_id"
+    t.index ["rider_id"], name: "index_deliveries_on_rider_id"
   end
 
   create_table "eikonas", force: :cascade do |t|
@@ -102,6 +111,14 @@ ActiveRecord::Schema.define(version: 2022_09_20_170609) do
     t.index ["category_id"], name: "index_proions_on_category_id"
   end
 
+  create_table "riders", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "mobile", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "tagged_products", force: :cascade do |t|
     t.integer "proion_id", null: false
     t.integer "tag_id", null: false
@@ -147,6 +164,8 @@ ActiveRecord::Schema.define(version: 2022_09_20_170609) do
   end
 
   add_foreign_key "categories", "categories", column: "parent_category_id"
+  add_foreign_key "deliveries", "orders"
+  add_foreign_key "deliveries", "riders"
   add_foreign_key "eikonas", "proions"
   add_foreign_key "tagged_products", "proions"
   add_foreign_key "tagged_products", "tags"

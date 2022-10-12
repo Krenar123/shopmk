@@ -6,6 +6,6 @@ class Cart < ApplicationRecord
 
   # LOGIC
   def sub_total
-    line_items.map { |line_item| line_item.total_price }.sum
+    line_items.map(&:total_price).sum
   end
 end
