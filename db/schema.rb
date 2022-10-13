@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_11_213804) do
+ActiveRecord::Schema.define(version: 2022_10_12_193521) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -88,6 +88,8 @@ ActiveRecord::Schema.define(version: 2022_10_11_213804) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_location_id"
+    t.integer "rider_id"
+    t.index ["rider_id"], name: "index_orders_on_rider_id"
     t.index ["user_location_id"], name: "index_orders_on_user_location_id"
   end
 
@@ -114,7 +116,7 @@ ActiveRecord::Schema.define(version: 2022_10_11_213804) do
   create_table "riders", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.integer "mobile", null: false
+    t.string "mobile", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

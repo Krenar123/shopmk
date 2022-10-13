@@ -87,3 +87,4 @@ group :test do
 end
 
 gem 'byebug', '~> 11.1', groups: %i[development test]
+gem "aws-sdk-s3", require: false
