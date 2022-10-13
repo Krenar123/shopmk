@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_12_201104) do
+ActiveRecord::Schema.define(version: 2022_10_12_193521) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -88,6 +88,8 @@ ActiveRecord::Schema.define(version: 2022_10_12_201104) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_location_id"
+    t.integer "rider_id"
+    t.index ["rider_id"], name: "index_orders_on_rider_id"
     t.index ["user_location_id"], name: "index_orders_on_user_location_id"
   end
 
@@ -159,7 +161,10 @@ ActiveRecord::Schema.define(version: 2022_10_12_201104) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+<<<<<<< HEAD
     t.string "phone"
+=======
+>>>>>>> 44d6181b13faa9745466e714441e6c6ba80b5182
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
