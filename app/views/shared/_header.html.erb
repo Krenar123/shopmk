@@ -15,8 +15,8 @@
         </p>
       </div>
     </div>
-    <div class="is-flex">
-      <div id="cart-details ">
+    <div class="is-flex" id="mobile-width">
+      <div id="cart-details">
         <% if @current_cart.present? && @current_cart.line_items.present? %>
           <% unless action_name == "index" %>
             <%= render 'carts/cart_nav', cart: @current_cart %>

@@ -272,6 +272,21 @@ body {
     }
 }
 
+@media only screen and (max-width: 768px) {
+    #cart-details {
+        width: 85%;
+    }
+    #mobile-width {
+        position: fixed;
+        bottom: 45px;
+        /* right: 40%; */
+        width: 85%;
+    }
+    #mobile-width-cart-nav {
+        width: 87%;
+    }
+}
+
 
 /* Loader 4 */
 
