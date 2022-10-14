@@ -15,19 +15,19 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    @current_cart.line_items.each do |item|
-      @order.line_items << item
-      item.cart_id = nil
-    end
     @order.save
+
+    LineItem.where(cart_id: session[:cart_id]).update_all(cart_id: nil)
+
     Cart.destroy(session[:cart_id])
     session[:cart_id] = nil
-    redirect_to root_path
+
+    redirect_to order_path(@order.id)
   end
 
   private
 
   def order_params
-    params.require(:order).permit(:name, :email, :address, :pay_method)
+    params.require(:order).permit(:user_location_id, line_item_ids: [])
   end
 end

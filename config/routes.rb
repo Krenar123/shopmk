@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     resources :eikonas
     resources :proions
     resources :categories
+    resources :orders
+    resources :riders
+    resources :deliveries
     resources :tags
     resources :tagged_products
 
@@ -26,8 +29,8 @@ Rails.application.routes.draw do
   resources :categories, key: :reference
   resources :orders
   resources :locations
-  
-  get 'carts/cart_checkout' => "carts#cart_checkout", as: 'cart_checkout'
+
+  get 'carts/cart_checkout' => 'carts#cart_checkout', as: 'cart_checkout'
   get 'carts/:id' => 'carts#show', as: 'cart'
   delete 'carts/:id' => 'carts#destroy'
 
