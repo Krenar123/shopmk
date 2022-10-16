@@ -1,0 +1,15 @@
+en:
+  shared:
+    pages:
+      main:
+        greet: "Groceries delivered in minutes"
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta a et ipsa voluptates in velit rem minus nihil, blanditiis nisi, quidem tempore quos qui quas. Blanditiis hic dolorem fugiat? Blanditiis!"
+        start: "Start Shopping"
+        greet_2: "Need Something Sooq it!"
+        description_2: "Explore our assortment of fresh fruit, vegetables, bread and more..."
+        salty_snacks: "Salty snacks"
+        fruits_and_veggies: "Fruits & vegetables"
+        eggs_and_milk: "Eggs & Milk"
+        alchohol: "Alcohol-free Drinks"
+        explore: "Explore Categories"
+        why_sooq: "Why Sooq?"

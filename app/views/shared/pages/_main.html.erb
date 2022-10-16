@@ -8,11 +8,11 @@
               <%= image_tag("logo_hero.png", :size => "200x135") %>
             </div>
             <div class="conent-is-medium">
-              <h1 class="title is-3 mb-6" style="color:#022855">Groceries delivered in minutes</h1>
-              <p class="subtitle is-5" style="color:#022855">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta a et ipsa voluptates in velit rem minus nihil, blanditiis nisi, quidem tempore quos qui quas. Blanditiis hic dolorem fugiat? Blanditiis!</p>
+              <h1 class="title is-3 mb-6" style="color:#022855"><%= t('.greet') %></h1>
+              <p class="subtitle is-5" style="color:#022855"><%= t('.description') %> </p>
             </div>
             <div class=" mt-4 has-text-centered-mobile">
-              <a href="/shop" class="button is-danger">Start Shopping</a>
+              <a href="/shop" class="button is-danger"><%= t('.start') %></a>
             </div>
           </div>
         </div>
@@ -28,45 +28,45 @@
 <section class="section">
   <div class="container">
     <div class="title is-2  pb-3 has-text-centered pull" style="color:#022855">
-      Need Something Sooq it!
+      <%= t('.greet_2') %>
     </div>
-    <p class="subtitle is-5 has-text-centered pb-6"> Explore our assortment of fresh fruit, vegetables, bread and more...</p>
+    <p class="subtitle is-5 has-text-centered pb-6"><%= t('.description_2') %></p>
     <div class="columns  is-mobile is-tablet  is-flex is-justify-content-center	is-align-content-center	is-flex-wrap-wrap" style="gap:4rem; flex-wrap:wrap">
       <div class="card-content" style=" width:11rem; height:10rem; background-color:#e3f7f7" >
         <%= image_tag("chips.png", :size => "90x85",:style => 'margin-left: 1.4rem;') %>
         <div class="subtitle is-6 mt-4 has-text-centered">
-          <div class="subtitle is-6 "> Salty snacks </div>
+          <div class="subtitle is-6 "> <%= t('.salty_snacks') %></div>
         </div>
       </div>
       <div class="card-content  	"style=" width:11rem; height:10rem; background-color:#e3f7f7">
         <%= image_tag("pngegg.png", :size => "200x55",:style => 'margin-left: 0.5rem;') %>
         <div class=" is-align-conent-center mt-2 ">
-          <div class="subtitle is-6 "> fruits & vegetables</div>
+          <div class="subtitle is-6 "><%= t('.fruits_and_veggies') %></div>
         </div>
       </div>
       <div class="card-content is-align-content-center "style="width:11rem;height:10rem; background-color:#e3f7f7">
         <%= image_tag("eggmilk.png", :size => "100x85",:style => 'margin-bottom:0.4rem; margin-left: 0.5rem;') %>
         <div class="subtitle is-6 mt-4 has-text-centered">
-          <p> Eggs & Milk </p>
+          <p><%= t('.eggs_and_milk') %></p>
         </div>
       </div>
       <div class="card-content is-align-content-center "style="width:11rem;height:10rem;background-color:#e3f7f7">
         <%= image_tag("cola.png", :size => "200x100",:style => ' margin-bottom:0.7rem;margin-left:0.1; margin-top:-1rem;') %>
         <div class="is-align-conent-center mt-3 ">
-          <div style="width:150px"class="subtitle is-6 "> Alcohol-free Drinks</div>
+          <div style="width:150px"class="subtitle is-6 "><%= t('.alchohol') %></div>
         </div>
       </div>
     </div>
     <section class="sectiion">
       <div style="text-align:center;margin-top:100px">
-        <div class="button is-danger has-text-centered px-6 has-text-weight-bold"> Explore Categories</div>
+        <div class="button is-danger has-text-centered px-6 has-text-weight-bold"><%= t('.explore') %></div>
       </div>
     </section>
   </div>
 </section>
 <div class="section" >
   <div class="title is-1 has-text-centered-mobile has-text-centered" style="color:#022855">
-    Why Sooq?
+    <%= t('.why_sooq') %>
   </div>
   <div class="container ">
     <div class="columns mt-6 has-text-centered  is-flex is-justify-content-center is-flex-wrap-wrap	is-align-content-center	" >
