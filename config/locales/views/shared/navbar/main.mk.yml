@@ -1,0 +1,6 @@
+mk:
+  shared:
+    navbar:
+      main:
+        navigation: "НАВИГАЦИЈА"
+        categories: "КАТЕГОРИИ"

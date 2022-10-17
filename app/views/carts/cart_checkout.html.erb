@@ -6,7 +6,7 @@
                     <div class="card">
                         <header class="card-header">
                             <p class="card-header-title">
-                            Cart details
+                            <%= t('.cart_details') %>
                             </p>
                         </header>
                         <div class="card-content">
@@ -16,7 +16,7 @@
                             <!-- Pass products -->
                             <hr />
                             <div class="mb-4 is-flex is-justify-content-space-between" style="font-size: 15px; font-weight: 500;">
-                                <span class="is-flex is-align-items-center">Address:</span>
+                                <span class="is-flex is-align-items-center"><%= t('.address') %>:</span>
                                 <span class="is-flex is-align-items-center">
                                     <div class="control">
                                         <div id="full-address" class="select" style="margin-right: 15px;">
@@ -25,17 +25,17 @@
                                             <% end %>
                                         </div>
                                     </div>
-                                    <a href="#" data-controller="location" data-action="click->location#openLocation">Add address</a>
+                                    <a href="#" data-controller="location" data-action="click->location#openLocation"><%= t('.add_address') %></a>
                                 </span>
                             </div>
                             <hr />
                             <div class="is-flex is-justify-content-space-between" style="font-size: 15px; font-weight: 500;">
-                                <span>Total:</span><span><span id="total-second-amount"><%= @cart.sub_total %></span> <span class="currency">den</span></span>
+                                <span><%= t('.total') %>:</span><span><span id="total-second-amount"><%= @cart.sub_total %></span> <span class="currency"><%= t('carts.cart_nav.den') %></span></span>
                             </div>
                         </div>
                         <footer class="card-footer">
-                            <button href="#" id="order-button" class="card-footer-item <% if @show_location.present? %>disabled<% end %>">Order</button>
-                            <a href="/shop" class="card-footer-item">Go back to market</a>
+                            <button href="#" id="order-button" class="card-footer-item <% if @show_location.present? %>disabled<% end %>"><%= t('.order') %></button>
+                            <a href="/shop" class="card-footer-item"><%= t('.go_back') %></a>
                         </footer>
                     </div>
                     <input style="display:none;" type="text" value="" name="order[line_item_ids][]" id="order_line_item_ids">
