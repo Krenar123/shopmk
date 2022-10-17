@@ -73,34 +73,34 @@
       <div class="column is-3-desktop  is-5-tablet is-7-mobile 	is-flex-wrap-wrap"  style="width:17rem;">
         <%= image_tag("groceries.svg", :size => "110x100") %>
         <div class="title is-6 ">
-          Supermarket Prices
+          <%= t('.supermarket_h1') %>
         </div>
         <div class="subtitle is-6" >
-          Over 2000 items, direct to your door, at normal supermarket prices!
+          <%= t('.supermarket_h2') %>
         </div>
       </div>
       <div class="column is-3-desktop  is-5-tablet is-5-mobile " style="width:17rem;">
         <%= image_tag("fast.svg", :size => "110x100") %>
         <div class="title is-6 ">
-          Supermarket Prices
+          <%= t('.supermarket_h1') %>
         </div>
         <div class="subtitle is-6" >
-          Over 2000 items, direct to your door, at normal supermarket prices!
+          <%= t('.supermarket_h2') %>
         </div>
       </div>
       <div class="column is-3-desktop is-5-mobile  is-5-tablet" style="width:17rem;">
         <%= image_tag("diet.svg", :size => "110x100") %>
         <div class="title is-6 ">
-          Supermarket Prices
+          <%= t('.supermarket_h1') %>
         </div>
         <div class="subtitle is-6" >
-          Over 2000 items, direct to your door, at normal supermarket prices!
+          <%= t('.supermarket_h2') %>
         </div>
       </div>
     </div>
     <section class="section is-mobile-6 is-desktop-6 is-tablet-6">
       <div style="text-align:center;margin-top:2em">
-        <div class="button is-danger has-text-centered px-6 has-text-weight-bold"> Start Shopping</div>
+        <div class="button is-danger has-text-centered px-6 has-text-weight-bold"><%= t('.start') %></div>
       </div>
     </section>
   </div>
@@ -111,19 +111,19 @@
     <div class="columns  is-flex is-justify-content-center is-multiline  is-flex-wrap-wrap is-align-content-center	" >
       <div class="column is-4-desktop  is-6-tablet is-6-mobile is-flex-direction-column-mobile flex-direction-column-tablet"  style="width:30rem;">
         <div class="title is-3 has-text-left-desktop has-text-centered-tablet has-text-centered-mobile"style="color:#022855"  >
-          Our delivery areas
+          <%= t('.our_delivery') %>
         </div>
         <div class="subtitle is-4 has-text-left-desktop has-text-centered-mobile has-text-centered-tablet ">
-          Find the cities where we deliver your grocery and ready to eat meals, in minutes and at supermarket prices.
+          <%= t('.delivery_text') %>
         </div>
         <div class="pb-4 has-text-left-desktop has-text-centered-mobile has-text-centered-tablet ">
-          <div class="button is-danger px-6 has-text-weight-bold"> Start Shopping</div>
+          <div class="button is-danger px-6 has-text-weight-bold"><%= t('.start') %></div>
         </div>
         <div class="is-centered-tablet has-text-left-desktop has-text-centered-tablet has-text-centered-mobile ">
           <%# <div class="is-flex has-text-centered-mobile is-flex-wrap-wrap  is-align-content-center is-centered-mobile "> %>
           <div>
-            <span class="is-pulled-left-desktop is-pulled-left-mobile is-pulled-left-tablet "> City not listed?</span>
-            <span><a href="#"class="is-pulled-left-desktop  has-text-centered-mobile ml-2 "> Signup for our waitlist </a></span>
+            <span class="is-pulled-left-desktop is-pulled-left-mobile is-pulled-left-tablet "> <%= t('.city_not') %></span>
+            <span><a href="#"class="is-pulled-left-desktop  has-text-centered-mobile ml-2 "> <%= t('.signup_waitlist') %> </a></span>
           </div>
         </div>
       </div>
@@ -137,22 +137,22 @@
       <div class="columns mt-5  has-text-centered  is-flex is-justify-content-left is-flex-wrap-wrap	is-align-content-center	" >
         <div class="column is-12-mobile">
           <div class="tag is-medium is-info is-light"style="border-radius:0.5rem; height:2.5rem;width:12.5rem;" >
-            <div class="subtitle " style="color:#022855;padding:0 1.1rem">Shkup</div>
+            <div class="subtitle " style="color:#022855;padding:0 1.1rem"><%= t('.skopje')%></div>
           </div>
         </div>
         <div class="column is-12-mobile">
           <div class="tag is-medium is-info is-light"style="border-radius:0.5rem;height:2.5rem;width:12.5rem;" >
-            <div class="subtitle is-5" style="color:#022855;padding:0 1.1rem">Vizbeg</div>
+            <div class="subtitle is-5" style="color:#022855;padding:0 1.1rem"><%= t('.vizbegovo')%></div>
           </div>
         </div>
         <div class="column is-12-mobile">
           <div class="tag is-medium is-info is-light"style="border-radius:0.5rem;height:2.5rem;width:12.5rem;" >
-            <div class="subtitle is-5" style="color:#022855;padding:0 1.1rem">Karposh</div>
+            <div class="subtitle is-5" style="color:#022855;padding:0 1.1rem"><%= t('.karposh') %></div>
           </div>
         </div>
         <div class="column is-12-mobile">
           <div class="tag is-medium is-info is-light"style="border-radius:0.5rem;height:2.5rem;width:12.5rem;" >
-            <div class="subtitle is-5" style="color:#022855;padding:0 1.1rem">Centar</div>
+            <div class="subtitle is-5" style="color:#022855;padding:0 1.1rem"><%= t('.centar') %></div>
           </div>
         </div>
       </div>
