@@ -3,7 +3,7 @@
 <div class="modal" id="cart-modal">
   <div class="modal-card">
     <header class="modal-card-head">
-      <p class="modal-card-title">Shopping cart</p>
+      <p class="modal-card-title"><%= t('.shopping_cart') %></p>
       <a href="#" data-controller="add-to-cart" data-action="click->add-to-cart#closeCart">
         <button class="delete" aria-label="close"></button>
       </a>
@@ -14,9 +14,9 @@
       </div>
     </section>
     <footer class="modal-card-foot">
-      <a href="carts/cart_checkout" class="button is-danger">Checkout</a>
+      <a href="carts/cart_checkout" class="button is-danger"><%= t('.checkout') %></a>
       <a href="#" data-controller="add-to-cart" data-action="click->add-to-cart#closeCart">
-        <button class="button is-light">Cancel</button>
+        <button class="button is-light"><%= t('.cancel') %></button>
       </a>
     </footer>
   </div>

@@ -1,0 +1,6 @@
+en:
+  shared:
+    navbar:
+      main:
+        navigation: "NAVIGATION"
+        categories: "CATEGORIES"

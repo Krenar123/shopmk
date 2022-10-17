@@ -1,0 +1,6 @@
+mk:
+  carts:
+    cart:
+      shopping_cart: "Кошничка"
+      checkout: "Плати"
+      cancel: "Откажи"

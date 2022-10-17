@@ -1,0 +1,6 @@
+mk:
+  carts:
+    cart_nav:
+      den: " ден."
+      50: "+ 50,00"
+      delivery: "достава"

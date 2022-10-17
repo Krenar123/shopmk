@@ -6,6 +6,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :current_cart
+  before_action :set_locale
+
+  # For links generated with routing helpers (like products_path or products_url)
+  def default_url_options
+    { locale: (I18n.locale == I18n.default_locale ? nil : I18n.locale) }
+  end
 
   private
 
@@ -23,5 +29,10 @@ class ApplicationController < ActionController::Base
       @current_cart = Cart.create
       session[:cart_id] = @current_cart.id
     end
+  end
+
+  def set_locale
+    locale = params[:locale].to_s.strip.to_sym
+    I18n.locale = I18n.available_locales.include?(locale) ? locale : I18n.default_locale
   end
 end

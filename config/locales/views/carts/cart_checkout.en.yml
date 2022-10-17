@@ -1,0 +1,9 @@
+en:
+  carts:
+    cart_checkout:
+      cart_details: "Cart details"
+      address: "Adress"
+      add_address: "Add address"
+      total: "Total"
+      order: "Order"
+      go_back: "Go back to market"

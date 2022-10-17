@@ -1,0 +1,9 @@
+mk:
+  carts:
+    cart_checkout:
+      cart_details: "Детали за нарачката"
+      address: "Адреса"
+      add_address: "Додади адреса"
+      total: "Вкупно"
+      order: "Нарачај"
+      go_back: "Врати се на пазар"

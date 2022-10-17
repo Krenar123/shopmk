@@ -8,11 +8,11 @@
               <%= image_tag("logo_hero.png", :size => "200x135") %>
             </div>
             <div class="conent-is-medium">
-              <h1 class="title is-3 mb-6" style="color:#022855">Groceries delivered in minutes</h1>
-              <p class="subtitle is-5" style="color:#022855">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta a et ipsa voluptates in velit rem minus nihil, blanditiis nisi, quidem tempore quos qui quas. Blanditiis hic dolorem fugiat? Blanditiis!</p>
+              <h1 class="title is-3 mb-6" style="color:#022855"><%= t('.greet') %></h1>
+              <p class="subtitle is-5" style="color:#022855"><%= t('.description') %> </p>
             </div>
             <div class=" mt-4 has-text-centered-mobile">
-              <a href="/shop" class="button is-danger">Start Shopping</a>
+              <a href="/shop" class="button is-danger"><%= t('.start') %></a>
             </div>
           </div>
         </div>
@@ -28,79 +28,79 @@
 <section class="section">
   <div class="container">
     <div class="title is-2  pb-3 has-text-centered pull" style="color:#022855">
-      Need Something Sooq it!
+      <%= t('.greet_2') %>
     </div>
-    <p class="subtitle is-5 has-text-centered pb-6"> Explore our assortment of fresh fruit, vegetables, bread and more...</p>
+    <p class="subtitle is-5 has-text-centered pb-6"><%= t('.description_2') %></p>
     <div class="columns  is-mobile is-tablet  is-flex is-justify-content-center	is-align-content-center	is-flex-wrap-wrap" style="gap:4rem; flex-wrap:wrap">
       <div class="card-content" style=" width:11rem; height:10rem; background-color:#e3f7f7" >
         <%= image_tag("chips.png", :size => "90x85",:style => 'margin-left: 1.4rem;') %>
         <div class="subtitle is-6 mt-4 has-text-centered">
-          <div class="subtitle is-6 "> Salty snacks </div>
+          <div class="subtitle is-6 "> <%= t('.salty_snacks') %></div>
         </div>
       </div>
       <div class="card-content  	"style=" width:11rem; height:10rem; background-color:#e3f7f7">
         <%= image_tag("pngegg.png", :size => "200x55",:style => 'margin-left: 0.5rem;') %>
         <div class=" is-align-conent-center mt-2 ">
-          <div class="subtitle is-6 "> fruits & vegetables</div>
+          <div class="subtitle is-6 "><%= t('.fruits_and_veggies') %></div>
         </div>
       </div>
       <div class="card-content is-align-content-center "style="width:11rem;height:10rem; background-color:#e3f7f7">
         <%= image_tag("eggmilk.png", :size => "100x85",:style => 'margin-bottom:0.4rem; margin-left: 0.5rem;') %>
         <div class="subtitle is-6 mt-4 has-text-centered">
-          <p> Eggs & Milk </p>
+          <p><%= t('.eggs_and_milk') %></p>
         </div>
       </div>
       <div class="card-content is-align-content-center "style="width:11rem;height:10rem;background-color:#e3f7f7">
         <%= image_tag("cola.png", :size => "200x100",:style => ' margin-bottom:0.7rem;margin-left:0.1; margin-top:-1rem;') %>
         <div class="is-align-conent-center mt-3 ">
-          <div style="width:150px"class="subtitle is-6 "> Alcohol-free Drinks</div>
+          <div style="width:150px"class="subtitle is-6 "><%= t('.alchohol') %></div>
         </div>
       </div>
     </div>
     <section class="sectiion">
       <div style="text-align:center;margin-top:100px">
-        <div class="button is-danger has-text-centered px-6 has-text-weight-bold"> Explore Categories</div>
+        <div class="button is-danger has-text-centered px-6 has-text-weight-bold"><%= t('.explore') %></div>
       </div>
     </section>
   </div>
 </section>
 <div class="section" >
   <div class="title is-1 has-text-centered-mobile has-text-centered" style="color:#022855">
-    Why Sooq?
+    <%= t('.why_sooq') %>
   </div>
   <div class="container ">
     <div class="columns mt-6 has-text-centered  is-flex is-justify-content-center is-flex-wrap-wrap	is-align-content-center	" >
       <div class="column is-3-desktop  is-5-tablet is-7-mobile 	is-flex-wrap-wrap"  style="width:17rem;">
         <%= image_tag("groceries.svg", :size => "110x100") %>
         <div class="title is-6 ">
-          Supermarket Prices
+          <%= t('.supermarket_h1') %>
         </div>
         <div class="subtitle is-6" >
-          Over 2000 items, direct to your door, at normal supermarket prices!
+          <%= t('.supermarket_h2') %>
         </div>
       </div>
       <div class="column is-3-desktop  is-5-tablet is-5-mobile " style="width:17rem;">
         <%= image_tag("fast.svg", :size => "110x100") %>
         <div class="title is-6 ">
-          Supermarket Prices
+          <%= t('.supermarket_h1') %>
         </div>
         <div class="subtitle is-6" >
-          Over 2000 items, direct to your door, at normal supermarket prices!
+          <%= t('.supermarket_h2') %>
         </div>
       </div>
       <div class="column is-3-desktop is-5-mobile  is-5-tablet" style="width:17rem;">
         <%= image_tag("diet.svg", :size => "110x100") %>
         <div class="title is-6 ">
-          Supermarket Prices
+          <%= t('.supermarket_h1') %>
         </div>
         <div class="subtitle is-6" >
-          Over 2000 items, direct to your door, at normal supermarket prices!
+          <%= t('.supermarket_h2') %>
         </div>
       </div>
     </div>
     <section class="section is-mobile-6 is-desktop-6 is-tablet-6">
       <div style="text-align:center;margin-top:2em">
-        <div class="button is-danger has-text-centered px-6 has-text-weight-bold"> Start Shopping</div>
+        <div class="button is-danger has-text-centered px-6 has-text-weight-bold"><%= t('.start') %></div>
       </div>
     </section>
   </div>
@@ -111,19 +111,19 @@
     <div class="columns  is-flex is-justify-content-center is-multiline  is-flex-wrap-wrap is-align-content-center	" >
       <div class="column is-4-desktop  is-6-tablet is-6-mobile is-flex-direction-column-mobile flex-direction-column-tablet"  style="width:30rem;">
         <div class="title is-3 has-text-left-desktop has-text-centered-tablet has-text-centered-mobile"style="color:#022855"  >
-          Our delivery areas
+          <%= t('.our_delivery') %>
         </div>
         <div class="subtitle is-4 has-text-left-desktop has-text-centered-mobile has-text-centered-tablet ">
-          Find the cities where we deliver your grocery and ready to eat meals, in minutes and at supermarket prices.
+          <%= t('.delivery_text') %>
         </div>
         <div class="pb-4 has-text-left-desktop has-text-centered-mobile has-text-centered-tablet ">
-          <div class="button is-danger px-6 has-text-weight-bold"> Start Shopping</div>
+          <div class="button is-danger px-6 has-text-weight-bold"><%= t('.start') %></div>
         </div>
         <div class="is-centered-tablet has-text-left-desktop has-text-centered-tablet has-text-centered-mobile ">
           <%# <div class="is-flex has-text-centered-mobile is-flex-wrap-wrap  is-align-content-center is-centered-mobile "> %>
           <div>
-            <span class="is-pulled-left-desktop is-pulled-left-mobile is-pulled-left-tablet "> City not listed?</span>
-            <span><a href="#"class="is-pulled-left-desktop  has-text-centered-mobile ml-2 "> Signup for our waitlist </a></span>
+            <span class="is-pulled-left-desktop is-pulled-left-mobile is-pulled-left-tablet "> <%= t('.city_not') %></span>
+            <span><a href="#"class="is-pulled-left-desktop  has-text-centered-mobile ml-2 "> <%= t('.signup_waitlist') %> </a></span>
           </div>
         </div>
       </div>
@@ -137,22 +137,22 @@
       <div class="columns mt-5  has-text-centered  is-flex is-justify-content-left is-flex-wrap-wrap	is-align-content-center	" >
         <div class="column is-12-mobile">
           <div class="tag is-medium is-info is-light"style="border-radius:0.5rem; height:2.5rem;width:12.5rem;" >
-            <div class="subtitle " style="color:#022855;padding:0 1.1rem">Shkup</div>
+            <div class="subtitle " style="color:#022855;padding:0 1.1rem"><%= t('.skopje')%></div>
           </div>
         </div>
         <div class="column is-12-mobile">
           <div class="tag is-medium is-info is-light"style="border-radius:0.5rem;height:2.5rem;width:12.5rem;" >
-            <div class="subtitle is-5" style="color:#022855;padding:0 1.1rem">Vizbeg</div>
+            <div class="subtitle is-5" style="color:#022855;padding:0 1.1rem"><%= t('.vizbegovo')%></div>
           </div>
         </div>
         <div class="column is-12-mobile">
           <div class="tag is-medium is-info is-light"style="border-radius:0.5rem;height:2.5rem;width:12.5rem;" >
-            <div class="subtitle is-5" style="color:#022855;padding:0 1.1rem">Karposh</div>
+            <div class="subtitle is-5" style="color:#022855;padding:0 1.1rem"><%= t('.karposh') %></div>
           </div>
         </div>
         <div class="column is-12-mobile">
           <div class="tag is-medium is-info is-light"style="border-radius:0.5rem;height:2.5rem;width:12.5rem;" >
-            <div class="subtitle is-5" style="color:#022855;padding:0 1.1rem">Centar</div>
+            <div class="subtitle is-5" style="color:#022855;padding:0 1.1rem"><%= t('.centar') %></div>
           </div>
         </div>
       </div>

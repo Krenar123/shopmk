@@ -20,5 +20,12 @@ module Buymk
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    # Where the I18n library should search for translation files
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    # Locales are supported by our app
+    config.i18n.available_locales = %i[en mk al]
+
+    # Our default locale
+    config.i18n.default_locale = :mk
   end
 end

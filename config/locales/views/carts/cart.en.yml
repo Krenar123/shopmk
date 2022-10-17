@@ -1,0 +1,6 @@
+en:
+  carts:
+    cart:
+      shopping_cart: "Shopping cart"
+      checkout: "Checkout"
+      cancel: "Cancel"
