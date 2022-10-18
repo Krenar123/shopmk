@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2022_10_18_214849) do
     t.integer "proion_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "best"
+    t.string "thumbnail"
     t.index ["proion_id"], name: "index_eikonas_on_proion_id"
   end
 
