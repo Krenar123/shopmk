@@ -13,7 +13,7 @@ class EikonaDashboard < Administrate::BaseDashboard
     proion: Field::BelongsTo,
     id: Field::Number,
     path_ref: Field::String,
-    best: Field::String,
+    thumbnail: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -27,7 +27,7 @@ class EikonaDashboard < Administrate::BaseDashboard
     proion
     id
     path_ref
-    best
+    thumbnail
     created_at
   ].freeze
 
@@ -37,7 +37,7 @@ class EikonaDashboard < Administrate::BaseDashboard
     proion
     id
     path_ref
-    best
+    thumbnail
     created_at
     updated_at
   ].freeze
@@ -48,7 +48,7 @@ class EikonaDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     proion
     path_ref
-    best
+    thumbnail
   ].freeze
 
   # COLLECTION_FILTERS

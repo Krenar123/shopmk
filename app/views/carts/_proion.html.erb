@@ -1,7 +1,7 @@
 <% line_items.each do |line_item| %>
     <%
         proion = line_item.proion
-        eikona = proion.eikonas.present? && proion.eikonas.find_by(best: "true").present? ? proion.eikonas.find_by(best: "true") : ""
+        eikona = proion.eikonas.present? && proion.eikonas.find_by(thumbnail: "true").present? ? proion.eikonas.find_by(thumbnail: "true") : ""
     %>
     <div class="is-flex is-justify-content-space-between is-align-items-end mt-3 mb-3">
         <div class="is-flex is-align-items-end">
