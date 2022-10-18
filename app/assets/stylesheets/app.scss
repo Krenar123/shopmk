@@ -49,10 +49,10 @@ button:active {
 .authorization-btn {
     border: none;
     box-shadow: none;
-    color: #485fc7;
+    color: #022855;
     background-color: transparent !important;
     &:hover {
-        color: #485fc7;
+        color: #022855;
     }
 }
 
@@ -243,9 +243,8 @@ body {
 
 .user-account-icon {
     line-height: 50px;
-    margin-top: -15px;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background-color: #bfbdbd;
     border-radius: 50%;
     display: flex;
@@ -254,6 +253,11 @@ body {
     color: #022855;
     font-weight: bold;
     background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    left: -180px;
 }
 
 @media only screen and (max-width: 768px) {

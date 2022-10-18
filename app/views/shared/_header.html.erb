@@ -1,12 +1,11 @@
 <section class="hero navbar is-fixed-top <%= content_for?(:pages_index) ? yield(:pages_index) : "" %>">
-  <div class="hero-body hero-body-header is-flex is-justify-content-space-between">
-    <%= render 'shared/i18n' %>
+  <div class="hero-body hero-body-header is-flex is-justify-content-space-between is-align-items-center">
     <a  href="/shop">
       <p class="title title-pages is-flex">
         <%= image_tag("logo_hero.png",size:"150x150")%>
       </p>
     </a>
-    <div class="field">
+    <div class="field" style="margin: 0px;">
       <div class="control">
         <p class="control has-icons-left has-icons-right is-hidden-mobile ">
           <input class="input" type="email" placeholder="Search... ">
@@ -24,9 +23,33 @@
           <% end %>
         <%end%>
       </div>
-      <div class="user-account-icon ml-5 mb-2">
-        <%= image_tag("default-avatar.png", :alt => "rss feed", :style => "width:50px;height:50px") %>
-      </div>
+      <% if !content_for?(:pages_index) %>
+        <div class="dropdown is-hoverable">
+          <div class="dropdown-trigger">
+            <div class="user-account-icon ml-5" aria-haspopup="true" aria-controls="dropdown-menu4">
+              <i style="font-size: 20px;" class="fa-regular fa-user"></i>
+            </div>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+            <div class="dropdown-content">
+              <div class="dropdown-item">
+                <div class="is-flex">
+                  <p class="mr-6">Choose language:</p>
+                  <%= render 'shared/i18n' %>
+                </div>
+                <hr style="margin: 1em 0;">
+                <div class="is-flex">
+                  <% if current_user.present? %>
+                    <%= button_to "Sign out", destroy_user_session_path, {class: 'authorization-btn is-link', style: 'padding-left: 0px;', method: :delete}  %>
+                  <% else %>
+                    <%= button_to "Sign in", new_user_session_path, {class: 'authorization-btn is-link', style: 'padding-left: 0px;', method: :get}  %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
     <% if !content_for?(:pages_index) %>
       <div style="display:none;">
