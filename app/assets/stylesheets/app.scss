@@ -287,6 +287,58 @@ body {
     }
 }
 
+@media only screen and (max-width: 768px) {
+    #heading-delivery {
+        font-size: 1.2em;
+    }
+    #delivery-time {
+        font-size: 1em;
+    }
+    .shopping-icon-size-mobile {
+        font-size: 3em;
+        margin-top: 40px;
+    }
+    #delivery-men {
+        font-size: 1rem;
+    }
+    .vertical-sign {
+        font-size: 1.2rem;
+    }
+    .order-track {
+        font-size: 0.7rem;
+    }
+    #whole-content-img {}
+}
+
+@media only screen and (max-width: 450px) {
+    #heading-delivery {
+        font-size: 0.7em !important;
+    }
+    #delivery-time {
+        font-size: 0.6em !important;
+    }
+    .shopping-icon-size-mobile {
+        font-size: 2em !important;
+        // margin-top: 40px !important;
+    }
+    #delivery-men {
+        font-size: 0.7em !important;
+    }
+    .non-padding-mobile-less-then-450px {
+        padding: 20px 30px !important;
+    }
+    .vertical-sign {
+        font-size: 0.6rem !important;
+    }
+    .order-track {
+        font-size: 0.5rem !important;
+    }
+    .steps-width {
+        height: 3px !important;
+    }
+    #whole-content-img {}
+}
+
 
 /* Loader 4 */
 
