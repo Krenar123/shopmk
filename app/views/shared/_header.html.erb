@@ -1,6 +1,6 @@
 <section class="hero navbar is-fixed-top <%= content_for?(:pages_index) ? yield(:pages_index) : "" %>">
   <div class="hero-body hero-body-header is-flex is-justify-content-space-between is-align-items-center">
-    <a  href="/shop">
+    <a  href="<%= shop_path(locale: I18n.locale) %>">
       <p class="title title-pages is-flex">
         <%= image_tag("logo_hero.png",size:"150x150")%>
       </p>
