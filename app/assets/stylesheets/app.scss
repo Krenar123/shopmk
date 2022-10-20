@@ -307,7 +307,29 @@ body {
     .order-track {
         font-size: 0.7rem;
     }
-    #whole-content-img {}
+    .non-padding-mobile-less-then-450px-second {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    .subtitle-ajdusted {
+        font-size: 1.125rem !important;
+    }
+    .order-quantity {
+        width: 40px !important;
+        font-size: 1.1rem !important;
+    }
+    .customer-name {
+        margin-left: 0px !important;
+    }
+    #input {
+        width: 100% !important;
+    }
+    .receipt-icon {
+        font-size: 1.3rem !important;
+    }
+    .receipt-text {
+        font-size: 1.1rem !important;
+    }
 }
 
 @media only screen and (max-width: 450px) {
@@ -324,9 +346,6 @@ body {
     #delivery-men {
         font-size: 0.7em !important;
     }
-    .non-padding-mobile-less-then-450px {
-        padding: 20px 30px !important;
-    }
     .vertical-sign {
         font-size: 0.6rem !important;
     }
@@ -336,7 +355,38 @@ body {
     .steps-width {
         height: 3px !important;
     }
-    #whole-content-img {}
+    .order-quantity {
+        width: 29px !important;
+        font-size: 0.8rem !important;
+    }
+    .order-name {
+        font-size: 0.8rem !important;
+    }
+    .order-type {
+        font-size: 0.6rem !important;
+    }
+    .image-profile-rider {
+        width: 30px !important;
+    }
+    .subtitle-ajdusted {
+        font-size: 1rem !important;
+    }
+    .non-padding-mobile-less-then-450px-second {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    #input {
+        width: 100% !important;
+    }
+    .customer-name {
+        margin-left: 0px !important;
+    }
+    .receipt-icon {
+        font-size: 1rem !important;
+    }
+    .receipt-text {
+        font-size: 0.9rem !important;
+    }
 }
 
 

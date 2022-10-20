@@ -17,7 +17,7 @@
   <div class="container"style="border-radius:5px;">
     <div class="hero is-medium">
       <div class="hero-body" style="padding-top: 12px;">
-        <div class="columns is-mobile">
+        <div class="columns is-mobile is-flex-direction-column	">
           <div class="column is-three-fifths is-offset-one-fifth p-6 non-padding-mobile-less-then-450px" style="box-shadow: 1px 3px 14px 0px rgba(5,5,5,0.68);-webkit-box-shadow: 1px 15px 23px -13px rgba(5,5,5,0.68);-moz-box-shadow: 1px 3px 14px 0px rgba(5,5,5,0.68);border-bottom-left-radius:8px; border-bottom-right-radius:8px;">
             <div class="is-flex mb-5" style="gap:2px;padding-bottom:30px;">
               <div class= "steps-width"style = "width:80px; height:5px; background-color:#f14668"></div>
@@ -32,10 +32,36 @@
             <hr />
             <p class="subtitle is-6 order-track">Your order's on track to be delivered on time.</p>
           </div>
+          <div class="column is-three-fifths is-offset-one-fifth p-6 non-padding-mobile-less-then-450px-second" >
+            <div class="subtitle is-4 subtitle-ajdusted"> Delivery </div>
+            <div class="control has-icons-left ">
+              <input class="input"id="input" type="email" disable style="width:50%;" placeholder="Email">
+              <span class="icon is-small is-left" >
+                <i class="fa fa-map-marker fa-xs" style="width:50%;" aria-hidden="true"></i>
+              </span>
+            </div>
+            <div class=" mt-5">
+              <span class="subtitle is-4 subtitle-ajdusted"> Order details</span>
+              <hr>
+            </div>
+            <div class="is-flex">
+              <%= image_tag("profilepic.jpg", :alt => "rss feed", :width => "40px", :class=> "image-profile-rider",:height =>"20px", :style => "border-radius:100px;") %>
+              <div class="ml-3 is-flex is-flex-direction-column mt-1"> <span class="subtitle is-6 order-name" style="margin:0 !important;"> Toby Carvey </span>
+                <span class="order-id mt-1 subtitle is-7 has-text-grey-light "style="margin:0 !important;"> #12312312</span> </div>
+            </div>
+            <hr>
+            <div class="is-flex">
+              <span class="subtitle is-5 order-quantity  has-text-grey"> 1 x</span>
+              <div class="ml-5 is-flex is-flex-direction-column mt-1  customer-name"> <span class="subtitle is-6 order-name" style="margin:0 !important;"> The Ulti Meat Carvey! </span>
+                <span class="mt-5 subtitle is-7 has-text-grey-light order-type"style="margin:0 !important;"> Stuffy, Vegetartian Turkish Kebab, Iskender</span> </div>
+            </div>
+            <hr>
+            <i class="fa-solid fa-receipt receipt-icon fa-xl has-text-danger "></i>
+            <span class="subtitle is-5 receipt-text has-text-danger ">View receipt</span>
+          </div>
         </div>
+      </div>
+      <div class="columns is-mobile">
       </div>
     </div>
   </div>
-</div>
-</div>
-</div>
