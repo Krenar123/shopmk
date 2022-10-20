@@ -89,8 +89,6 @@ ActiveRecord::Schema.define(version: 2022_10_18_214849) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_location_id"
-    t.integer "rider_id"
-    t.index ["rider_id"], name: "index_orders_on_rider_id"
     t.index ["user_location_id"], name: "index_orders_on_user_location_id"
   end
 
