@@ -15,7 +15,7 @@ class Proion < ApplicationRecord
   def main_image
     return false unless check_for_images
 
-    eikonas.where(best: 'true').pluck(:path_ref).first
+    eikonas.where(thumbnail: 'true').pluck(:path_ref).first
   end
 
   def check_for_images

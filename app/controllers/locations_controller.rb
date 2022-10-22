@@ -12,17 +12,17 @@ class LocationsController < ApplicationController
     @location = Location.create(location_params)
     create_user_location
 
-    render json: { location: @location, full_address: @location.full_address, locations: Location.all.count }
+    render json: { location: @location, full_address: @location.full_address, locations: UserLocation.where(user: @current_user).count }
   end
 
   private
 
   def location_params
-    params.permit(:city, :neighborhood, :road, :description)
+    params.permit(:city, :neighborhood, :road, :description, :phone)
   end
 
   def create_user_location
-    @user_location = UserLocation.create(location: @location, user: @current_user)
+    @user_location = UserLocation.create(location: @location, user: @current_user, phone: location_params[:phone])
   end
 
   def get_current_user

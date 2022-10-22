@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_13_103447) do
+ActiveRecord::Schema.define(version: 2022_10_18_214849) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2022_10_13_103447) do
     t.integer "proion_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "best"
+    t.string "thumbnail"
     t.index ["proion_id"], name: "index_eikonas_on_proion_id"
   end
 
@@ -143,6 +143,7 @@ ActiveRecord::Schema.define(version: 2022_10_13_103447) do
     t.integer "location_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "phone"
     t.index ["location_id"], name: "index_user_locations_on_location_id"
     t.index ["user_id"], name: "index_user_locations_on_user_id"
   end

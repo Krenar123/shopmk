@@ -1,7 +1,7 @@
 <% line_items.each do |line_item| %>
     <%
         proion = line_item.proion
-        eikona = proion.eikonas.present? && proion.eikonas.find_by(best: "true").present? ? proion.eikonas.find_by(best: "true") : ""
+        eikona = proion.eikonas.present? && proion.eikonas.find_by(thumbnail: "true").present? ? proion.eikonas.find_by(thumbnail: "true") : ""
     %>
     <div class="is-flex is-justify-content-space-between is-align-items-end mt-3 mb-3">
         <div class="is-flex is-align-items-end">
@@ -9,7 +9,7 @@
                 <span class="is-flex is-align-items-center is-justify-content-center"><% if eikona.present? %><%= image_tag(eikona.path_ref, :size => "80x80",style:"margin:0 auto;") %><% else %><%= image_tag("domestos.png", :size => "80x80",style:"margin:0 auto;") %><% end %></span>
             </div>
             <div class="ml-2">
-                <p style="font-size: 12px;"><%= proion.price %> <span class="currency">den</span></p>
+                <p style="font-size: 12px;"><%= proion.price %> <span class="currency"><%= t('carts.cart_nav.den') %></span></p>
                 <p style="font-weight: 500;"><%= proion.title %></p>
             </div>
         </div>

@@ -1,6 +1,6 @@
 <div class="is-hidden-mobile">
   <div class="column">
-    <h4 class="home-title">NAVIGATION</h4>
+    <h4 class="home-title"><%= t('.navigation') %></h4>
     <a href="#" data-controller="render-category" data-render-category-load-path="/navigate-category" data-action="click->render-category#loadSubCategories" data-reference="<%= @main_category.reference %>">
       <div class="is-flex mt-2 is-align-items-center">
         <i style="width: 25px;"  class="has-text-black-bis <%= @main_category.icon %>"></i>
@@ -9,7 +9,7 @@
     </a>
   </div>
   <div class="column">
-    <h4 class="home-title">CATEGORIES</h4>
+    <h4 class="home-title"><%= t('.categories') %></h4>
     <div class="is-flex is-multiline is-flex-direction-column is-fullwidth is-scrollable">
       <% @categories.each do |category| %>
         <%= render 'shared/navbar/category', category: category %>

@@ -38,10 +38,12 @@ export default class extends Controller {
       data: formData,
       success: function(data) {
         // We need to make it ad option select
+        console.log(data)
+        console.log(data.locations);
         if(data.locations == "1"){
           //Create and append select list
           var selectList = document.createElement("select");
-          selectList.id = "select-address";
+          selectList.id = "order_user_location_id";
           fullAddress.appendChild(selectList);
 
           var option = document.createElement("option");
@@ -53,7 +55,7 @@ export default class extends Controller {
         }else {
           // fill the select with option
           // Create and append select list
-          var selectList = document.getElementById("select-address");
+          var selectList = document.getElementById("order_user_location_id");
 
           var option = document.createElement("option");
           option.value = data.location.id;

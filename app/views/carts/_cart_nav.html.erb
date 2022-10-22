@@ -3,8 +3,8 @@
     <div class="column price-div has-background-danger ">
       <i class="has-text-white is-pulled-left fa fa-shopping-bag is-3" aria-hidden="true"  style="position: absolute; top:20px"></i>
       <div class="is-flex is-flex-direction-column ml-5 card-nav-mt-mobile">
-        <span class="has-text-right has-text-white ml-5 is-pulled-right font-size-subtotal-mobile"><% if cart.sub_total != 0 %><span id="total-amount"><%= cart.sub_total %></span> <span class="currency">den</span><% end %></span>
-        <span class="is-pulled-right has-text-right subtitle has-text-white	 is-7 " id="delivery-price"> + 50.00 <span class="currency">den</span> delivery fee</span>
+        <span class="has-text-right has-text-white ml-5 is-pulled-right font-size-subtotal-mobile"><% if cart.sub_total != 0 %><span id="total-amount"><%= cart.sub_total %></span> <span class="currency"><%= t('.den') %></span><% end %></span>
+        <span class="is-pulled-right has-text-right subtitle has-text-white	 is-7 " id="delivery-price"> <%= t('.50') %><span class="currency"><%= t('.den') %></span> <%= t('.delivery') %></span>
       </div>
     </div>
   </div>
