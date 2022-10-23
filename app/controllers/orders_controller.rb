@@ -7,6 +7,8 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @rider = Rider.all.last
+    @delivery = Delivery.find_by(order: @order, rider: @rider)
   end
 
   def new

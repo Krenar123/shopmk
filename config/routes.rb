@@ -22,14 +22,18 @@ Rails.application.routes.draw do
       registrations: 'users/registrations',
       sessions: 'users/sessions'
     }
-    # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+    devise_for :riders, controllers: {
+      registrations: 'riders/registrations',
+      sessions: 'riders/sessions'
+    }
 
-    # Defines the root path route ("/")
-    # root "articles#index"
+    get 'riders/:id' => 'riders#show', as: 'rider'
+
 
     resources :proions, path: 'products'
     resources :categories, key: :reference
     resources :orders
+    resources :deliveries
     resources :locations
 
     get 'carts/cart_checkout' => 'carts#cart_checkout', as: 'cart_checkout'

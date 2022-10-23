@@ -48,10 +48,10 @@ export default class extends Controller {
 
           var option = document.createElement("option");
           option.value = data.location.id;
-          option.text = data.full_address;
+          option.text = data.address;
           selectList.appendChild(option);
           orderButton.classList.remove("disabled");
-          // create an select with one option (id: user_location, full_address)
+          // create an select with one option (id: user_location, address)
         }else {
           // fill the select with option
           // Create and append select list
@@ -59,7 +59,7 @@ export default class extends Controller {
 
           var option = document.createElement("option");
           option.value = data.location.id;
-          option.text = data.full_address;
+          option.text = data.address;
           selectList.appendChild(option);
         };
 

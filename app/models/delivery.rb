@@ -3,5 +3,5 @@ class Delivery < ApplicationRecord
   belongs_to :order
 
   ################################# SETTINGS ###################################
-  enum status: %i[delivered paid]
+  enum status: %i[accepted prepared delivered paid]
 end

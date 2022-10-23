@@ -10,6 +10,10 @@ class Location < ApplicationRecord
   attr_accessor :phone
 
   def full_address
+    "#{neighborhood}, #{road}, #{description}"
+  end
+
+  def address
     "#{neighborhood} #{road}"
   end
 end

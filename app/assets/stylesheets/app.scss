@@ -566,3 +566,15 @@ body {
         transform: translate3d(0, 0, 0) scale(1);
     }
 }
+
+.delivery-not-active {
+    background-color: #f7dee3;
+}
+
+.delivery-being-active {
+    background-color: #ec98a9;
+}
+
+.delivery-active {
+    background-color: #f14668;
+}

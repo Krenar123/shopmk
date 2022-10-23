@@ -12,7 +12,7 @@ class LocationsController < ApplicationController
     @location = Location.create(location_params)
     create_user_location
 
-    render json: { location: @location, full_address: @location.full_address, locations: UserLocation.where(user: @current_user).count }
+    render json: { location: @location, address: @location.address, locations: UserLocation.where(user: @current_user).count }
   end
 
   private

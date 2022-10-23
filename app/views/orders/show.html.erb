@@ -4,9 +4,9 @@
       <div class="hero-body" style="padding-top: 4rem; padding-bottom: 12px;">
         <div class="columns is-mobile">
           <div class="column is-three-fifths is-offset-one-fifth has-background-white p-6 non-padding-mobile-less-then-450px" style="padding-bottom:1.5rem!important; border-top-left-radius:8px; border-top-right-radius:8px;">
-            <p class="subtitle is-3 m-0" id="heading-delivery"> Esimeted Delivery </p>
+            <p class="subtitle is-3 m-0" id="heading-delivery"> Estimated Delivery </p>
             <div class="is-flex  is-justify-content-space-between mt-4" id="whole-content-img">
-              <div class="title is-1 "id="delivery-time" >12:30 - 12:40</div>
+              <div class="title is-1 "id="delivery-time" ><%= @delivery.created_at.strftime("%H:%M") %> - <%= (@delivery.created_at + 30.minutes).strftime("%H:%M") %></div>
               <i class="fa fa-shopping-bag has-text-danger fa-5x shopping-icon-size-mobile" style="margin-top:-15px" aria-hidden="true"></i>
             </div>
           </div>
@@ -19,26 +19,23 @@
       <div class="hero-body" style="padding-top: 12px;">
         <div class="columns is-mobile is-flex-direction-column	">
           <div class="column is-three-fifths is-offset-one-fifth p-6 non-padding-mobile-less-then-450px" style="box-shadow: 1px 3px 14px 0px rgba(5,5,5,0.68);-webkit-box-shadow: 1px 15px 23px -13px rgba(5,5,5,0.68);-moz-box-shadow: 1px 3px 14px 0px rgba(5,5,5,0.68);border-bottom-left-radius:8px; border-bottom-right-radius:8px;">
-            <div class="is-flex mb-5" style="gap:2px;padding-bottom:30px;">
-              <div class= "steps-width"style = "width:80px; height:5px; background-color:#f14668"></div>
-              <div class= "steps-width" style = "width:120px; height:5px; background-color:#f14668"></div>
-              <div class= "steps-width" style = "width:240px; height:5px; background-color:#f14668"></div>
-              <div class= "steps-width" style = "width:120px; height:5px; background-color:#f14668"></div>
-              <div class= "steps-width" style = "width:80px; height:5px; background-color:#f14668"></div>
+            <div class="is-flex mb-5" style="gap:2px;padding-bottom:30px;" data-controller="order">
+              <div <% if @delivery.status.nil? %>id="delivery-being-active"<% end %> class="steps-width <% if @delivery.status.nil? %>delivery-being-active<% else %>delivery-active<% end %>" style="width:80px; height:5px;"></div>
+              <div <% if @delivery.accepted? %>id="delivery-being-active"<% end %> class="steps-width <% if @delivery.status.nil? %>delivery-not-active<% elsif @delivery.accepted? %>delivery-being-active<% else %>delivery-active<% end %>" style="width:120px; height:5px;"></div>
+              <div <% if @delivery.prepared? %>id="delivery-being-active"<% end %> class="steps-width <% if @delivery.status.nil? || @delivery.accepted? %>delivery-not-active<% elsif @delivery.prepared? %>delivery-being-active<% else %>delivery-active<% end %>" style="width:340px; height:5px;"></div>
+              <div <% if @delivery.delivered? %>id="delivery-being-active"<% end %> class="steps-width <% if @delivery.status.nil? || @delivery.accepted? || @delivery.prepared? %>delivery-not-active<% elsif @delivery.delivered? %>delivery-being-active<% else %>delivery-active<% end %>" style="width:80px; height:5px;"></div>
             </div>
             <div class="is-flex is-justify-content-space-between">
-              <span class="subtitle is-4 m-0" id= "delivery-men"> Top Carvey is preparing your order </span><i class="fa fa-arrow-up fa-xl has-text-danger vertical-sign" aria-hidden="true"></i>
+              <span class="subtitle is-4 m-0" id= "delivery-men"><% if @delivery.paid? %>Enjoy :)<% else %><%= @rider.name %> is <% if @delivery.delivered? %>delivered<% else %><% if @delivery.status.nil? %>accepting<% elsif @delivery.accepted? %>preparing<% elsif @delivery.prepared? %>delivering<% end %> your order<% end %><% end %> </span><i class="fa fa-arrow-up fa-xl has-text-danger vertical-sign" aria-hidden="true"></i>
             </div>
             <hr />
-            <p class="subtitle is-6 order-track">Your order's on track to be delivered on time.</p>
+            <p class="subtitle is-6 order-track"><% if @delivery.delivered? || @delivery.paid? %>Your order's delivered<% else %>Your order's on track to be delivered on time.<% end %></p>
           </div>
           <div class="column is-three-fifths is-offset-one-fifth p-6 non-padding-mobile-less-then-450px-second" >
             <div class="subtitle is-4 subtitle-ajdusted"> Delivery </div>
-            <div class="control has-icons-left ">
-              <input class="input"id="input" type="email" disable style="width:50%;" placeholder="Email">
-              <span class="icon is-small is-left" >
-                <i class="fa fa-map-marker fa-xs" style="width:50%;" aria-hidden="true"></i>
-              </span>
+            <div class="is-flex is-align-items-center">
+              <i class="fa fa-map-marker fa-xs" style="font-size: 16px; margin-right: 10px;" aria-hidden="true"></i>
+              <p><%= @order.address %></p>
             </div>
             <div class=" mt-5">
               <span class="subtitle is-4 subtitle-ajdusted"> Order details</span>
@@ -46,16 +43,18 @@
             </div>
             <div class="is-flex">
               <%= image_tag("profilepic.jpg", :alt => "rss feed", :width => "40px", :class=> "image-profile-rider",:height =>"20px", :style => "border-radius:100px;") %>
-              <div class="ml-3 is-flex is-flex-direction-column mt-1"> <span class="subtitle is-6 order-name" style="margin:0 !important;"> Toby Carvey </span>
-                <span class="order-id mt-1 subtitle is-7 has-text-grey-light "style="margin:0 !important;"> #12312312</span> </div>
+              <div class="ml-3 is-flex is-flex-direction-column mt-1"> <span class="subtitle is-6 order-name" style="margin:0 !important;"><%= @rider.name %></span>
+                <span class="order-id mt-1 subtitle is-7 has-text-grey-light "style="margin:0 !important;"><%= @rider.mobile %></span> </div>
             </div>
             <hr>
-            <div class="is-flex">
-              <span class="subtitle is-5 order-quantity  has-text-grey"> 1 x</span>
-              <div class="ml-5 is-flex is-flex-direction-column mt-1  customer-name"> <span class="subtitle is-6 order-name" style="margin:0 !important;"> The Ulti Meat Carvey! </span>
-                <span class="mt-5 subtitle is-7 has-text-grey-light order-type"style="margin:0 !important;"> Stuffy, Vegetartian Turkish Kebab, Iskender</span> </div>
-            </div>
-            <hr>
+            <% @order.line_items.each do |line_item| %>
+              <div class="is-flex">
+                <span class="subtitle is-5 order-quantity  has-text-grey"><%= line_item.quantity %> x</span>
+                <div class="ml-5 is-flex is-flex-direction-column mt-1  customer-name"> <span class="subtitle is-6 order-name" style="margin:0 !important;"><%= line_item.proion.title %> - <%= line_item.proion.description %></span>
+                  <span class="mt-5 subtitle is-7 has-text-grey-light order-type"style="margin:0 !important;"><%= line_item.proion.price %></span> </div>
+              </div>
+              <hr>
+            <% end %>
             <i class="fa-solid fa-receipt receipt-icon fa-xl has-text-danger "></i>
             <span class="subtitle is-5 receipt-text has-text-danger ">View receipt</span>
           </div>
@@ -65,3 +64,9 @@
       </div>
     </div>
   </div>
+
+<script>
+  setTimeout(function(){
+    window.location.reload(1);
+  }, 60000);
+</script>

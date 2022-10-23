@@ -1,0 +1,29 @@
+<div class="main-container">
+    <table>
+        <tr>
+            <th>Delivery Address</th>
+            <th>Delivery Phone Contact</th>
+            <th>Delivery Status</th>
+        </tr>
+        <% @rider.deliveries.each do |delivery| %>
+            <tr data-controller="delivery">
+                <td>
+                    <%= delivery.order.address %>
+                </td>
+                <td>
+                    <%= delivery.order.phone %>
+                </td>
+                <td>
+                    <%= form_with model: delivery, id: "delivery-status-form" do |form| %>
+                        <select name="delivery[status]" id="delivery_status" data-controller="delivery" data-delivery-update-url="<%= delivery_path(delivery) %>" data-action="change->delivery#updateStatus">
+                            <option selected="selected" value="">Select</option>
+                            <% Delivery.statuses.keys.each do |status| %>
+                                <option value="<%= status %>" <% if  status == delivery.status %> selected <% end %>><%= status.capitalize %></option>
+                            <% end %>
+                        </select>
+                    <% end %>
+                </td>
+            </tr>
+        <% end %>
+    </table>
+</div>

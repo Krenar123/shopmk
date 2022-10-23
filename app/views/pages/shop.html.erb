@@ -11,8 +11,8 @@
               <span class="opened-hours has-text-weight-semibold	subtitle is-7" style="color:#a9a8a8">OPEN 8:00 am - 11:59 pm</span>
               <% if @current_user.present? %>
                 <div>
-                  <% if @location.present? && @location.full_address.present? %>
-                    <p class="client-address has-text-weight-semibold subtitle is-7"><%= truncate(@location.full_address, length: 20, omission: '...') %></a>
+                  <% if @location.present? && @location.address.present? %>
+                    <p class="client-address has-text-weight-semibold subtitle is-7"><%= truncate(@location.address, length: 20, omission: '...') %></a>
                   <% else %>
                     <% if @current_user.present? %>
                       <a href="#" data-controller="location" data-action="click->location#openLocation" class="client-address has-text-weight-semibold subtitle is-7	has-text-danger">Add  address</a>
