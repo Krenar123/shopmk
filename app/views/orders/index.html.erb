@@ -1,2 +1,48 @@
-<h1>Orders#index</h1>
-<p>Find me in app/views/orders/index.html.erb</p>
+<div class="has-background-white">
+  <div class="container"style="background-color: #06062fde!important; border-radius: 450px; border-top-left-radius:165px; border-bottom-right-radius: 165px;">
+    <div class="hero is-medium">
+      <div class="hero-body" style="padding-top: 4rem; padding-bottom: 12px;">
+        <div class="columns is-mobile">
+          <div class="column is-three-fifths is-offset-one-fifth has-background-white p-6 non-padding-mobile-less-then-450px" style="padding-bottom:1.5rem!important; border-top-left-radius:8px; border-top-right-radius:8px;">
+            <p class="title is-1 m-0" id="heading-delivery"> Your orders </p>
+            <div class="is-flex  is-justify-content-space-between mt-4" id="whole-content-img">
+              <div class="subtitle is-3 "id="delivery-time">Click on order to see the details</div>
+              <i class="fa fa-shopping-bag has-text-danger fa-5x shopping-icon-size-mobile" style="margin-top:-15px" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container"style="border-radius:5px;">
+    <div class="hero is-medium">
+      <div class="hero-body" style="padding-top: 12px;">
+        <div class="columns is-mobile is-flex-direction-column	">
+          <div class="column is-three-fifths is-offset-one-fifth p-6 non-padding-mobile-less-then-450px" style="box-shadow: 1px 3px 14px 0px rgba(5,5,5,0.68);-webkit-box-shadow: 1px 15px 23px -13px rgba(5,5,5,0.68);-moz-box-shadow: 1px 3px 14px 0px rgba(5,5,5,0.68);border-bottom-left-radius:8px; border-bottom-right-radius:8px;">
+            <% @orders.each do |order| %>
+                <%
+                    delivery = order.deliveries.first
+                    delivery_status = delivery.present? && delivery.status.present? ? delivery.status.capitalize : "Accepting"
+                %>
+                <a href="orders/<%= order.id %>">
+                    <div class="p-5 has-background-danger m-3" style="border-radius: 8px; color: white;">
+                        <div class="is-flex is-justify-content-space-between">
+                            <p style="font-weight: 600;"><%= order.address %></p>
+                            <i style="font-size: 24px;" class="fa-solid fa-arrow-right"></i>
+                        </div>
+                        <div>
+                            <p style="font-size: 13px"><%= order.created_at.strftime("%d %B") %> <span style="margin-left: 10px; margin-right: 10px;">●</span> <%= order.total_price %>.00 den <span style="margin-left: 10px; margin-right: 10px;">●</span> <%= delivery_status %></p>
+                        </div>
+                    </div>
+                </a>
+            <% end %>
+            <hr />
+            <a class="receipt-text has-text-danger" href="<%= shop_path(locale: I18n.locale) %>" class="card-footer-item"><%= t('.go_back') %></a>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-mobile">
+      </div>
+    </div>
+  </div>
+

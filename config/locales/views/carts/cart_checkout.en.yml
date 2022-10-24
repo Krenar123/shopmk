@@ -2,7 +2,7 @@ en:
   carts:
     cart_checkout:
       cart_details: "Cart details"
-      address: "Adress"
+      address: "Address"
       add_address: "Add address"
       total: "Total"
       order: "Order"

@@ -9,7 +9,7 @@ class Order < ApplicationRecord
   def address
     return nil unless user_location.present?
 
-    Location.find_by(id: user_location.location_id).full_address
+    user_location.location.full_address
   end
   
   def phone
@@ -26,6 +26,10 @@ class Order < ApplicationRecord
     return nil unless UserLocation.find_by(id: user_location_id).present?
 
     UserLocation.find_by(id: user_location_id)
+  end
+
+  def total_price
+    self.line_items.map{ |l| l.total_price }.sum + 70
   end
 
   private

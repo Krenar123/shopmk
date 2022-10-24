@@ -1,0 +1,9 @@
+sq:
+  carts:
+    cart_checkout:
+      cart_details: "Detajet e porosisë"
+      address: "Adresa"
+      add_address: "Shtoni adresë"
+      total: "Totali"
+      order: "Krijoni porosinë"
+      go_back: "Kthehu në dyqan"

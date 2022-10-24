@@ -1,0 +1,27 @@
+sq:
+  shared:
+    pages:
+      main:
+        greet: "Groceries delivered in minutes"
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta a et ipsa voluptates in velit rem minus nihil, blanditiis nisi, quidem tempore quos qui quas. Blanditiis hic dolorem fugiat? Blanditiis!"
+        start: "Start Shopping"
+        greet_2: "Need Something Sooq it!"
+        description_2: "Explore our assortment of fresh fruit, vegetables, bread and more..."
+        salty_snacks: "Salty snacks"
+        fruits_and_veggies: "Fruits & vegetables"
+        eggs_and_milk: "Eggs & Milk"
+        alchohol: "Alcohol-free Drinks"
+        explore: "Explore Categories"
+        why_sooq: "Why Sooq?"
+        supermarket_h1: "Supermarket Prices"
+        supermarket_h2: "Over 2000 items, direct to your door, at normal supermarket prices!"
+        our_delivery: "Our delivery areas"
+        delivery_text: "Find the cities where we deliver your grocery and ready to eat meals, in minutes and at supermarket prices."
+        city_not: "City not listed?"
+        signup_waitlist: "Signup for our waitlist"
+        skopje: "Skopje"
+        vizbegovo: "Vizbegovo"
+        karposh: "Karposh"
+        centar: "Centar"
+
+

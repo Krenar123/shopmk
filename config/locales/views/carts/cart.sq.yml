@@ -1,0 +1,6 @@
+sq:
+  carts:
+    cart:
+      shopping_cart: "Shporta"
+      checkout: "Paguaj"
+      cancel: "Anuloni"

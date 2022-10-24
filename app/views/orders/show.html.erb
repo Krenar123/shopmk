@@ -55,8 +55,7 @@
               </div>
               <hr>
             <% end %>
-            <i class="fa-solid fa-receipt receipt-icon fa-xl has-text-danger "></i>
-            <span class="subtitle is-5 receipt-text has-text-danger ">View receipt</span>
+            <a class="receipt-text has-text-danger" href="<%= shop_path(locale: I18n.locale) %>" class="card-footer-item"><%= t('.go_back') %></a>
           </div>
         </div>
       </div>

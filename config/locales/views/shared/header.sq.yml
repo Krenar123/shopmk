@@ -1,0 +1,8 @@
+sq:
+  shared:
+    header:
+      search: "Kërkoni..."
+      choose_language: "Zgjidhni gjuhën"
+      sign_in: "Logohu"
+      sign_out: "Dilni"
+      orders: "Porositë"

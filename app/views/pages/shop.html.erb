@@ -5,10 +5,10 @@
         <div class="column is-12 ">
           <div class="card is-flex ">
             <div class="column is-3 is-flex is-justify-content-center is-align-items-center" style="padding:0.5rem">
-              <span class="showing-time pt-1"> 14 min.</span>
+              <span class="showing-time pt-1">30 <%= t('.min') %>.</span>
             </div>
             <div class="mt-1">
-              <span class="opened-hours has-text-weight-semibold	subtitle is-7" style="color:#a9a8a8">OPEN 8:00 am - 11:59 pm</span>
+              <span class="opened-hours has-text-weight-semibold	subtitle is-7" style="color:#a9a8a8"><%= t('.open') %> 8:00 - 23:59</span>
               <% if @current_user.present? %>
                 <div>
                   <% if @location.present? && @location.address.present? %>

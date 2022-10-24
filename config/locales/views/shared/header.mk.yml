@@ -1,0 +1,8 @@
+mk:
+  shared:
+    header:
+      search: "Барај..."
+      choose_language: "Изберете јазик"
+      sign_in: "Најави се"
+      sign_out: "Одјави се"
+      orders: "Нарачките"
