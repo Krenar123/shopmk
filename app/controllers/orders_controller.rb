@@ -2,11 +2,11 @@
 
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-  before_action :get_current_user, only: :cart_checkout
+  before_action :get_current_user, only: :index
 
   def index
     @user_location = UserLocation.find_by(user: @current_user)
-    @orders = Order.where(user_location_id: @user_location.id)
+    @orders = Order.where(user_location_id: @user_location.id) if @user_location.present?
     @rider = Rider.all.last
   end
 

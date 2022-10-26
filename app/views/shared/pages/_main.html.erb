@@ -59,7 +59,7 @@
     </div>
     <section class="sectiion">
       <div style="text-align:center;margin-top:100px">
-        <div class="button is-danger has-text-centered px-6 has-text-weight-bold"><%= t('.explore') %></div>
+        <a href="<%= shop_path(locale: I18n.locale) %>"><div class="button is-danger has-text-centered px-6 has-text-weight-bold"><%= t('.explore') %></div></a>
       </div>
     </section>
   </div>
@@ -82,25 +82,25 @@
       <div class="column is-3-desktop  is-5-tablet is-5-mobile " style="width:17rem;">
         <%= image_tag("fast.svg", :size => "110x100") %>
         <div class="title is-6 ">
-          <%= t('.supermarket_h1') %>
+          <%= t('.supermarket_h1_v1') %>
         </div>
         <div class="subtitle is-6" >
-          <%= t('.supermarket_h2') %>
+          <%= t('.supermarket_h2_v1') %>
         </div>
       </div>
       <div class="column is-3-desktop is-5-mobile  is-5-tablet" style="width:17rem;">
         <%= image_tag("diet.svg", :size => "110x100") %>
         <div class="title is-6 ">
-          <%= t('.supermarket_h1') %>
+          <%= t('.supermarket_h1_v2') %>
         </div>
         <div class="subtitle is-6" >
-          <%= t('.supermarket_h2') %>
+          <%= t('.supermarket_h2_v2') %>
         </div>
       </div>
     </div>
     <section class="section is-mobile-6 is-desktop-6 is-tablet-6">
       <div style="text-align:center;margin-top:2em">
-        <div class="button is-danger has-text-centered px-6 has-text-weight-bold"><%= t('.start') %></div>
+        <a href="<%= shop_path(locale: I18n.locale) %>"><div class="button is-danger has-text-centered px-6 has-text-weight-bold"><%= t('.start') %></div></a>
       </div>
     </section>
   </div>
@@ -117,7 +117,7 @@
           <%= t('.delivery_text') %>
         </div>
         <div class="pb-4 has-text-left-desktop has-text-centered-mobile has-text-centered-tablet ">
-          <div class="button is-danger px-6 has-text-weight-bold"><%= t('.start') %></div>
+          <a href="<%= shop_path(locale: I18n.locale) %>"><div class="button is-danger px-6 has-text-weight-bold"><%= t('.start') %></div></a>
         </div>
         <div class="is-centered-tablet has-text-left-desktop has-text-centered-tablet has-text-centered-mobile ">
           <%# <div class="is-flex has-text-centered-mobile is-flex-wrap-wrap  is-align-content-center is-centered-mobile "> %>
@@ -142,17 +142,12 @@
         </div>
         <div class="column is-12-mobile">
           <div class="tag is-medium is-info is-light"style="border-radius:0.5rem;height:2.5rem;width:12.5rem;" >
-            <div class="subtitle is-5" style="color:#022855;padding:0 1.1rem"><%= t('.vizbegovo')%></div>
+            <div class="subtitle is-5" style="color:#022855;padding:0 1.1rem"><%= t('.topansko')%></div>
           </div>
         </div>
         <div class="column is-12-mobile">
           <div class="tag is-medium is-info is-light"style="border-radius:0.5rem;height:2.5rem;width:12.5rem;" >
-            <div class="subtitle is-5" style="color:#022855;padding:0 1.1rem"><%= t('.karposh') %></div>
-          </div>
-        </div>
-        <div class="column is-12-mobile">
-          <div class="tag is-medium is-info is-light"style="border-radius:0.5rem;height:2.5rem;width:12.5rem;" >
-            <div class="subtitle is-5" style="color:#022855;padding:0 1.1rem"><%= t('.centar') %></div>
+            <div class="subtitle is-5" style="color:#022855;padding:0 1.1rem"><%= t('.chair') %></div>
           </div>
         </div>
       </div>
