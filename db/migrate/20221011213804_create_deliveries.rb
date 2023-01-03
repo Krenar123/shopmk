@@ -6,11 +6,5 @@ class CreateDeliveries < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
-
-    rider = Rider.create!(name: 'Test Rider Name',
-                          email: 'test@test.com',
-                          mobile: 123_456_789)
-
-    Delivery.update_all(rider_id: rider.id)
   end
 end
