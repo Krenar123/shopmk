@@ -13,7 +13,9 @@
       </div>
       <div class="has-text-left">
         <p style="margin-top: 5px;"><span class="subtitle is-9"><%= proion.price %> <span class="currency"><%= t('carts.cart_nav.den') %></span></span></p>
-        <span style="position: relative; top: -5px;" class="subtitle is-9 is-bold is-black"><a class="subtitle is-9 has-text-weight-medium	" href="domestos.com"><%= proion.title %></a></span>
+        <span style="position: relative; top: -5px;" class="subtitle is-9 is-bold is-black">
+          <a href="#" class="subtitle is-9 has-text-weight-medium"  data-controller="product" data-product-load-path="<%= proion_path(proion) %>" data-action="click->product#getProduct" data-product-id="<%= proion.id %>" ><%= proion.title %></a>
+        </span>
         <p><span class="subtitle is-7"><%= proion.price %> <span class="currency"><%= t('carts.cart_nav.den') %></span> / <%=  proion.size %> </span></p>
       </div>
     </div>
