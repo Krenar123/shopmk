@@ -13,7 +13,9 @@
       </div>
       <div class="has-text-left">
         <p><span class="subtitle is-7"> <%=  proion.price %></span></p>
-        <span class="subtitle is-6 is-bold is-black"><a class="subtitle is-7 has-text-weight-medium	" href="domestos.com"><%=proion.title   %></a> </span>
+          <span class="subtitle is-6 is-bold is-black">
+            <a href="#" data-controller="product" data-product-load-path="<%= proion_path(proion) %>" data-action="click->product#getProduct" data-product-id="<%= proion.id %>" ><%= proion.title %></a>
+          </span>
         <p><span class="subtitle is-7"> $20.33 / 1kg</span></p>
       </div>
     </div>
