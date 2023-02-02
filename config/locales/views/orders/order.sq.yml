@@ -1,0 +1,17 @@
+sq:
+  orders:
+    order:
+      estimated_delivery: "Koha e parashikuar e dërgesës"
+      enjoy: "Shijoni ushqimin"
+      cancel: "Anuloni"
+      delivered: "ka dorëzuar porosinë tuaj"
+      accepting: "po pranon porosinë tuaj"
+      preparing: "po përgatit porosinë tuaj"
+      delivering: "po dorëzon porosinë tuaj"
+      delivered_paragraph: "Porosia juaj u dorëzua"
+      delivering_paragraph: "Porosia juaj është në rrugën e duhur për t'u dorëzuar në kohë"
+      delivery: "Adresa e dorëzimit"
+      order: "Detajet e porosisë"
+      go_back: "Kthehu prapa"
+      your_orders: "Porositë tuaja"
+      click_order: "Klikoni në zonën e porosisë për të parë detajet"

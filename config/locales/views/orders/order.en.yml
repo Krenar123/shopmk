@@ -1,0 +1,17 @@
+en:
+  orders:
+    order:
+      estimated_delivery: "Estimated Delivery"
+      enjoy: "Enjoy"
+      cancel: "Cancel"
+      delivered: "has delivered your order"
+      accepting: "is accepting your order"
+      preparing: "is preparing your order"
+      delivering: "is delivering your order"
+      delivered_paragraph: "Your order's delivered"
+      delivering_paragraph: "Your order's on track to be delivered on time"
+      delivery: "Delivery address"
+      order: "Order details"
+      go_back: "Go back"
+      your_orders: "Your orders"
+      click_order: "Click on order to see the details"

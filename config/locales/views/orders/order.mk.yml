@@ -1,0 +1,17 @@
+mk:
+  orders:
+    order:
+      estimated_delivery: "Проценета Испорака"
+      enjoy: "Уживајте во храната"
+      cancel: "Cancel"
+      delivered: "ја достави вашата нарачка"
+      accepting: "ја прифаќа вашата нарачка"
+      preparing: "ја подготвува вашата нарачка"
+      delivering: "ја доставува вашата нарачка"
+      delivered_paragraph: "Вашата нарачка е испорачана"
+      delivering_paragraph: "Вашата нарачка е на пат да биде доставена навреме"
+      delivery: "Адреса на доставување"
+      order: "Детали за нарачка"
+      go_back: "Врати се назад"
+      your_orders: "Вашите нарачки"
+      click_order: "Кликнете на нарачката за да ги видите деталите"

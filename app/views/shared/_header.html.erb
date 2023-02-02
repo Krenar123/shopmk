@@ -5,16 +5,18 @@
         <%= image_tag("logo_hero.png",size:"150x150")%>
       </p>
     </a>
-    <div class="field" style="margin: 0px;">
-      <div class="control">
-        <p class="control has-icons-left has-icons-right is-hidden-mobile ">
-          <input class="input" type="email" placeholder="<%= t('.search') %>">
-          <span class="icon is-small is-left">
-            <i class="fas fa-search"></i>
-          </span>
-        </p>
+    <% if !content_for?(:pages_index) %>
+      <div class="field" style="margin: 0px;">
+        <div class="control">
+          <p class="control has-icons-left has-icons-right is-hidden-mobile ">
+            <input class="input" type="email" placeholder="<%= t('.search') %>">
+            <span class="icon is-small is-left">
+              <i class="fas fa-search"></i>
+            </span>
+          </p>
+        </div>
       </div>
-    </div>
+    <% end %>
     <div class="is-flex" id="mobile-width">
       <div id="cart-details">
         <% if @current_cart.present? && @current_cart.line_items.present? %>

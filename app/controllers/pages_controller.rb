@@ -15,7 +15,7 @@ class PagesController < ApplicationController
   private
 
   def get_categories
-    @main_category = Category.find_or_create_by(name: 'Home')
+    @main_category = Category.find_or_create_by(name: 'Home', icon: 'fa-solid fa-home')
 
     category = params[:reference].present? ? params[:reference] : @main_category.reference
     @category = Category.find_by(reference: category)

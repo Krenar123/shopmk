@@ -4,7 +4,7 @@
       <div class="hero-body" style="padding-top: 4rem; padding-bottom: 12px;">
         <div class="columns is-mobile">
           <div class="column is-three-fifths is-offset-one-fifth has-background-white p-6 non-padding-mobile-less-then-450px" style="padding-bottom:1.5rem!important; border-top-left-radius:8px; border-top-right-radius:8px;">
-            <p class="subtitle is-3 m-0" id="heading-delivery"> Estimated Delivery </p>
+            <p class="subtitle is-3 m-0" id="heading-delivery"><%= t('orders.order.estimated_delivery') %> </p>
             <div class="is-flex  is-justify-content-space-between mt-4" id="whole-content-img">
               <div class="title is-1 "id="delivery-time" ><%= @delivery.created_at.strftime("%H:%M") %> - <%= (@delivery.created_at + 30.minutes).strftime("%H:%M") %></div>
               <i class="fa fa-shopping-bag has-text-danger fa-5x shopping-icon-size-mobile" style="margin-top:-15px" aria-hidden="true"></i>
@@ -26,19 +26,19 @@
               <div <% if @delivery.delivered? %>id="delivery-being-active"<% end %> class="steps-width <% if @delivery.status.nil? || @delivery.accepted? || @delivery.prepared? %>delivery-not-active<% elsif @delivery.delivered? %>delivery-being-active<% else %>delivery-active<% end %>" style="width:80px; height:5px;"></div>
             </div>
             <div class="is-flex is-justify-content-space-between">
-              <span class="subtitle is-4 m-0" id= "delivery-men"><% if @delivery.paid? %>Enjoy :)<% else %><%= @rider.name %> is <% if @delivery.delivered? %>delivered<% else %><% if @delivery.status.nil? %>accepting<% elsif @delivery.accepted? %>preparing<% elsif @delivery.prepared? %>delivering<% end %> your order<% end %><% end %> </span><i class="fa fa-arrow-up fa-xl has-text-danger vertical-sign" aria-hidden="true"></i>
+              <span class="subtitle is-4 m-0" id= "delivery-men"><% if @delivery.paid? %><%= t('orders.order.enjoy') %> :)<% else %><%= @rider.name %> <% if @delivery.delivered? %><%= t('orders.order.delivered') %><% else %><% if @delivery.status.nil? %><%= t('orders.order.accepting') %><% elsif @delivery.accepted? %><%= t('orders.order.preparing') %><% elsif @delivery.prepared? %><%= t('orders.order.delivering') %><% end %><% end %><% end %> </span><i class="fa fa-arrow-up fa-xl has-text-danger vertical-sign" aria-hidden="true"></i>
             </div>
             <hr />
-            <p class="subtitle is-6 order-track"><% if @delivery.delivered? || @delivery.paid? %>Your order's delivered<% else %>Your order's on track to be delivered on time.<% end %></p>
+            <p class="subtitle is-6 order-track"><% if @delivery.delivered? || @delivery.paid? %><%= t('orders.order.delivered_paragraph') %><% else %><%= t('orders.order.delivering_paragraph') %><% end %></p>
           </div>
           <div class="column is-three-fifths is-offset-one-fifth p-6 non-padding-mobile-less-then-450px-second" >
-            <div class="subtitle is-4 subtitle-ajdusted"> Delivery </div>
+            <div class="subtitle is-4 subtitle-ajdusted"><%= t('orders.order.delivery') %></div>
             <div class="is-flex is-align-items-center">
               <i class="fa fa-map-marker fa-xs" style="font-size: 16px; margin-right: 10px;" aria-hidden="true"></i>
               <p><%= @order.address %></p>
             </div>
             <div class=" mt-5">
-              <span class="subtitle is-4 subtitle-ajdusted"> Order details</span>
+              <span class="subtitle is-4 subtitle-ajdusted"><%= t('orders.order.order') %></span>
               <hr>
             </div>
             <div class="is-flex">
@@ -51,11 +51,11 @@
               <div class="is-flex">
                 <span class="subtitle is-5 order-quantity  has-text-grey"><%= line_item.quantity %> x</span>
                 <div class="ml-5 is-flex is-flex-direction-column mt-1  customer-name"> <span class="subtitle is-6 order-name" style="margin:0 !important;"><%= line_item.proion.title %> - <%= line_item.proion.description %></span>
-                  <span class="mt-5 subtitle is-7 has-text-grey-light order-type"style="margin:0 !important;"><%= line_item.proion.price %></span> </div>
+                  <span class="mt-5 subtitle is-7 has-text-grey-light order-type"style="margin:0 !important;"><%= line_item.proion.price %> <span class="currency"><%= t('.den') %></span></span> </div>
               </div>
               <hr>
             <% end %>
-            <a class="receipt-text has-text-danger" href="<%= shop_path(locale: I18n.locale) %>" class="card-footer-item"><%= t('.go_back') %></a>
+            <a class="receipt-text has-text-danger" href="<%= shop_path(locale: I18n.locale) %>" class="card-footer-item"><%= t('orders.order.go_back') %></a>
           </div>
         </div>
       </div>
