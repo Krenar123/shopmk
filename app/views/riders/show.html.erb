@@ -14,8 +14,8 @@
                     <%= delivery.order.phone %>
                 </td>
                 <td>
-                    <%= form_with model: delivery, id: "delivery-status-form" do |form| %>
-                        <select name="delivery[status]" id="delivery_status" data-controller="delivery" data-delivery-update-url="<%= delivery_path(delivery) %>" data-action="change->delivery#updateStatus">
+                    <%= form_with model: delivery, id: "delivery-status-form-#{delivery.id}" do |form| %>
+                        <select name="delivery[status]" id="delivery_status" data-controller="delivery" data-delivery-del-ref="<%= delivery.id %>" data-delivery-update-url="<%= delivery_path(delivery) %>" data-action="change->delivery#updateStatus">
                             <option selected="selected" value="">Select</option>
                             <% Delivery.statuses.keys.each do |status| %>
                                 <option value="<%= status %>" <% if  status == delivery.status %> selected <% end %>><%= status.capitalize %></option>

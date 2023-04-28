@@ -4,17 +4,18 @@
 <div class="columns is-flex " >
   <div class="column is-12">
     <div id="card-item-product" class = "is-flex is-flex-direction-column " >
-      <div class="product-image is-flex is-align-center is-justify-content-center"style="position:relative">
-        <span class="is-flex is-align-items-center is-justify-content-center"><% if eikona.present? %><%= image_tag(proion.eikonas.find_by(thumbnail: "true").path_ref, :size => "80x80",style:"margin:0 auto;") %><% else %><%= image_tag("domestos.png", :size => "80x80",style:"margin:0 auto;") %><% end %></span>
-        <a href="#" data-controller="add-to-cart" data-add-to-cart-load-path="<%= line_items_path(:product_id => proion.id) %>" data-action="click->add-to-cart#fillCart">
-          <%= image_tag("plus-svgrepo-com.svg", :size => "80x80", :class => "add-icon") %>
-          <%# <i class="fa fa-plus add-icon" style="position:absolute; top: 5px; left: 5px;" aria-hidden="true"></i> %>
-        </a>
-      </div>
+      <a href="#" class=""  data-controller="product" data-product-load-path="<%= proion_path(locale: I18n.locale, id: proion) %>" data-action="click->product#getProduct" data-product-id="<%= proion.id %>">
+        <div class="product-image is-flex is-align-center is-justify-content-center"style="position:relative">
+          <span class="is-flex is-align-items-center is-justify-content-center"><% if eikona.present? %><%= image_tag(proion.eikonas.find_by(thumbnail: "true").path_ref, :size => "80x80",style:"margin:0 auto;") %><% else %><%= image_tag("domestos.png", :size => "80x80",style:"margin:0 auto;") %><% end %></span>
+          <a href="#" data-controller="add-to-cart" data-add-to-cart-load-path="<%= line_items_path(:product_id => proion.id) %>" data-action="click->add-to-cart#fillCart" style="z-index: 999;">
+            <%= image_tag("plus-svgrepo-com.svg", :size => "80x80", :class => "add-icon") %>
+          </a>
+        </div>
+      </a>
       <div class="has-text-left">
         <p style="margin-top: 5px;"><span class="subtitle is-9"><%= proion.price %> <span class="currency"><%= t('carts.cart_nav.den') %></span></span></p>
-        <span style="position: relative; top: -5px;" class="subtitle is-9 is-bold is-black">
-          <a href="#" class="subtitle is-9 has-text-weight-medium"  data-controller="product" data-product-load-path="<%= proion_path(proion) %>" data-action="click->product#getProduct" data-product-id="<%= proion.id %>" ><%= proion.title %></a>
+        <span style="position: relative; top: -5px; font-weight: 700;" class="subtitle is-9 is-bold is-black">
+          <%= proion.title %>
         </span>
         <p><span class="subtitle is-7"><%= proion.price %> <span class="currency"><%= t('carts.cart_nav.den') %></span> / <%=  proion.size %> </span></p>
       </div>

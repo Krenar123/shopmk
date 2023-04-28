@@ -42,7 +42,7 @@
                 <% if current_user.present? %>
                   <hr style="margin: 1em 0;">
                   <div class="is-flex">
-                    <a class="is-link" href="/orders" style="color: #022855; font-weight: 600; padding-left: 0px;"><%= t('.orders') %></a>
+                    <a class="is-link" href="<%= orders_path(locale: I18n.locale) %>" style="color: #022855; font-weight: 600; padding-left: 0px;"><%= t('.orders') %></a>
                   </div>
                 <% end %>
                 <hr style="margin: 1em 0;">

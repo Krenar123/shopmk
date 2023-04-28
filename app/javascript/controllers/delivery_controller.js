@@ -9,13 +9,13 @@ export default class extends Controller {
     
   }
 
-  updateStatus() {
+  updateStatus(event) {
     console.log("Delivery status");
 
     let updateDeliveryPath = this.data.get("update-url");
-    const deliveryForm = document.getElementById("delivery-status-form");
-
-    console.log(updateDeliveryPath);
+    let updateDeliveryRef = this.data.get("del-ref");
+    
+    const deliveryForm = document.getElementById("delivery-status-form-".concat(updateDeliveryRef));
     // I have to show loading here while waiting
     var formData = new FormData(deliveryForm)
 

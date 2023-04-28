@@ -1,5 +1,8 @@
-import { Controller } from "stimulus"
+import { Controller } from "@hotwired/stimulus";
+// Import UJS so we can access the Rails.ajax method
+import Rails from "@rails/ujs";
 
+// Connects to data-controller="product"
 export default class extends Controller {
   static targets = ["product"]
 
@@ -7,11 +10,12 @@ export default class extends Controller {
     console.log("Product controller connected")
   }
 
-  getProduct(event) {
+  getProduct(e) {
     let productLoadPath = this.data.get("load-path");
-    let productId = event.currentTarget.dataset.id;
+    let productId = this.data.get("id");
     const productDetails = document.getElementById("category-details");
 
+    console.log(productId);
     console.log(productLoadPath);
     
     productDetails.style.display = "none";
@@ -20,7 +24,7 @@ export default class extends Controller {
       document.getElementById("loader-4").style.display = "none";
 
       Rails.ajax({
-          type: "post",
+          type: "get",
           dataType: "json",
           url: productLoadPath,
           data: `reference=${productId}`,
