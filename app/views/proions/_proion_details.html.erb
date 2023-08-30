@@ -27,6 +27,7 @@
       <p class="subtitle-adjusted" style="font-weight: 500;"><span class="subtitle-adjusted is-7"><%= proion.price %> <span class="currency"><%= t('carts.cart_nav.den') %></span> / <%=  proion.size %> </span></p>
       <p class="subtitle mt-6"><%= t('proions.proion.proion_information') %></p>
       <p class="subtitle is-6"><%= proion.long_description %></p>
+      <a class="button is-danger" data-controller="add-to-cart" data-add-to-cart-load-path="<%= line_items_path(:product_id => proion.id) %>" data-action="click->add-to-cart#fillCart"><%= t('proions.proion.add_item') %></a>
     </div>
   </div>
 </div>

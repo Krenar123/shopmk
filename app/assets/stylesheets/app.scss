@@ -62,21 +62,19 @@ button:active {
 }
 
 @media screen and (min-width: 769px) {
+    .modal,.modal-background{
+        position:absolute;
+        right:2.2rem;
+        top:120px;
+    }
+
     .column.is-2_5,
     .column.is-2_5-tablet {
         flex: none;
         width: 20%;
         position: fixed;
     }
-    .modal-background {
-        position: absolute;
-        right: 0px;
-        left: 0;
-        top: 95px;
-        right: 0;
-        z-index: 11;
-        height: 1000%;
-    }
+    
     #modal-background {
         display: none;
     }
@@ -87,6 +85,7 @@ button:active {
         width: 360px;
         position: relative;
     }
+    
     #modal-arrow {
         color: white;
         position: absolute;
@@ -123,6 +122,13 @@ button:active {
     #modal-arrow {
         display: none;
     }
+    #modal-background {
+        display: none;
+    }
+    .modal{
+        position: fixed;
+        width: 100%;
+    }
 
     .is-flex-direction-mobile-desktop {
         flex-direction: column;
@@ -136,6 +142,12 @@ button:active {
 
     .carousel {
         height: 320px!important;
+    }
+
+    .price-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -161,9 +173,6 @@ button:active {
     background: white;
 }
 
-.modal-card-title {
-    color: white;
-}
 
 a.disabled {
     pointer-events: none;
@@ -283,6 +292,18 @@ body {
 .dropdown-menu {
     left: -180px;
 }
+.modal-background {
+    position: absolute;
+    right: 0px;
+    left: 0;
+    top: 95px;
+    right: 0;
+    z-index: 11;
+    height: 1000%;
+}
+.modal-card {
+    margin: 0px;
+}
 
 @media only screen and (max-width: 768px) {
     #delivery-price {
@@ -294,7 +315,7 @@ body {
         float: right;
     }
     .card-nav-mt-mobile {
-        margin-top: 0.3rem;
+        display: none!important;
     }
     .font-size-subtotal-mobile {
         font-size: 12px;
@@ -307,9 +328,9 @@ body {
     }
     #mobile-width {
         position: fixed;
-        bottom: 45px;
-        left: 5%;
-        width: 100%;
+        bottom: 48px;
+        right: 10%;
+        width: 15%;
     }
     #mobile-width-cart-nav {
         width: 100%;
