@@ -1,7 +1,7 @@
 <div class="is-hidden-mobile">
   <div class="column">
     <h4 class="home-title"><%= t('.navigation') %></h4>
-    <a href="#" data-controller="render-category" data-render-category-load-path="/navigate-category" data-action="click->render-category#loadSubCategories" data-reference="<%= @main_category.reference %>">
+    <a href="#" data-controller="render-category" data-render-category-load-path="/<%= I18n.locale %>/navigate-category" data-action="click->render-category#loadSubCategories" data-reference="<%= @main_category.reference %>">
       <div class="is-flex mt-2 is-align-items-center">
         <i style="width: 25px;"  class="has-text-black-bis <%= @main_category.icon %>"></i>
         <p class="ml-2 paragraph-icons has-text-black-bis"><%= t('.home') %></p>
@@ -21,7 +21,7 @@
   <div class="column">
     <h4>CATEGORIES</h4>
     <div class="is-flex is-multiline is-fullwidth is-scrollable">
-      <a href="#" data-controller="render-category" data-render-category-load-path="/navigate-category" data-action="click->render-category#loadSubCategories" data-reference="<%= @main_category.reference %>" class="mr-4">
+      <a href="#" data-controller="render-category" data-render-category-load-path="/<%= I18n.locale %>/navigate-category" data-action="click->render-category#loadSubCategories" data-reference="<%= @main_category.reference %>" class="mr-4">
         <div class="card">
           <div class="product-image is-flex is-flex-direction-column is-align-center is-justify-content-center"style="position:relative">
             <p class="card-category"><%= @main_category.name %></p>

@@ -10,6 +10,7 @@ import "@fortawesome/fontawesome-free/js/all";
 import "channels"
 import '../styles'
 import './add_jquery'
+import './carousel'
 
 Rails.start()
 Turbolinks.start()

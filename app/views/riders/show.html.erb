@@ -4,6 +4,7 @@
             <th>Delivery Address</th>
             <th>Delivery Phone Contact</th>
             <th>Delivery Status</th>
+            <th>Delivery Created</th>
         </tr>
         <% @rider.deliveries.each do |delivery| %>
             <tr data-controller="delivery">
@@ -22,6 +23,9 @@
                             <% end %>
                         </select>
                     <% end %>
+                </td>
+                <td>
+                    <%= delivery.order.created_at %>
                 </td>
             </tr>
         <% end %>

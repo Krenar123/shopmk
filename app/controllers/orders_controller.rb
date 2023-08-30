@@ -6,7 +6,7 @@ class OrdersController < ApplicationController
 
   def index
     @user_location = UserLocation.find_by(user: @current_user)
-    @orders = Order.where(user_location_id: @user_location.id) if @user_location.present?
+    @orders = Order.where(user_location_id: @user_location.id).order(created_at: :desc) if @user_location.present?
     @rider = Rider.all.last
   end
 

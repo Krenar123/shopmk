@@ -1,24 +1,32 @@
 <%
     eikona = proion.eikonas.present? && proion.eikonas.find_by(thumbnail: "true").present? ? proion.eikonas.find_by(thumbnail: "true") : ""
 %>
-<div class="columns is-flex">
-  Details
-  <div class="column is-12">
-    <div id="card-item-product" class = "is-flex is-flex-direction-column " >
-      <div class="product-image is-flex is-align-center is-justify-content-center"style="position:relative">
-        <span class="is-flex is-align-items-center is-justify-content-center"><% if eikona.present? %><%= image_tag(proion.eikonas.find_by(thumbnail: "true").path_ref, :size => "80x80",style:"margin:0 auto;") %><% else %><%= image_tag("domestos.png", :size => "80x80",style:"margin:0 auto;") %><% end %></span>
-        <a href="#" data-controller="add-to-cart" data-add-to-cart-load-path="<%= line_items_path(:product_id => proion.id) %>" data-action="click->add-to-cart#fillCart">
-          <%= image_tag("plus-svgrepo-com.svg", :size => "80x80", :class => "add-icon") %>
-          <%# <i class="fa fa-plus add-icon" style="position:absolute; top: 5px; left: 5px;" aria-hidden="true"></i> %>
-        </a>
+<div class="column is-12 is-flex is-flex-direction-mobile-desktop">
+  <div class="column is-6">
+    <div class="carousel carousel-animated carousel-animate-fade" data-autoplay="true" data-delay="3000" style="height: 630px;">
+      <div class="carousel-container" style="background: #f5f5f5; border-radius: 8px;">
+        <% proion.eikonas.each do |eikona| %>
+          <div class="carousel-item has-background is-flex <% if eikona.thumbnail == "true" %>is-active<% end %>">
+            <img src="<%= eikona.path_ref %>" alt="Image 1">
+          </div>
+        <% end %>
       </div>
-      <div class="has-text-left">
-        <p style="margin-top: 5px;"><span class="subtitle is-9"><%= proion.price %> <span class="currency"><%= t('carts.cart_nav.den') %></span></span></p>
-        <span style="position: relative; top: -5px;" class="subtitle is-9 is-bold is-black">
-          <a href="#" class="subtitle is-9 has-text-weight-medium" data-controller="product" data-product-load-path="<%= proion_path(locale: I18n.locale, id: proion) %>" data-action="click->product#getProduct" data-product-id="<%= proion.id %>" ><%= proion.title %></a>
-        </span>
-        <p><span class="subtitle is-7"><%= proion.price %> <span class="currency"><%= t('carts.cart_nav.den') %></span> / <%=  proion.size %> </span></p>
+      <div class="carousel-navigation is-overlay">
+        <div class="carousel-nav-left">
+          <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        </div>
+        <div class="carousel-nav-right">
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </div>
       </div>
+    </div>
+  </div>
+  <div class="column is-6 is-flex">
+    <div class="is-flex is-flex-direction-column">
+      <p class="title"><%= proion.title %></p>
+      <p class="subtitle-adjusted" style="font-weight: 500;"><span class="subtitle-adjusted is-7"><%= proion.price %> <span class="currency"><%= t('carts.cart_nav.den') %></span> / <%=  proion.size %> </span></p>
+      <p class="subtitle mt-6"><%= t('proions.proion.proion_information') %></p>
+      <p class="subtitle is-6"><%= proion.long_description %></p>
     </div>
   </div>
 </div>
