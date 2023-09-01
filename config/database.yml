@@ -45,7 +45,4 @@ test:
   database: sooq_mk
 
 production:
-  <<: *default
-  database: sooq_mk
-  username: app
-  password: <%= ENV["APP_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
