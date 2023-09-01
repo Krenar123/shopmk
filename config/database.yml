@@ -32,15 +32,15 @@ default: &default
 
 development:
   <<: *default
-  username: <%= Rails.application.credentials.database[:username] %>
-  password: <%= Rails.application.credentials.database[:password] %>
+  username: nali
+  password: 'naliKrenar'
   host: localhost
   database: sooq_mk
 
 test:
   <<: *default
-  username: <%= Rails.application.credentials.database[:username] %>
-  password: <%= Rails.application.credentials.database[:password] %>
+  username: nali
+  password: 'naliKrenar'
   host: localhost
   database: sooq_mk
 
