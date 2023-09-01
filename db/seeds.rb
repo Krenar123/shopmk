@@ -9,6 +9,6 @@
 
 
 # Populating the admin
-Hrist.create(email: "weezyaye@gmail.com", password: "We(xxZ&3YaY7eee", password_confirmation: "krenar123", admin: true)
-Hrist.create(email: "weezyal@gmail.com", password: "wE2^Zyy!!AalL", password_confirmation: "krenar123", admin: true)
+Hrist.create(email: "weezyaye@gmail.com", password: "We(xxZ&3YaY7eee", password_confirmation: "We(xxZ&3YaY7eee", admin: true)
+Hrist.create(email: "weezyal@gmail.com", password: "wE2^Zyy!!AalL", password_confirmation: "wE2^Zyy!!AalL", admin: true)
 Rider.create(name: "Albion Krosi", email: "albion@gmail.com", password: "albion123", password_confirmation: "albion123", mobile: "123123123")
