@@ -28,5 +28,6 @@ module Buymk
 
     # Our default locale
     config.i18n.default_locale = :mk
+    config.database_url = ENV['DATABASE_URL']
   end
 end
