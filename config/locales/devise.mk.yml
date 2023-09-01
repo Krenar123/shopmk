@@ -1,0 +1,5 @@
+mk:
+  devise:
+    signups:
+      sign_up: 'Пријавете се'
+      log_in: 'Најави се'

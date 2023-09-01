@@ -19,22 +19,25 @@
       <div class="hero-body" style="padding-top: 12px;">
         <div class="columns is-mobile is-flex-direction-column	">
           <div class="column is-three-fifths is-offset-one-fifth p-6 non-padding-mobile-less-then-450px" style="box-shadow: 1px 3px 14px 0px rgba(5,5,5,0.68);-webkit-box-shadow: 1px 15px 23px -13px rgba(5,5,5,0.68);-moz-box-shadow: 1px 3px 14px 0px rgba(5,5,5,0.68);border-bottom-left-radius:8px; border-bottom-right-radius:8px;">
-            <% @orders.each do |order| %>
-                <%
-                    delivery = order.deliveries.first
-                    delivery_status = delivery.present? && delivery.status.present? ? delivery.status.capitalize : "Accepting"
-                %>
-                <a href="orders/<%= order.id %>">
-                    <div class="p-5 has-background-danger m-3" style="border-radius: 8px; color: white;">
-                        <div class="is-flex is-justify-content-space-between">
-                            <p style="font-weight: 600;"><%= order.address %></p>
-                            <i style="font-size: 24px;" class="fa-solid fa-arrow-right"></i>
-                        </div>
-                        <div>
-                            <p style="font-size: 13px"><%= order.created_at.strftime("%d %B") %> <span style="margin-left: 10px; margin-right: 10px;">●</span> <%= order.total_price %>.00 den <span style="margin-left: 10px; margin-right: 10px;">●</span> <%= delivery_status %></p>
-                        </div>
-                    </div>
-                </a>
+            <% if @orders.present? %>
+              <% @orders.each do |order| %>
+                  <%
+                      delivery = order.deliveries.first
+                      delivery_status = delivery.present? && delivery.status.present? ? delivery.status.capitalize : "Accepting"
+                  %>
+                  <a href="orders/<%= order.id %>">
+                      <div class="p-5 has-background-danger m-3" style="border-radius: 8px; color: white;">
+                          <div class="is-flex is-justify-content-space-between">
+                              <p style="font-weight: 600;"><%= order.address %></p>
+                              <i style="font-size: 24px;" class="fa-solid fa-arrow-right"></i>
+                          </div>
+                          <div>
+                              <p style="font-size: 13px"><%= order.created_at.strftime("%d %B") %> <span style="margin-left: 10px; margin-right: 10px;">●</span> <%= order.total_price %>.00 den <span style="margin-left: 10px; margin-right: 10px;">●</span> <%= delivery_status %></p>
+                          </div>
+                      </div>
+                  </a>
+              <% end %>
+            <% else %>
             <% end %>
             <hr />
             <a class="receipt-text has-text-danger" href="<%= shop_path(locale: I18n.locale) %>" class="card-footer-item"><%= t('orders.order.go_back') %></a>

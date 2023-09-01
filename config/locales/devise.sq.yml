@@ -1,0 +1,5 @@
+sq:
+  devise:
+    singups:
+      sign_up: 'Regjistrohu'
+      log_in: 'Identifikohu'
