@@ -3,7 +3,7 @@ mk:
     order:
       estimated_delivery: "Проценета Испорака"
       enjoy: "Уживајте во храната"
-      cancel: "Cancel"
+      cancel: "Откажи"
       delivered: "ја достави вашата нарачка"
       accepting: "ја прифаќа вашата нарачка"
       preparing: "ја подготвува вашата нарачка"

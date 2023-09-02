@@ -3,6 +3,12 @@ sq:
     cart_checkout:
       cart_details: "Detajet e porosisë"
       address: "Adresa"
+      town: "Qyteti"
+      full_address: "Adresa e plotë"
+      phone_number: "Numri i telefonit"
+      additional_details: "Informacione shtesë"
+      add_more_details_about: "Shto informacione shtesë rreth: hyrjes, katit, numrit të apartamentit..."
+      confirm: "Confirm"
       add_address: "Shtoni adresë"
       total: "Totali"
       order: "Krijoni porosinë"

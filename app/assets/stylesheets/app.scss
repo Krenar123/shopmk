@@ -184,6 +184,12 @@ a.disabled {
     color: grey;
 }
 
+button.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+    color: grey;
+}
+
 .card-footer-item {
     font-weight: 500;
 }

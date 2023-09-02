@@ -15,7 +15,7 @@
                     <p class="client-address has-text-weight-semibold subtitle is-7"><%= truncate(@location.address, length: 20, omission: '...') %></a>
                   <% else %>
                     <% if @current_user.present? %>
-                      <a href="#" data-controller="location" data-action="click->location#openLocation" class="client-address has-text-weight-semibold subtitle is-7	has-text-danger">Add  address</a>
+                      <a href="#" data-controller="location" data-action="click->location#openLocation" class="client-address has-text-weight-semibold subtitle is-7	has-text-danger"><%= t('.add_address') %></a>
                     <% end %>
                   <% end %>
                 </div>

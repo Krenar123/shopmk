@@ -3,6 +3,12 @@ en:
     cart_checkout:
       cart_details: "Cart details"
       address: "Address"
+      town: "Town"
+      full_address: "Full address"
+      phone_number: "Phone number"
+      additional_details: "Additional details"
+      add_more_details_about: "Add more details about: entrance, floor, apartment number..."
+      confirm: "Confirm"
       add_address: "Add address"
       total: "Total"
       order: "Order"

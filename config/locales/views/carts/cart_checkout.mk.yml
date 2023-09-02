@@ -3,6 +3,12 @@ mk:
     cart_checkout:
       cart_details: "Детали за нарачката"
       address: "Адреса"
+      town: "Град"
+      full_address: "Целосна адреса"
+      phone_number: "Телефонски број"
+      additional_details: "Дополнителни информации"
+      add_more_details_about: "Додадете повеќе детали за: влез, кат, број на стан..."
+      confirm: "Потврди"
       add_address: "Додади адреса"
       total: "Вкупно"
       order: "Нарачај"

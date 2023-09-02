@@ -1,28 +1,28 @@
 <div class="columns is-multiline">
-  <div class="column is-8 is-offset-3">
+  <div class="column is-8 is-offset-4">
     <div id="modal-second" class="modal-second <% if show_location.present? %>is-active<% end %>" style="top:150px;">
       <div id="modal-background-second" class="modal-background-second"></div>
       <div class="modal-card-second">
         <header class="modal-card-head-second has-background-danger">
-          <p class="modal-card-title">Address</p>
+          <p class="modal-card-title"><%= t('carts.cart_checkout.address') %></p>
           <a href="#" data-controller="location" data-action="click->location#closeLocation" class="delete" aria-label="close"></a>
         </header>
         <%= form_with model: location, id: "location-form" do |form| %>
           <section class="modal-card-body">
             <div class="field">
-              <label class="label">Town</label>
+              <label class="label"><%= t('carts.cart_checkout.town') %></label>
               <div class="control">
                 <%= form.text_field :neighborhood, class: "input", placeholder: 'Chair...' %>
               </div>
             </div>
             <div class="field">
-              <label class="label">Full address</label>
+              <label class="label"><%= t('carts.cart_checkout.full_address') %></label>
               <div class="control">
                 <%= form.text_field :road, class: "input", placeholder: 'Vukovarska 5/1...' %>
               </div>
             </div>
             <div class="field">
-              <label class="label">Phone number</label>
+              <label class="label"><%= t('carts.cart_checkout.phone_number') %></label>
               <div class="field-body">
                 <div class="field is-expanded">
                   <div class="field has-addons">
@@ -39,8 +39,8 @@
               </div>
             </div>
             <div class="field">
-              <label class="label">Additional details</label>
-              <p style="font-size: 13px;">Add more details about: entrance, floor, apartment number...</p>
+              <label class="label"><%= t('carts.cart_checkout.additional_details') %></label>
+              <p style="font-size: 13px;"><%= t('carts.cart_checkout.add_more_details_about') %></p>
               <div class="control">
                 <%= form.text_area :description, class: "input", placeholder: 'Entrance 2, 4th floor, number 25...' %>
               </div>
@@ -48,8 +48,8 @@
           </section>
           <footer class="modal-card-foot-second">
             <!-- Duhet me bo me javascript controller -->
-            <a class="button is-danger" data-controller="location" data-action="click->location#createLocation">Create</a>
-            <a href="#" data-controller="location" data-action="click->location#closeLocation" class="button is-light ml-2">Cancel</a>
+            <a class="button is-danger" data-controller="location" data-action="click->location#createLocation"><%= t('carts.cart_checkout.confirm') %></a>
+            <a href="#" data-controller="location" data-action="click->location#closeLocation" class="button is-light ml-2"><%= t('carts.cart.cancel') %></a>
           </footer>
         <% end %>
       </div>
