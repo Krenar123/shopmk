@@ -2,7 +2,7 @@
 
 en:
   devise:
-    singups:
+    signups:
       sign_up: 'Sign up'
       log_in: 'Log in'
     confirmations:

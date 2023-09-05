@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  namespace :admin do
+  namespace :sooqadministrationmembers do
     resources :hrists
     resources :eikonas
     resources :proions
@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     resources :deliveries
     resources :tags
     resources :tagged_products
+    resources :users
+    resources :user_locations
 
     root to: 'hrists#index'
   end

@@ -6,7 +6,7 @@
 #
 # If you want to add pagination or other controller-level concerns,
 # you're free to overwrite the RESTful controller actions.
-module Admin
+module Sooqadministrationmembers
   class ApplicationController < Administrate::ApplicationController
     include AuthenticateAdmin
     before_action :authenticate_admin!
