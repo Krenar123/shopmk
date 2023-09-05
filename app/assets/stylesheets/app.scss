@@ -24,7 +24,7 @@
 }
 
 body {
-    min-height: 97vh;
+    overflow: hidden;
 }
 
 #download-images {
@@ -64,7 +64,11 @@ button:active {
     padding: 1.7rem 3rem;
     padding-right: 0;
 }
-
+@media screen and (min-width: 950px){
+    body {
+        min-height: 97vh;
+    }
+}
 @media screen and (min-width: 769px) {
     .modal,.modal-background{
         position:absolute;
@@ -112,6 +116,9 @@ button:active {
     }
     .carousel {
         height: 630px!important;
+    }
+    .fa-arrow-right { 
+        font-size: 24px;
     }
 }
 
@@ -314,7 +321,14 @@ body {
 .modal-card {
     margin: 0px;
 }
-
+@media only screen and (max-width: 920px) {
+    .modal-second {
+        width: 100%;
+    }
+    .modal-card-second {
+        margin: 0px;
+    }
+}
 @media only screen and (max-width: 768px) {
     #delivery-price {
         font-size: 8px;
@@ -381,6 +395,20 @@ body {
     .order-track {
         font-size: 0.7rem;
     }
+    .smaller-padding-mobile {
+        padding: 20px !important;
+    }
+    .order-section-mobile {
+        padding: 9px!important;
+        margin: 0px!important;
+    }
+    .order-section-mobile > div > p {
+        font-size: 9px;
+    }
+
+    .fa-arrow-right { 
+        font-size: 16px;
+    }
     .non-padding-mobile-less-then-450px-second {
         padding-left: 0px !important;
         padding-right: 0px !important;
@@ -403,6 +431,25 @@ body {
     }
     .receipt-text {
         font-size: 1.1rem !important;
+    }
+
+    .modal-second {
+        top: 60px!important;
+    }
+
+    .m-0-mobile {
+        margin: 0px!important;
+    }
+    .font-mobile {
+        font-size: 12px;
+    }
+
+    .is-full-touch {
+        padding: 0px;
+    }
+
+    .columns-margin-mobile {
+        margin: 0px;
     }
 }
 

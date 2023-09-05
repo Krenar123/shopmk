@@ -1,7 +1,7 @@
 <div class="hero is-medium">
     <div class="hero-body">
-        <div class="columns is-mobile">
-            <div class="column is-three-fifths is-offset-one-fifth">
+        <div class="columns columns-margin-mobile is-mobile">
+            <div class="column is-three-fifths-desktop is-full-touch m-0-mobile is-offset-one-fifth">
                 <%= form_with model: @order, id: "order-form" do |form| %>
                     <div class="card">
                         <header class="card-header">
@@ -25,7 +25,7 @@
                                             <% end %>
                                         </div>
                                     </div>
-                                    <a href="#" data-controller="location" data-action="click->location#openLocation"><%= t('.add_address') %></a>
+                                    <a href="#" class="font-mobile" data-controller="location" data-action="click->location#openLocation"><%= t('.add_address') %></a>
                                 </span>
                             </div>
                             <hr />
