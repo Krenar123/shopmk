@@ -2,3 +2,4 @@
 import "@fortawesome/fontawesome-free"
 import "controllers"
 import './packs/carousel'
+import './packs/dropdown'

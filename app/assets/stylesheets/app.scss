@@ -120,6 +120,15 @@ button:active {
     .fa-arrow-right { 
         font-size: 24px;
     }
+
+    .dropdown-menu {
+        right: 50px;
+        min-width: 12rem;
+        padding-top: 2px;
+        position: absolute;
+        top: 100%;
+        z-index: 20;
+    }
 }
 
 @media screen and (max-width: 769px) {
@@ -306,9 +315,6 @@ body {
     cursor: pointer;
 }
 
-.dropdown-menu {
-    left: -180px;
-}
 .modal-background {
     position: absolute;
     right: 0px;
@@ -352,7 +358,7 @@ body {
     }
     #mobile-width {
         position: fixed;
-        bottom: 48px;
+        bottom: 100px;
         right: 10%;
         width: 15%;
     }
@@ -450,6 +456,15 @@ body {
 
     .columns-margin-mobile {
         margin: 0px;
+    }
+
+    .dropdown-menu {
+        right: 0px;
+        min-width: 12rem;
+        padding-top: 10px;
+        position: absolute;
+        top: 100%;
+        z-index: 20;
     }
 }
 
