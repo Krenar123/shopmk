@@ -15,7 +15,8 @@ class EikonaDashboard < Administrate::BaseDashboard
     path_ref: Field::String,
     thumbnail: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime
+    updated_at: Field::DateTime,
+    image: Field::ActiveStorage,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -27,6 +28,7 @@ class EikonaDashboard < Administrate::BaseDashboard
     proion
     id
     path_ref
+    image
     thumbnail
     created_at
   ].freeze
@@ -48,6 +50,7 @@ class EikonaDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     proion
     path_ref
+    image
     thumbnail
   ].freeze
 

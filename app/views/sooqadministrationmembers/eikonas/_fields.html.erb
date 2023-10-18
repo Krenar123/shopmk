@@ -1,0 +1,11 @@
+<!-- app/views/admin/eikonas/_fields.html.erb -->
+<div class="nested-form-wrapper" data-new-record="<%= f.object.new_record? %>">
+  <%= f.label :thumbnail %>
+  <%= f.text_field :thumbnail %>
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+
+  <button type="button" data-action="nested-form#remove">Remove image</button>
+
+  <%= f.hidden_field :_destroy %>
+</div>

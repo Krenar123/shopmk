@@ -7,6 +7,9 @@ module Sooqadministrationmembers
     #
     def new
       @tags = Tag.all
+      @proion = Proion.new # Create a new Proion object
+      3.times { @proion.eikonas.build } # Build associated Eikona objects
+    
       super
     end
 
@@ -81,7 +84,8 @@ module Sooqadministrationmembers
         :protein,
         :salt,
         :sugar,
-        :tag_names
+        :tag_names,
+        eikonas_attributes: [:id, :_destroy, :path_ref, :thumbnail, :image]
       )
     end
 

@@ -16,6 +16,8 @@ gem 'sprockets-rails'
 
 gem 'pg'
 
+gem 'administrate-field-active_storage', '~> 0.4.2'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 
@@ -56,6 +58,7 @@ gem 'administrate'
 
 gem 'devise'
 
+gem 'image_processing', '~> 1.2'
 gem "aws-sdk-s3", require: false
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -91,4 +94,4 @@ group :test do
 end
 
 gem 'byebug', '~> 11.1', groups: %i[development test]
-gem "aws-sdk-s3", require: false
+

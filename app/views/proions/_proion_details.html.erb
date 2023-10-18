@@ -7,7 +7,7 @@
       <div class="carousel-container" style="background: #f5f5f5; border-radius: 8px;">
         <% proion.eikonas.each do |eikona| %>
           <div class="carousel-item has-background is-flex <% if eikona.thumbnail == "true" %>is-active<% end %>">
-            <img src="<%= eikona.path_ref %>" alt="Image 1">
+            <img src="<%= url_for(eikona.image) %>" alt="Image 1">
           </div>
         <% end %>
       </div>

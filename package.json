@@ -12,6 +12,7 @@
     "moment": "^2.29.4",
     "npm-upgrade": "^3.1.0",
     "sass": "^1.54.4",
+    "stimulus-rails-nested-form": "^4.1.0",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",

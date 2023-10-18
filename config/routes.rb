@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   namespace :sooqadministrationmembers do
     resources :hrists
     resources :eikonas
-    resources :proions
+    resources :proions do
+      resources :eikonas, shallow: true
+    end
     resources :categories
     resources :orders
     resources :riders

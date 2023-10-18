@@ -5,6 +5,7 @@ class Proion < ApplicationRecord
 
   belongs_to :category, optional: true
   has_many :eikonas
+  accepts_nested_attributes_for :eikonas, reject_if: :all_blank, allow_destroy: true
   has_many :tagged_products, dependent: :delete_all
   has_many :tags, through: :tagged_products
 

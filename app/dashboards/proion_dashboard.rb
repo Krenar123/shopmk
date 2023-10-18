@@ -27,7 +27,8 @@ class ProionDashboard < Administrate::BaseDashboard
     protein: Field::String,
     salt: Field::String,
     sugar: Field::String,
-    category: Field::BelongsTo
+    category: Field::BelongsTo,
+    eikonas: Field::HasMany
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -38,6 +39,7 @@ class ProionDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     title
+    eikonas
     price
     category
   ].freeze
@@ -48,6 +50,7 @@ class ProionDashboard < Administrate::BaseDashboard
     id
     title
     description
+    eikonas
     price
     size
     category
@@ -82,6 +85,7 @@ class ProionDashboard < Administrate::BaseDashboard
     protein
     salt
     sugar
+    eikonas
   ].freeze
 
   # COLLECTION_FILTERS
