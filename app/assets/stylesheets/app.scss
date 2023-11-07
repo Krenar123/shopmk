@@ -172,7 +172,7 @@ button:active {
 }
 
 .modal-second {
-    top: 150px;
+    top: 45px;
     overflow: visible;
 }
 
@@ -222,6 +222,7 @@ button.disabled {
 .product-image {
     background-color: #f3f2f0;
     width: 130px;
+    min-height: 100px;
     border-radius: 7%;
 }
 
@@ -333,6 +334,7 @@ body {
     }
     .modal-card-second {
         margin: 0px;
+        overflow: visible!important;
     }
 }
 @media only screen and (max-width: 768px) {
@@ -382,6 +384,9 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
+    #category-details {
+        margin-left: -1.5rem;
+    }
     #heading-delivery {
         font-size: 1.2em;
     }
@@ -440,7 +445,7 @@ body {
     }
 
     .modal-second {
-        top: 60px!important;
+        top: 0px!important;
     }
 
     .m-0-mobile {
@@ -798,3 +803,17 @@ img {vertical-align: middle;}
   .prev, .next,.text {font-size: 11px}
 }
 
+
+.is-scrollable {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+    margin-right: -0.75rem;
+    width: 150%;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.is-scrollable::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}

@@ -1,6 +1,6 @@
 <div class="columns columns-margin-mobile is-multiline">
   <div class="column is-8-desktop is-full-touch is-offset-4">
-    <div id="modal-second" class="modal-second <% if show_location.present? %>is-active<% end %>" style="top:150px;">
+    <div id="modal-second" class="modal-second <% if show_location.present? %>is-active<% end %>" style="top:45px;">
       <div id="modal-background-second" class="modal-background-second"></div>
       <div class="modal-card-second">
         <header class="modal-card-head-second has-background-danger">
@@ -44,6 +44,13 @@
               <div class="control">
                 <%= form.text_area :description, class: "input", placeholder: 'Entrance 2, 4th floor, number 25...' %>
               </div>
+            </div>
+            
+            <%= form.hidden_field :longitude, class: "input", id: "longitude" %>
+            <%= form.hidden_field :latitude, class: "input", id: "latitude" %>
+
+            <div data-controller="maps">
+              <div id="map" style="height: 310px; max-width: 600px;"></div>
             </div>
           </section>
           <footer class="modal-card-foot-second">

@@ -15,7 +15,7 @@
       <div class="has-text-left">
         <p style="margin-top: 5px;"><span class="subtitle is-9"><%= proion.price %> <span class="currency"><%= t('carts.cart_nav.den') %></span></span></p>
         <span style="position: relative; top: -5px; font-weight: 700;" class="subtitle is-9 is-bold is-black">
-          <%= proion.title %>
+          <%= truncate(proion.title, length: 16) %>
         </span>
         <p><span class="subtitle is-7"><%= proion.price %> <span class="currency"><%= t('carts.cart_nav.den') %></span> / <%=  proion.size %> </span></p>
       </div>

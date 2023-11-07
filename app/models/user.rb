@@ -8,4 +8,8 @@ class User < ApplicationRecord
 
   has_many :user_locations, dependent: :delete_all
   has_many :locations, through: :user_locations
+  
+  def self.find_or_create_guest(ip_address)
+    find_or_create_by(ip_address: ip_address)
+  end
 end

@@ -25,5 +25,13 @@ module Users
     # def configure_sign_in_params
     #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
     # end
+
+    def continue_as_guest
+      ip_address = request.remote_ip
+      user = User.find_or_create_guest(ip_address)
+  
+      sign_in(user)
+      redirect_to root_path, notice: "Signed in as a guest."
+    end
   end
 end

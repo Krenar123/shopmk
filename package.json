@@ -6,6 +6,7 @@
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
+    "@turf/turf": "^6.5.0",
     "bulma": "^0.9.3",
     "bulma-carousel": "^3.0.0",
     "jquery": "^3.6.0",

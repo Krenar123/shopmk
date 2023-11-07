@@ -16,3 +16,5 @@ pin '@hotwired/stimulus-loading', to: 'stimulus-loading.js', preload: true
 pin '@rails/ujs', to: 'https://ga.jspm.io/npm:@rails/ujs@7.0.3-1/lib/assets/compiled/rails-ujs.js'
 pin_all_from 'app/javascript/controllers', under: 'controllers'
 pin_all_from 'app/javascript/customs', under: 'customs', preload: true
+pin "leaflet", to: "https://ga.jspm.io/npm:leaflet@1.9.4/dist/leaflet-src.js"
+pin "leaflet-css", to: "https://ga.jspm.io/npm:leaflet-css@0.1.0/dist/leaflet.css.min.js"

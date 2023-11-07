@@ -18,7 +18,7 @@ class LocationsController < ApplicationController
   private
 
   def location_params
-    params.permit(:city, :neighborhood, :road, :description, :phone)
+    params.permit(:city, :neighborhood, :road, :description, :phone, :latitude, :longitude)
   end
 
   def create_user_location

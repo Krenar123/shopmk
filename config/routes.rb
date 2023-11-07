@@ -31,6 +31,10 @@ Rails.application.routes.draw do
       sessions: 'riders/sessions'
     }
 
+    devise_scope :user do
+      post 'users/continue_as_guest', to: 'users/sessions#continue_as_guest', as: 'continue_as_guest'
+    end
+
     get 'riders/:id' => 'riders#show', as: 'rider'
 
 

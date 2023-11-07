@@ -1,4 +1,16 @@
-<div class="columns is-mobile is-flex-direction-column mb-6">
+<div class="is-hidden-mobile">
+  <div class="column">
     <h3 class="subtitle mb-4"><%= subcategory.name %></h3>
-    <%= render subcategory.proions %>
+    <div class="is-flex is-multiline is-fullwidth is-scrollable">
+        <%= render subcategory.proions %>
+    </div>
+  </div>
+</div>
+<div class="is-hidden-tablet">
+  <div class="column">
+    <h3 class="subtitle mb-4"><%= subcategory.name %></h3>
+    <div class="is-flex is-multiline is-fullwidth ">
+        <%= render subcategory.proions %>
+    </div>
+  </div>
 </div>
