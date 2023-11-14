@@ -103,28 +103,7 @@ and renders all form fields for a resource's editable attributes.
       </script>
     </div>
   </div>
-  
-  <div class="field-unit field-unit--string field-unit--optional">
-    <div class="field-unit__label">
-  <template data-nested-form-target="template">
-    <%= f.fields_for :eikonas, Eikona.new, child_index: 'NEW_RECORD' do |eikonas_fields| %>
-      <%= render "sooqadministrationmembers/eikonas/fields", f: eikonas_fields %>
-    <% end %>
-  </template>
-  </div>
-  
-  <div class="field-unit__field">
-  <%= f.fields_for :eikonas do |eikonas_fields| %>
-    <%= render "sooqadministrationmembers/eikonas/fields", f: eikonas_fields %>
-  <% end %>
-  <div data-nested-form-target="target"></div>
 
-  <button type="button" data-action="nested-form#add">Add Image</button>
-  </div>
-  </div>
-
-
-  
 
   <div class="form-actions">
     <%= f.submit %>
