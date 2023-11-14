@@ -6,7 +6,13 @@
     <div id="card-item-product" class = "is-flex is-flex-direction-column " >
       <a href="#" class="is-flex"  data-controller="product" data-product-load-path="<%= proion_path(locale: I18n.locale, id: proion) %>" data-action="click->product#getProduct" data-product-id="<%= proion.id %>">
         <div class="product-image is-flex is-align-center is-justify-content-center"style="position:relative">
-          <span class="is-flex is-align-items-center is-justify-content-center"><% if eikona.present? %><%= image_tag(proion.eikonas.find_by(thumbnail: "true").image, :size => "80x80",style:"margin:0 auto;") %><% else %><%= image_tag("domestos.png", :size => "80x80",style:"margin:0 auto;") %><% end %></span>
+          <span class="is-flex is-align-items-center is-justify-content-center">
+            <% if eikona.present? && eikona.respond_to?(:image) && eikona.image.attached? %>
+              <%= image_tag(proion.eikonas.find_by(thumbnail: "true").image, :size => "80x80",style:"margin:0 auto;") %>
+            <% else %>
+              <%= image_tag("domestos.png", :size => "80x80",style:"margin:0 auto;") %>
+            <% end %>
+          </span>
           <a href="#" data-controller="add-to-cart" data-add-to-cart-load-path="<%= line_items_path(:product_id => proion.id) %>" data-action="click->add-to-cart#fillCart" style="z-index: 1;">
             <%= image_tag("plus-svgrepo-com.svg", :size => "80x80", :class => "add-icon") %>
           </a>
