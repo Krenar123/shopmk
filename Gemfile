@@ -15,7 +15,7 @@ gem 'sprockets-rails'
 #gem 'sqlite3', '~> 1.4'
 gem 'pg'
 
-#gem 'administrate-field-active_storage', '~> 0.4.2'
+gem 'administrate-field-active_storage'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
