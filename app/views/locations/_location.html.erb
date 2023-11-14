@@ -1,6 +1,6 @@
-<div class="columns columns-margin-mobile is-multiline">
+<div class="columns columns-margin-mobile is-multiline" <% if show_location.present? %>data-controller="location" data-location-show-location="<%= show_location %>"<% end %>>
   <div class="column is-8-desktop is-full-touch is-offset-4">
-    <div id="modal-second" class="modal-second <% if show_location.present? %>is-active<% end %>" style="top:45px;">
+    <div id="modal-second" class="modal-second" style="top:45px;">
       <div id="modal-background-second" class="modal-background-second"></div>
       <div class="modal-card-second">
         <header class="modal-card-head-second has-background-danger">

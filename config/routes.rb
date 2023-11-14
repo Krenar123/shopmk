@@ -21,6 +21,14 @@ Rails.application.routes.draw do
 
   devise_for :hrists
 
+  namespace :api do
+    namespace :v1 do
+      scope :market do
+        resources :proions, only: [:create]
+      end
+    end
+  end
+
   scope "(:locale)", locale: /mk|sq/ do
     devise_for :users, controllers: {
       registrations: 'users/registrations',

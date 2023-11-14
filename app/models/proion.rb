@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Proion < ApplicationRecord
+  before_save :adjust_price, if: :market_price_changed?
+
   attr_accessor :tag_names
 
   belongs_to :category, optional: true
@@ -44,6 +46,10 @@ class Proion < ApplicationRecord
   end
 
   private
+
+  def adjust_price
+    self.price = "#{market_price.to_i * 1.05}"
+  end
 
   def link_tags!(tag_names)
     return TaggedProduct.where(proion_id: id).destroy_all if tag_names.blank?

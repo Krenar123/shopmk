@@ -25,7 +25,13 @@
         <div class="card">
           <div class="product-image is-flex is-flex-direction-column is-align-center is-justify-content-center"style="position:relative">
             <p class="card-category"><%= @main_category.name %></p>
-            <span class="is-flex"><%= image_tag("domestos.png", :size => "80x80",style:"margin:0 auto;") %></span>
+            <span class="is-flex" style="height: 80px;">
+              <% if @main_category.image.present? %>
+                <%= image_tag(@main_category.image, :size => "80x80",style:"margin:0 auto; object-fit: contain;") %>
+              <% else %>
+                <%= image_tag("domestos.png", :size => "80x80",style:"margin:0 auto; object-fit: contain;") %>
+              <% end %>
+            </span>
             <%# <i class="fa fa-plus add-icon" style="position:absolute; top: 5px; left: 5px;" aria-hidden="true"></i> %>
           </div>
         </div>

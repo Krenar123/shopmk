@@ -31,7 +31,10 @@ module Users
       user = User.find_or_create_guest(ip_address)
   
       sign_in(user)
-      redirect_to root_path, notice: "Signed in as a guest."
+      
+      url_to_redirect = @current_cart.present? ? cart_checkout_path(locale: I18n.locale) : shop_path(locale: I18n.locale)
+      
+      redirect_to url_to_redirect
     end
   end
 end

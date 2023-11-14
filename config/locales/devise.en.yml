@@ -5,6 +5,7 @@ en:
     signups:
       sign_up: 'Sign up'
       log_in: 'Log in'
+      continue_as_guest: 'Continue as guest'
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."

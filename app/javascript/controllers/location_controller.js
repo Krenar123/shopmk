@@ -7,7 +7,10 @@ import L from 'leaflet';
 // Connects to data-controller="locations"
 export default class extends Controller {
   connect() {
-    
+    if (this.data.get('showLocation')) {
+      // Run the action when connected
+      this.openLocation();
+    }
   }
   static targets = [ "locations" ]
 
@@ -16,7 +19,10 @@ export default class extends Controller {
     
     document.getElementById("modal-second").style.display = "block";
     document.getElementById("modal-background-second").style.display = "block";
-    this.initializeMap();
+    const mapContainer = document.getElementById('map');
+    if (!mapContainer) {
+      this.initializeMap(); // Initialize a new map
+    }
   }
 
   closeLocation(e){

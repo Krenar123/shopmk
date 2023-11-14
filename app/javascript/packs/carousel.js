@@ -3,8 +3,7 @@
 
 import './bulma-carousel';
 
-document.addEventListener('DOMContentLoaded', () => {
+//document.addEventListener('DOMContentLoaded', () => {
   // Initialize the carousel
-  
-  bulmaCarousel.attach();
-});
+//  bulmaCarousel.attach();
+//});

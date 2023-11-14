@@ -3,3 +3,4 @@ sq:
     signups:
       sign_up: 'Regjistrohu'
       log_in: 'Identifikohu'
+      continue_as_guest: 'Vazhdoni pa identifikim'

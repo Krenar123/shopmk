@@ -3,3 +3,4 @@ mk:
     signups:
       sign_up: 'Пријавете се'
       log_in: 'Најави се'
+      continue_as_guest: 'Продолзжете без идентификација'

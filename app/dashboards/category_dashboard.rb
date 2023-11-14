@@ -16,7 +16,8 @@ class CategoryDashboard < Administrate::BaseDashboard
     reference: Field::String,
     icon: Field::String,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime
+    updated_at: Field::DateTime,
+    image: Field::ActiveStorage,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -30,6 +31,7 @@ class CategoryDashboard < Administrate::BaseDashboard
     name
     reference
     icon
+    image
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -51,6 +53,7 @@ class CategoryDashboard < Administrate::BaseDashboard
     parent_category
     name
     icon
+    image
   ].freeze
 
   # COLLECTION_FILTERS

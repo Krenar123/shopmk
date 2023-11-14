@@ -3,3 +3,4 @@ mk:
     shop:
       min: "мин"
       open: "ОТВОРЕНО"
+      add_address: "Додади адреса"

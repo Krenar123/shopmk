@@ -222,7 +222,7 @@ button.disabled {
 .product-image {
     background-color: #f3f2f0;
     width: 130px;
-    min-height: 100px;
+    min-height: 125px;
     border-radius: 7%;
 }
 
@@ -351,6 +351,10 @@ body {
     }
     .font-size-subtotal-mobile {
         font-size: 12px;
+    }
+
+    .product-image-category {
+        justify-content: space-around!important;
     }
 }
 

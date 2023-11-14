@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_11_07_222640) do
+ActiveRecord::Schema.define(version: 2023_11_11_232858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -140,6 +140,8 @@ ActiveRecord::Schema.define(version: 2023_11_07_222640) do
     t.string "salt"
     t.string "sugar"
     t.integer "category_id"
+    t.string "market_price"
+    t.string "market_proion_id"
     t.index ["category_id"], name: "index_proions_on_category_id"
   end
 

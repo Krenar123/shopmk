@@ -14,9 +14,6 @@ export default class extends Controller {
     let productLoadPath = this.data.get("load-path");
     let productId = this.data.get("id");
     const productDetails = document.getElementById("category-details");
-
-    console.log(productId);
-    console.log(productLoadPath);
     
     productDetails.style.display = "none";
     document.getElementById("loader-4").style.display = "block";
@@ -29,11 +26,11 @@ export default class extends Controller {
           url: productLoadPath,
           data: `reference=${productId}`,
           success: function(data) {
-              productDetails.innerHTML = data.html;
-              productDetails.style.display = "block";
+            productDetails.innerHTML = data.html;
+            productDetails.style.display = "block";
           },
           error: function(data) {
-              alert("Error: no product match this ID");
+            alert("Error: no product match this ID");
           },
       });
     }, 3000);

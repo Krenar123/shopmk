@@ -35,4 +35,8 @@ class ApplicationController < ActionController::Base
     locale = params[:locale].to_s.strip.to_sym
     I18n.locale = I18n.available_locales.include?(locale) ? locale : I18n.default_locale
   end
+  
+  def after_sign_in_path_for(resource_or_scope)
+    current_cart.present? ? cart_path(current_cart, locale: I18n.locale) : shop_path(locale: I18n.locale)
+  end
 end
