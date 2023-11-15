@@ -22,6 +22,7 @@ export default class extends Controller {
             url: cartLoadPath,
             data: ``,
             success: function(data) {
+                cartDetails.style.display = 'block';
                 cartDetails.innerHTML = data.html;
             },
             error: function(data) {
@@ -66,7 +67,7 @@ export default class extends Controller {
                     ) {
                         totalSecondAmount.innerHTML = data.amount;
                     }
-                    
+
                     if(parseInt(data.amount) >= 1000){
                         proceedToCheckout.classList.remove('disabled-link');
                     }else{
