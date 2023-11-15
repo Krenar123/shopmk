@@ -76,6 +76,8 @@ module Sooqadministrationmembers
         :size,
         :category_id,
         :previous_price,
+        :price_per_size,
+        :market_price,
         :long_description,
         :energy,
         :fat,
