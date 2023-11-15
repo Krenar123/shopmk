@@ -24,6 +24,11 @@ export default class extends Controller {
     const currentIndex = this.currentIndex();
     const newIndex = currentIndex + offset;
 
+    console.log(event.target.dataset);
+    console.log(currentIndex);
+    console.log(newIndex);
+    console.log(offset);
+
     if (newIndex >= carouselItems.length) {
       // If newIndex is beyond the last item, loop back to the first item
       this.showSlide(0);

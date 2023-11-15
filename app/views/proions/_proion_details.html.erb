@@ -1,7 +1,7 @@
 <%
     eikona = proion.eikonas.present? && proion.eikonas.find_by(thumbnail: "true").present? ? proion.eikonas.find_by(thumbnail: "true") : ""
 %>
-<div class="column is-12 is-flex is-flex-direction-mobile-desktop">
+<div id="product-details-section" class="column is-12 is-flex is-flex-direction-mobile-desktop">
   <div class="column is-6">
     <div class="carousel carousel-animated carousel-animate-fade" data-controller="carousel">
       <div class="carousel-container" style="background: #f5f5f5; border-radius: 8px;">
@@ -12,12 +12,14 @@
         <% end %>
       </div>
       <div class="carousel-navigation is-overlay">
-        <div class="carousel-nav-left">
-          <i class="fas fa-chevron-left" aria-hidden="true" data-action="click->carousel#changeSlide" data-carousel-offset="-1"></i>
-        </div>
-        <div class="carousel-nav-right">
-          <i class="fas fa-chevron-right" aria-hidden="true" data-action="click->carousel#changeSlide" data-carousel-offset="1"></i>
-        </div>
+        <% if proion.present? && proion.eikonas.present? && proion.eikonas.length > 1 %>
+          <div class="carousel-nav-left">
+            <i class="fas fa-chevron-left" aria-hidden="true" data-action="click->carousel#changeSlide" data-carousel-offset="-1"></i>
+          </div>
+          <div class="carousel-nav-right">
+            <i class="fas fa-chevron-right" aria-hidden="true" data-action="click->carousel#changeSlide" data-carousel-offset="1"></i>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

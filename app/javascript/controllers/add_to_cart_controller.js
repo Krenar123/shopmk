@@ -40,6 +40,7 @@ export default class extends Controller {
         const totalAmount = document.getElementById("total-amount");
         const totalSecondAmount = document.getElementById("total-second-amount");
         const cartNav = document.getElementById("cart-nav");
+        const proceedToCheckout = document.getElementById("proceed-to-checkout");
         // I have to show loading here while waiting
 
         Rails.ajax({
@@ -64,6 +65,12 @@ export default class extends Controller {
                         totalSecondAmount != null
                     ) {
                         totalSecondAmount.innerHTML = data.amount;
+                    }
+                    
+                    if(parseInt(data.amount) >= 1000){
+                        proceedToCheckout.classList.remove('disabled-link');
+                    }else{
+                        proceedToCheckout.classList.add('disabled-link');
                     }
                 }
             },

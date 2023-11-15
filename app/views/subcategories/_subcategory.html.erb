@@ -1,7 +1,7 @@
-<div class="is-hidden-mobile">
+<div class="is-hidden-mobile" style="margin-right: 60px;">
   <div class="column">
     <h3 class="subtitle mb-4"><%= subcategory.name %></h3>
-    <div class="is-flex is-multiline is-fullwidth is-scrollable">
+    <div class="is-flex is-multiline is-fullwidth" style="flex-wrap: wrap;">
         <%= render subcategory.proions %>
     </div>
   </div>
@@ -9,7 +9,7 @@
 <div class="is-hidden-tablet">
   <div class="column">
     <h3 class="subtitle mb-4"><%= subcategory.name %></h3>
-    <div class="is-flex is-multiline is-fullwidth ">
+    <div class="is-flex is-multiline is-fullwidth is-scrollable-products">
         <%= render subcategory.proions %>
     </div>
   </div>

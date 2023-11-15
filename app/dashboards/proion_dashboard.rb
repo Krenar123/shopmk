@@ -14,6 +14,8 @@ class ProionDashboard < Administrate::BaseDashboard
     title: Field::String,
     description: Field::String,
     price: Field::String,
+    market_price: Field::String,
+    price_per_size: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     size: Field::String,
@@ -52,6 +54,8 @@ class ProionDashboard < Administrate::BaseDashboard
     description
     eikonas
     price
+    market_price
+    price_per_size
     size
     category
     previous_price
@@ -74,9 +78,11 @@ class ProionDashboard < Administrate::BaseDashboard
     title
     description
     price
+    market_price
+    previous_price
+    price_per_size
     size
     category
-    previous_price
     long_description
     energy
     fat

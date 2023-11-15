@@ -14,7 +14,7 @@
       </div>
     </section>
     <footer class="modal-card-foot">
-      <a href="<%= cart_checkout_path(locale: I18n.locale) %>" class="button is-danger"><%= t('.checkout') %></a>
+      <a id="proceed-to-checkout" href="<%= cart_checkout_path(locale: I18n.locale) %>" class="button is-danger <% if (cart.present? && cart.sub_total < 1000) || cart.blank? %>disabled-link<% end %>"><%= t('.checkout') %></a>
       <a href="#" data-controller="add-to-cart" data-action="click->add-to-cart#closeCart">
         <button class="button is-light"><%= t('.cancel') %></button>
       </a>

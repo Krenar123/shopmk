@@ -2,5 +2,5 @@ sq:
   carts:
     cart:
       shopping_cart: "Shporta"
-      checkout: "Paguaj"
+      checkout: "Porosit"
       cancel: "Anuloni"
