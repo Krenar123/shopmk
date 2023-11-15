@@ -19,10 +19,8 @@ export default class extends Controller {
     
     document.getElementById("modal-second").style.display = "block";
     document.getElementById("modal-background-second").style.display = "block";
-    const mapContainer = document.getElementById('map');
-    if (!mapContainer) {
-      this.initializeMap(); // Initialize a new map
-    }
+    
+    this.initializeMap(); // Initialize a new map
   }
 
   closeLocation(e){
