@@ -49,7 +49,7 @@
             <hr>
             <% @order.line_items.each do |line_item| %>
               <div class="is-flex">
-                <span class="subtitle is-5 order-quantity  has-text-grey"><%= line_item.quantity %> x</span>
+                <span class="subtitle is-5 order-quantity  has-text-grey" style="min-width: 26px;"><%= line_item.quantity %> x</span>
                 <div class="ml-5 is-flex is-flex-direction-column mt-1  customer-name"> <span class="subtitle is-6 order-name" style="margin:0 !important;"><%= line_item.proion.title %> - <%= line_item.proion.description %></span>
                   <span class="mt-5 subtitle is-7 has-text-grey-light order-type"style="margin:0 !important;"><%= line_item.proion.price %> <span class="currency"><%= t('.den') %></span></span> </div>
               </div>

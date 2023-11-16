@@ -136,6 +136,10 @@ button:active {
         top: 100%;
         z-index: 20;
     }
+
+    #cart-nav-modal-body {
+        max-height: 500px;
+    }
 }
 
 @media screen and (max-width: 769px) {
@@ -490,6 +494,16 @@ body {
 
     #location-form {
         overflow: scroll;
+    }
+
+    #cart-nav-modal-body {
+        max-height: 300px;
+    }
+}
+
+@media only screen and (min-width: 467px) {
+    .checkout-proion-image-section {
+        max-width: 250px!important;
     }
 }
 
