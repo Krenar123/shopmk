@@ -868,3 +868,8 @@ img {vertical-align: middle;}
     text-decoration: none;
     pointer-events: none; /* Disable pointer events */
 }
+
+#drag-marker-text {
+    display: none;
+    font-size: 13px;
+}

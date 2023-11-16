@@ -8,6 +8,7 @@ sq:
       phone_number: "Numri i telefonit"
       additional_details: "Informacione shtesë"
       add_more_details_about: "Shto informacione shtesë rreth: hyrjes, katit, numrit të apartamentit..."
+      drag_marker: "Vendoseni shënuesin tek vendndodhja juaj në hartë"
       confirm: "Confirm"
       add_address: "Shtoni adresë"
       total: "Totali"
