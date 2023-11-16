@@ -93,11 +93,14 @@ export default class extends Controller {
           //Create and append select list
           var selectList = document.createElement("select");
           selectList.id = "order_user_location_id";
+          selectList.name = "order[user_location_id]"; 
+
           fullAddress.appendChild(selectList);
 
           var option = document.createElement("option");
           option.value = data.location.id;
           option.text = data.address;
+          option.selected = true;
           selectList.appendChild(option);
           orderButton.classList.remove("disabled");
           // create an select with one option (id: user_location, address)
