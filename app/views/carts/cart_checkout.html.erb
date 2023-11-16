@@ -34,7 +34,7 @@
                             </div>
                         </div>
                         <footer class="card-footer">
-                            <button href="#" id="order-button" class="card-footer-item <% if @show_location.present? %>disabled<% end %>"><%= t('.order') %></button>
+                            <button href="#" id="order-button" class="card-footer-item <% if @show_location.present? || (@cart.sub_total.present? && @cart.sub_total.to_i < 1000) %>disabled<% end %>"><%= t('.order') %></button>
                             <a href="<%= shop_path(locale: I18n.locale) %>" class="card-footer-item"><%= t('.go_back') %></a>
                         </footer>
                     </div>
