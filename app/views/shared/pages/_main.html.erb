@@ -12,7 +12,7 @@
               <p class="subtitle is-5" style="color:#022855"><%= t('.description') %> </p>
             </div>
             <div class=" mt-4 has-text-centered-mobile">
-              <a href="/shop" class="button is-danger"><%= t('.start') %></a>
+              <a href="<%= shop_path(locale: I18n.locale) %>" class="button is-danger"><%= t('.start') %></a>
             </div>
           </div>
         </div>
@@ -59,7 +59,9 @@
     </div>
     <section class="sectiion">
       <div style="text-align:center;margin-top:100px">
-        <a href="<%= shop_path(locale: I18n.locale) %>"><div class="button is-danger has-text-centered px-6 has-text-weight-bold"><%= t('.explore') %></div></a>
+        <a href="<%= shop_path(locale: I18n.locale) %>">
+          <div class="button is-danger has-text-centered px-6 has-text-weight-bold"><%= t('.explore') %></div>
+        </a>
       </div>
     </section>
   </div>
@@ -100,7 +102,9 @@
     </div>
     <section class="section is-mobile-6 is-desktop-6 is-tablet-6">
       <div style="text-align:center;margin-top:2em">
-        <a href="<%= shop_path(locale: I18n.locale) %>"><div class="button is-danger has-text-centered px-6 has-text-weight-bold"><%= t('.start') %></div></a>
+        <a href="<%= shop_path(locale: I18n.locale) %>">
+          <div class="button is-danger has-text-centered px-6 has-text-weight-bold"><%= t('.start') %></div>
+        </a>
       </div>
     </section>
   </div>
@@ -117,7 +121,9 @@
           <%= t('.delivery_text') %>
         </div>
         <div class="pb-4 has-text-left-desktop has-text-centered-mobile has-text-centered-tablet ">
-          <a href="<%= shop_path(locale: I18n.locale) %>"><div class="button is-danger px-6 has-text-weight-bold"><%= t('.start') %></div></a>
+          <a href="<%= shop_path(locale: I18n.locale) %>">
+            <div class="button is-danger px-6 has-text-weight-bold"><%= t('.start') %></div>
+          </a>
         </div>
         <div class="is-centered-tablet has-text-left-desktop has-text-centered-tablet has-text-centered-mobile ">
           <%# <div class="is-flex has-text-centered-mobile is-flex-wrap-wrap  is-align-content-center is-centered-mobile "> %>

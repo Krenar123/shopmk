@@ -18,12 +18,16 @@
       </div>
     <% end %>
     <div class="is-flex" id="mobile-width">
-      
-        <div id="cart-details" style="<% if @current_cart.present? && @current_cart.line_items.present? %><% else %>display: none;<% end %>">
-          <% unless action_name == "index" %>
-            <%= render 'carts/cart_nav', cart: @current_cart %>
-          <% end %>
+      <div id="cart-details" style="<% if @current_cart.present? && @current_cart.line_items.present? %><% else %>display: none;<% end %>">
+        <% unless action_name == "index" %>
+          <%= render 'carts/cart_nav', cart: @current_cart %>
+        <% end %>
+      </div>
+      <% if content_for?(:pages_index) %>
+        <div>
+          <%= render 'shared/i18n' %>
         </div>
+      <%end%>
       <% if !content_for?(:pages_index) %>
         <div id="account-section" class="is-flex is-align-items-center">
           <div class="" id="dropdownTrigger">
