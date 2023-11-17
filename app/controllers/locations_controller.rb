@@ -10,6 +10,9 @@ class LocationsController < ApplicationController
 
   def create
     @location = Location.create(location_params)
+    puts
+    puts location_params
+    puts
     create_user_location
     
     render json: { location: @user_location, address: @location.address, locations: UserLocation.where(user: @current_user).count }

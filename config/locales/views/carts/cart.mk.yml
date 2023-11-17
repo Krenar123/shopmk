@@ -2,5 +2,5 @@ mk:
   carts:
     cart:
       shopping_cart: "Кошничка"
-      checkout: "Плати"
+      checkout: "Нарачај"
       cancel: "Откажи"

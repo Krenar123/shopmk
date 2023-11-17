@@ -8,9 +8,9 @@
         <button class="delete" aria-label="close"></button>
       </a>
     </header>
-    <section class="modal-card-body">
+    <section class="modal-card-body" id="cart-nav-modal-body">
       <div id="add-reduce-section">
-        <%= render "carts/proion", line_items: cart.line_items %>
+        <%= render "carts/proion", line_items: cart.line_items, from_cart_checkout: false %>
       </div>
     </section>
     <footer class="modal-card-foot">

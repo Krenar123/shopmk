@@ -32,7 +32,7 @@ module Users
   
       sign_in(user)
       
-      url_to_redirect = @current_cart.present? ? cart_checkout_path(locale: I18n.locale) : shop_path(locale: I18n.locale)
+      url_to_redirect = @current_cart.present? && @current_cart.line_items.present? ? cart_checkout_path(locale: I18n.locale) : shop_path(locale: I18n.locale)
       
       redirect_to url_to_redirect
     end

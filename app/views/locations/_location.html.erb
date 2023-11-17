@@ -50,6 +50,7 @@
             <%= form.hidden_field :latitude, class: "input", id: "latitude" %>
 
             <div data-controller="maps">
+              <p id="drag-marker-text"><%= t('carts.cart_checkout.drag_marker') %></p>
               <div id="map" style="height: 310px; max-width: 600px;"></div>
             </div>
           </section>

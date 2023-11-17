@@ -24,21 +24,26 @@ export default class extends Controller {
   }
 
   closeLocation(e){
+    
     console.log("close location")
     document.getElementById("modal-second").style.display = "none";
+    document.getElementById('drag-marker-text').style.display = "none";
     document.getElementById("modal-background-second").style.display = "none";
   }
 
   initializeMap() {
     const mapContainer = document.getElementById('map');
+    const dragMarkerText = document.getElementById('drag-marker-text');
     if (mapContainer) {
     
-      const map = L.map('map').setView([42.01041, 21.44080], 17);
+      const map = L.map('map').setView([42.01041, 21.44080], 15);
       map.invalidateSize();
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors',
       }).addTo(map);
+
+      dragMarkerText.style.display = "block";
 
       var customIcon = L.icon({
         iconUrl: '/assets/map-marker.svg',
@@ -50,10 +55,10 @@ export default class extends Controller {
       const marker = L.marker([42.01041, 21.44080], { icon: customIcon, draggable: true }).addTo(map);
 
       const polygonCoordinates = [
-        [42.01262, 21.43192],
+        [42.02525, 21.42991],
         [42.00900, 21.43355],
         [42.00554, 21.44144],
-        [42.01712, 21.44726]
+        [42.02432, 21.45006]
       ];
     
       // Create a polygon and add it to the map
@@ -93,11 +98,14 @@ export default class extends Controller {
           //Create and append select list
           var selectList = document.createElement("select");
           selectList.id = "order_user_location_id";
+          selectList.name = "order[user_location_id]"; 
+
           fullAddress.appendChild(selectList);
 
           var option = document.createElement("option");
           option.value = data.location.id;
           option.text = data.address;
+          option.selected = true;
           selectList.appendChild(option);
           orderButton.classList.remove("disabled");
           // create an select with one option (id: user_location, address)

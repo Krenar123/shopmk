@@ -8,6 +8,7 @@ en:
       phone_number: "Phone number"
       additional_details: "Additional details"
       add_more_details_about: "Add more details about: entrance, floor, apartment number..."
+      drag_marker:  "Place the marker at your location on the map"
       confirm: "Confirm"
       add_address: "Add address"
       total: "Total"

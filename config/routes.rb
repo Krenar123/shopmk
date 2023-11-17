@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :tags
     resources :tagged_products
     resources :users
+    resources :locations
     resources :user_locations
 
     root to: 'hrists#index'
