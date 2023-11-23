@@ -23,11 +23,6 @@
           <%= render 'carts/cart_nav', cart: @current_cart %>
         <% end %>
       </div>
-      <% if content_for?(:pages_index) %>
-        <div>
-          <%= render 'shared/i18n' %>
-        </div>
-      <%end%>
       <% if !content_for?(:pages_index) %>
         <div id="account-section" class="is-flex is-align-items-center">
           <div class="" id="dropdownTrigger">
@@ -62,6 +57,11 @@
         </div>
       <% end %>
     </div>
+    <% if content_for?(:pages_index) %>
+      <div>
+        <%= render 'shared/i18n' %>
+      </div>
+    <%end%>
     <% if !content_for?(:pages_index) %>
       <div style="display:none;">
         <% if current_hrist.present? %>
