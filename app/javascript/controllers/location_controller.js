@@ -80,51 +80,72 @@ export default class extends Controller {
     const locationForm = document.getElementById("location-form");
     const fullAddress = document.getElementById("full-address");
     const orderButton = document.getElementById("order-button");
+    
+    // Check if neighborhood, road, and phone are empty
+    const neighborhoodInput = document.getElementById("neighborhood");
+    const roadInput = document.getElementById("road");
+    const phoneInput = document.getElementById("phone");
 
-    // I have to show loading here while waiting
-    var formData = new FormData(locationForm)
-    console.log(formData);
+    if (
+      neighborhoodInput.value.trim() === "" ||
+      roadInput.value.trim() === "" ||
+      phoneInput.value.trim() === ""
+    ) {
+      if(neighborhoodInput.value.trim() === "") {
+        // Focus on the neighborhood input and exit
+        neighborhoodInput.focus();
+      } else if(roadInput.value.trim() === "") {
+        // Focus on the neighborhood input and exit
+        roadInput.focus();
+      } else if(phoneInput.value.trim() === "") {
+        // Focus on the neighborhood input and exit
+        phoneInput.focus();
+      }
+    } else {
+      // I have to show loading here while waiting
+      var formData = new FormData(locationForm)
+      console.log(formData);
 
-    Rails.ajax({
-      type: "post",
-      dataType: 'json',
-      url: '/locations',
-      data: formData,
-      success: function(data) {
-        // We need to make it ad option select
-        console.log(data)
-        console.log(data.locations);
-        if(data.locations == "1"){
-          //Create and append select list
-          var selectList = document.createElement("select");
-          selectList.id = "order_user_location_id";
-          selectList.name = "order[user_location_id]"; 
+      Rails.ajax({
+        type: "post",
+        dataType: 'json',
+        url: '/locations',
+        data: formData,
+        success: function(data) {
+          // We need to make it ad option select
+          console.log(data)
+          console.log(data.locations);
+          if(data.locations == "1"){
+            //Create and append select list
+            var selectList = document.createElement("select");
+            selectList.id = "order_user_location_id";
+            selectList.name = "order[user_location_id]"; 
 
-          fullAddress.appendChild(selectList);
+            fullAddress.appendChild(selectList);
 
-          var option = document.createElement("option");
-          option.value = data.location.id;
-          option.text = data.address;
-          option.selected = true;
-          selectList.appendChild(option);
-          orderButton.classList.remove("disabled");
-          // create an select with one option (id: user_location, address)
-        }else {
-          // fill the select with option
-          // Create and append select list
-          var selectList = document.getElementById("order_user_location_id");
+            var option = document.createElement("option");
+            option.value = data.location.id;
+            option.text = data.address;
+            option.selected = true;
+            selectList.appendChild(option);
+            orderButton.classList.remove("disabled");
+            // create an select with one option (id: user_location, address)
+          }else {
+            // fill the select with option
+            // Create and append select list
+            var selectList = document.getElementById("order_user_location_id");
 
-          var option = document.createElement("option");
-          option.value = data.location.id;
-          option.text = data.address;
-          selectList.appendChild(option);
-        };
+            var option = document.createElement("option");
+            option.value = data.location.id;
+            option.text = data.address;
+            selectList.appendChild(option);
+          };
 
-        document.getElementById("modal-second").style.display = "none";
-        document.getElementById("modal-background-second").style.display = "none";
-      },
-      error: function(data) { console.log('Error: address was not created') }
-    })
+          document.getElementById("modal-second").style.display = "none";
+          document.getElementById("modal-background-second").style.display = "none";
+        },
+        error: function(data) { console.log('Error: address was not created') }
+      })
+    }
   }
-
 }
