@@ -11,6 +11,7 @@ class ProionDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
+    market_proion_id: Field::String,
     title: Field::String,
     description: Field::String,
     price: Field::String,
@@ -40,6 +41,7 @@ class ProionDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
+    market_proion_id
     title
     eikonas
     price
@@ -50,6 +52,7 @@ class ProionDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
+    market_proion_id
     title
     description
     eikonas

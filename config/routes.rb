@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       scope :market do
-        resources :proions, only: [:create]
+        resources :proions, only: [:create, :destroy]
       end
     end
   end

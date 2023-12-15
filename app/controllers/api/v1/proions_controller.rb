@@ -12,10 +12,14 @@ module Api
         head :ok
       end
 
+      def destroy
+        Proion.where.not(market_proion_id: [nil, ""]).destroy_all
+      end
+
       private
 
       def proions_params
-        params.require(:proions).map { |proion| proion.permit(:market_proion_id, :title, :price) }
+        params.require(:proions).map { |proion| proion.permit(:market_proion_id, :title, :market_price) }
       end
     end
   end
