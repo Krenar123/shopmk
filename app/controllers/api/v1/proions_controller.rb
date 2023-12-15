@@ -15,8 +15,7 @@ module Api
       private
 
       def proions_params
-        params.require(:proions).permit!
-          .fetch(:proions, [])
+        params.require(:proions).map { |proion| proion.permit(:market_proion_id, :title, :price) }
       end
     end
   end
