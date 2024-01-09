@@ -60,7 +60,15 @@ class Proion < ApplicationRecord
   private
 
   def adjust_price
-    self.price = "#{market_price.to_i * 1.05}"
+    self.price = "#{custom_round(market_price.to_f * 1.05)}"
+  end
+
+  def custom_round(number)
+    if number - number.floor >= 0.5
+      number.ceil
+    else
+      number.floor
+    end
   end
 
   def link_tags!(tag_names)
