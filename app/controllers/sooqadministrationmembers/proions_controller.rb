@@ -26,6 +26,8 @@ module Sooqadministrationmembers
       proion = Proion.new(proion_params)
 
       if proion.save_and_link_tag(proion_params)
+        proion.create_eikonas_for_proion(proion_image_params[:images]) if proion_image_params[:images].present?
+        
         redirect_to(
           after_resource_created_path(resource),
           notice: translate_with_resource('create.success')
@@ -43,6 +45,8 @@ module Sooqadministrationmembers
       proion = Proion.find(params[:id])
 
       if proion.update_and_link_tag(proion_params)
+        proion.create_eikonas_for_proion(proion_image_params[:images]) if proion_image_params[:images].present?
+        
         redirect_to(
           after_resource_updated_path(requested_resource),
           notice: translate_with_resource('update.success')
@@ -86,10 +90,15 @@ module Sooqadministrationmembers
         :protein,
         :salt,
         :sugar,
-        :tag_names,
-        eikonas_attributes: [:id, :_destroy, :path_ref, :thumbnail, :image]
+        :tag_names
       )
     end
+
+    def proion_image_params
+      params.require(:proion).permit(images: [])
+    end
+
+    #eikonas_attributes: [:id, :_destroy, :path_ref, :thumbnail, :image]
 
     # Override this method to specify custom lookup behavior.
     # This will be used to set the resource for the `show`, `edit`, and `update`

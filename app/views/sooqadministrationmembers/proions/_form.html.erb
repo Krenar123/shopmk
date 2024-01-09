@@ -14,7 +14,7 @@ and renders all form fields for a resource's editable attributes.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Form
 %>
 
-<%= form_for([namespace, page.resource], html: { class: "form" }, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' }) do |f| %>
+<%= form_for([namespace, page.resource], html: { class: "form", multipart: true }) do |f| %>
   <% if page.resource.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -44,11 +44,7 @@ and renders all form fields for a resource's editable attributes.
       <label for="proion_eikonas">Images</label>
     </div>
     <div class="field-unit__field">
-      <%= f.fields_for :eikonas do |eikona_form| %>
-        <%= f.file_field :image %>
-        <%= f.link_to_remove 'Remove Image', class: 'button is-danger' %>
-      <% end %>
-      <%= link_to_add_association 'Add Image', f, :eikonas, class: 'button is-primary' %>
+      <%= f.file_field :images, multiple: true, accept: 'image/*' %>
     </div>
   </div>
   

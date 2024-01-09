@@ -91,7 +91,6 @@ class ProionDashboard < Administrate::BaseDashboard
     protein
     salt
     sugar
-    eikonas
   ].freeze
 
   # COLLECTION_FILTERS

@@ -45,6 +45,18 @@ class Proion < ApplicationRecord
     end
   end
 
+  def create_eikonas_for_proion(images)
+    return nil if images.blank?
+
+    images.each_with_index do |image, index|
+      if image.present?
+        thumbnail = index == 0 ? "true" : "false"
+        eikona = Eikona.create!(proion_id: id, thumbnail: thumbnail)
+        eikona.image.attach(image)
+      end
+    end
+  end
+
   private
 
   def adjust_price
