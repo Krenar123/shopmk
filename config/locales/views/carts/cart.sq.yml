@@ -4,3 +4,4 @@ sq:
       shopping_cart: "Shporta"
       checkout: "Porosit"
       cancel: "Anuloni"
+      checkout_limit: "Duhet të shpenzoni më shumë se 1000 den për të porositur"

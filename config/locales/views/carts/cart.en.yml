@@ -4,3 +4,4 @@ en:
       shopping_cart: "Shopping cart"
       checkout: "Checkout"
       cancel: "Cancel"
+      checkout_limit: "Spend more than 1000 den. to order"

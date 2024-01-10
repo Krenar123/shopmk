@@ -13,6 +13,7 @@
         <%= render "carts/proion", line_items: cart.line_items, from_cart_checkout: false %>
       </div>
     </section>
+    <p style="padding: 10px 20px; background-color: white; font-size: 13px; font-weight: 500; "><%= t('.checkout_limit') %>*</p>
     <footer class="modal-card-foot">
       <a id="proceed-to-checkout" href="<%= cart_checkout_path(locale: I18n.locale) %>" class="button is-danger <% if (cart.present? && cart.sub_total < 1000) || cart.blank? %>disabled-link<% end %>"><%= t('.checkout') %></a>
       <a href="#" data-controller="add-to-cart" data-action="click->add-to-cart#closeCart">

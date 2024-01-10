@@ -4,3 +4,4 @@ mk:
       shopping_cart: "Кошничка"
       checkout: "Нарачај"
       cancel: "Откажи"
+      checkout_limit: "Потрошите повеќе од 1000 ден. за да нарачате"
